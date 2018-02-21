@@ -47,16 +47,16 @@
     
     //logo
     _logoImage = [[UIImageView alloc] init];
-    _logoImage.backgroundColor = [UIColor blueColor];
+    _logoImage.backgroundColor = COLOR_BLACK;
     _logoImage.image = [UIImage imageNamed:@"loginLogo"];
     _logoImage.frame = YLY6Rect(270, 170, 210, 66);
     [backView addSubview:_logoImage];
-    [_logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(270));
-        make.top.mas_equalTo(YLY6Width(178));
-        make.width.mas_equalTo(YLY6Width(212));
-        
-    }];
+//    [_logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.mas_equalTo(YLY6Width(270));
+//        make.top.mas_equalTo(YLY6Width(178));
+//        make.width.mas_equalTo(YLY6Width(212));
+//        make.height.mas_equalTo(YLY6Width(64));
+//    }];
     
     
     //iphoneInput
@@ -119,20 +119,6 @@
                                              userInfo:nil
                                               repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_sendingTimer forMode:NSRunLoopCommonModes];
-    
-    
-    
-    
-    
-    NSString *a = [NSString stringToMoneyFormat:@"0.00"];
-    NSString *b = [NSString stringToMoneyFormat:@"0"];
-    NSString *c = [NSString stringToMoneyFormat:@""];
-    NSString *d = [NSString stringToMoneyFormat:@"1234567890.123"];
-    NSString *e = [NSString stringToMoneyFormat:@"123456"];
-    NSString *f = [NSString moneyToFloat:@"123,456,789.02"];
-    NSString *g = [NSString moneyToFloat:@"123,456"];
-    YLYLog(@"\na=%@\nb=%@\nc=%@\nd=%@\ne=%@\nf=%@\ng=%@",a, b, c, d, e, f, g);
-    
 }
 
 

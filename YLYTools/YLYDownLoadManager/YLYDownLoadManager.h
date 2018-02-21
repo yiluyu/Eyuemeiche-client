@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "YLYHelper.h"
 
 @interface YLYDownLoadManager : NSObject
 

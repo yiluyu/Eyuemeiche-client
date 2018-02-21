@@ -36,7 +36,7 @@
 - (void)loadSubviews {
     //backview
     self.backView = [[YLYRootView alloc] init];
-    _backView.backgroundColor = [UIColor redColor];
+    _backView.backgroundColor = COLOR_RED;
     [self.view addSubview:_backView];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
@@ -50,8 +50,13 @@
             [weakSelf.loginView.phoneTextField resignFirstResponder];
         }
     };
-    self.loginView = [[LoginView alloc] init];
     
+    //信息
+    self.loginView = [[LoginView alloc] init];
+    [_backView addSubview:_loginView];
+    [_loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
     
     
     //点击获取code

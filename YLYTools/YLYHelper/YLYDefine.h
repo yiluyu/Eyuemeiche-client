@@ -6,6 +6,8 @@
 //  Copyright © 2017 yu. All rights reserved.
 //
 
+#import "YLYHelper.h"
+#import "YLYConstantDefine.h"
 
 /*
  该对象用定义宏
@@ -64,13 +66,13 @@
 #define SafeAreaTopHeight iPhoneX?88:64
 #define SafeAreaBottomHeight (iPhoneX?34:0)
 /** 以iPhone6屏幕为基准rect */
-#define YLY6Rect(x, y, width, height) [YLYFunction autoAdjustRect:CGRectMake(x, y, width, height)]
+#define YLY6Rect(x, y, width, height) [YLYHelper autoAdjustRect:CGRectMake(x, y, width, height)]
 
 //基于6屏幕适配font
-#define YLY6Font(a) [YLYFunction autoAdjustFont:a]
+#define YLY6Font(a) [YLYHelper autoAdjustFont:a]
 
 //基于6屏幕适配width
-#define YLY6Width(w) [YLYFunction autoAdjustWidth:w]
+#define YLY6Width(w) [YLYHelper autoAdjustWidth:w]
 
 //masonry中使用
 #define FIT(w) YLY6Width(w)

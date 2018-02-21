@@ -8,6 +8,8 @@
 
 #import "YLYDownLoadManager.h"
 
+#import "YLYDefine.h"
+
 @interface YLYDownLoadManager ()
 
 @property (nonatomic, readwrite, strong)NSMutableDictionary *controllerDict;//总操作字典

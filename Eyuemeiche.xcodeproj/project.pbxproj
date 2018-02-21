@@ -10,7 +10,6 @@
 		9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B0F1FB0A180008E2EB1 /* LoginViewController.m */; };
 		9A186B351FB0A180008E2EB1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B151FB0A180008E2EB1 /* MainViewController.m */; };
 		9A186B361FB0A180008E2EB1 /* YLYDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */; };
-		9A186B371FB0A180008E2EB1 /* YLYFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B271FB0A180008E2EB1 /* YLYFunction.m */; };
 		9A186B381FB0A180008E2EB1 /* YLYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B291FB0A180008E2EB1 /* YLYHelper.m */; };
 		9A186B391FB0A180008E2EB1 /* YLYPropertyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B2B1FB0A180008E2EB1 /* YLYPropertyManager.m */; };
 		9A186B3A1FB0A180008E2EB1 /* YLYRootCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B2E1FB0A180008E2EB1 /* YLYRootCell.m */; };
@@ -25,6 +24,7 @@
 		9A3D1FCB1FB047DB004F827C /* EyuemeicheUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D1FCA1FB047DB004F827C /* EyuemeicheUITests.m */; };
 		9A54E79120318BCC0054D38A /* BootUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79020318BCC0054D38A /* BootUnit.m */; };
 		9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79320318C270054D38A /* YLYRootTabbarController.m */; };
+		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
 		9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */; };
 		9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */; };
 		9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */; };
@@ -60,8 +60,6 @@
 		9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYDownLoadManager.m; sourceTree = "<group>"; };
 		9A186B241FB0A180008E2EB1 /* YLYConstantDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYConstantDefine.h; sourceTree = "<group>"; };
 		9A186B251FB0A180008E2EB1 /* YLYDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYDefine.h; sourceTree = "<group>"; };
-		9A186B261FB0A180008E2EB1 /* YLYFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYFunction.h; sourceTree = "<group>"; };
-		9A186B271FB0A180008E2EB1 /* YLYFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYFunction.m; sourceTree = "<group>"; };
 		9A186B281FB0A180008E2EB1 /* YLYHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYHelper.h; sourceTree = "<group>"; };
 		9A186B291FB0A180008E2EB1 /* YLYHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YLYHelper.m; sourceTree = "<group>"; };
 		9A186B2A1FB0A180008E2EB1 /* YLYPropertyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YLYPropertyManager.h; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		9A54E79020318BCC0054D38A /* BootUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BootUnit.m; sourceTree = "<group>"; };
 		9A54E79220318C270054D38A /* YLYRootTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootTabbarController.h; sourceTree = "<group>"; };
 		9A54E79320318C270054D38A /* YLYRootTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootTabbarController.m; sourceTree = "<group>"; };
+		9A54E795203950B70054D38A /* YLYRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootNavigationController.h; sourceTree = "<group>"; };
+		9A54E796203950B70054D38A /* YLYRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootNavigationController.m; sourceTree = "<group>"; };
 		9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eyuemeiche.entitlements; sourceTree = "<group>"; };
 		9AEBD379202AE72A009E5FC2 /* YLYRootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootModel.h; sourceTree = "<group>"; };
 		9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootModel.m; sourceTree = "<group>"; };
@@ -301,8 +301,6 @@
 			children = (
 				9A186B241FB0A180008E2EB1 /* YLYConstantDefine.h */,
 				9A186B251FB0A180008E2EB1 /* YLYDefine.h */,
-				9A186B261FB0A180008E2EB1 /* YLYFunction.h */,
-				9A186B271FB0A180008E2EB1 /* YLYFunction.m */,
 				9A186B281FB0A180008E2EB1 /* YLYHelper.h */,
 				9A186B291FB0A180008E2EB1 /* YLYHelper.m */,
 				9A186B2A1FB0A180008E2EB1 /* YLYPropertyManager.h */,
@@ -333,6 +331,8 @@
 				9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */,
 				9A54E79220318C270054D38A /* YLYRootTabbarController.h */,
 				9A54E79320318C270054D38A /* YLYRootTabbarController.m */,
+				9A54E795203950B70054D38A /* YLYRootNavigationController.h */,
+				9A54E796203950B70054D38A /* YLYRootNavigationController.m */,
 			);
 			path = YLYRootViewController;
 			sourceTree = "<group>";
@@ -685,10 +685,10 @@
 				9AEBD388202DB503009E5FC2 /* LoginView.m in Sources */,
 				9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */,
 				9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */,
-				9A186B371FB0A180008E2EB1 /* YLYFunction.m in Sources */,
 				9A54E79120318BCC0054D38A /* BootUnit.m in Sources */,
 				9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
+				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,
 				9A3D1FA81FB047DB004F827C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 //
 
 #import "YLYPropertyManager.h"
-#import "YLYHelper.h"
+#import "YLYDefine.h"
 
 @implementation YLYPropertyManager
 

@@ -32,13 +32,16 @@
 
 
 
+/* 通知name */
+/** 跳转登陆页面 */
+#define CONSTANT_NOTIY_SKIPLOGIN @"CONSTANT_NOTIY_SKIPLOGIN"
 
 
 
 /* 动画时间参数 */
 /** 动画时间短 */
-#define kShortAnimationTime 0.3f
+#define CONSTANT_ShortAnimationTime 0.3f
 /** 动画时间长 */
-#define kLongAnimationTime 0.5f
+#define CONSTANT_LongAnimationTime 0.5f
 
 

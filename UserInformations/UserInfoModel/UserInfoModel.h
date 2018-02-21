@@ -13,7 +13,7 @@
 @property (nonatomic, readwrite, copy)NSString *nickName;//昵称
 
 
-/** 初始化user数据 */
+/** 重置user数据 */
 - (void)renewUserData;
 
 @end

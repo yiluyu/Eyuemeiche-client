@@ -7,12 +7,12 @@
 //
 
 #import "UserInfoModel.h"
-#import "YLYHelper.h"
+#import "YLYDefine.h"
 
 @implementation UserInfoModel
 
 - (void)renewUserData {
-    YLYLog(@"初始化user数据");
+    YLYLog(@"重置userModel数据");
 }
 
 

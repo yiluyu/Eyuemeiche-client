@@ -7,7 +7,7 @@
 //
 
 #import "UserManager.h"
-#import "YLYHelper.h"
+#import "YLYDefine.h"
 #import "UserInfoModel.h"
 
 
@@ -50,7 +50,7 @@
         // 数据是否存在
         if ([fileManager fileExistsAtPath:userDataPath]) {
             //读取该数据
-            weakSelf.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfFile:userDataPath]];
+            strongSelf.userModel = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfFile:userDataPath]];
         } else {
             //创建该数据
             strongSelf.userModel = [[UserInfoModel alloc] init];

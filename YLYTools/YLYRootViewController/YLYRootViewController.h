@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YLYHelper.h"
 #import "YLYRootView.h"
+#import "YLYDefine.h"
 #import <Masonry.h>
 
 @class YLYRootModel;

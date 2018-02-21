@@ -14,6 +14,7 @@
 //root
 #import "BootUnit.h"
 #import "YLYRootTabbarController.h"
+#import "YLYRootNavigationController.h"
 
 //ViewControllers
 #import "MainViewController.h"
@@ -24,33 +25,23 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, readwrite, strong)BootUnit *bootUnit;//基础配置
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /*
+     基础配置
+     */
+    self.bootUnit = [BootUnit shareUnit];
     
-    //加载本地用户数据
-    [UserManager shareInstanceUserInfo];
-    //检查网络状态
-    [self checkNetStatus];
-    //检测是否登录失效
-    
-    
-    
-    //加载VC
-    //主页
-    MainViewController *mainVC = [[MainViewController alloc] init];
-    
-    //Navi
-    self.mainNavi = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    _mainNavi.navigationBar.translucent = NO;
-    _mainNavi.navigationBar.hidden = YES;
     
     //window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = self.mainNavi;
+    self.window.rootViewController = _bootUnit.tabbarController;
     
     [self.window makeKeyAndVisible];
     
@@ -85,19 +76,7 @@
 }
 
 
-#pragma -mark 注册通知
-- (void)registerNotification {
-    SELF_WEAK();
-    //网络状态监听
-    
-}
 
-
-#pragma -mark 事件处理
-//联网状态
-- (void)checkNetStatus {
-    
-}
 
 
 

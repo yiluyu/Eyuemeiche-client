@@ -15,10 +15,8 @@
 /*
  基础tool类
  */
-#import "YLYFunction.h"
 #import "YLYPropertyManager.h"
 #import "YLYDownLoadManager.h"
-#import "YLYDefine.h"
 
 /*
  扩展类别
@@ -37,6 +35,14 @@ typedef void (^notificationBlock)(NSNotification *noti);
 + (void)registerNotificationName:(NSString *)notiName observer:(id)observer event:(notificationBlock)block;
 /** 注销通知 */
 + (void)removeNotificationName:(NSString *)notiName observer:(id)observer;
+
+//适配
+//基于6宽度适配rect
++ (CGRect)autoAdjustRect:(CGRect)rect;
+//基于6屏幕适配长度
++ (CGFloat)autoAdjustWidth:(CGFloat)width;
+//基于6屏幕适配字体
++ (UIFont *)autoAdjustFont:(CGFloat)fontFloat;
 
 
 @end
