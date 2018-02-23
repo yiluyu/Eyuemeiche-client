@@ -25,6 +25,7 @@
 		9A54E79120318BCC0054D38A /* BootUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79020318BCC0054D38A /* BootUnit.m */; };
 		9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79320318C270054D38A /* YLYRootTabbarController.m */; };
 		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
+		9A54E79A204060D70054D38A /* YLYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E799204060D70054D38A /* YLYTextField.m */; };
 		9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */; };
 		9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */; };
 		9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */; };
@@ -92,6 +93,8 @@
 		9A54E79320318C270054D38A /* YLYRootTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootTabbarController.m; sourceTree = "<group>"; };
 		9A54E795203950B70054D38A /* YLYRootNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootNavigationController.h; sourceTree = "<group>"; };
 		9A54E796203950B70054D38A /* YLYRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootNavigationController.m; sourceTree = "<group>"; };
+		9A54E798204060D70054D38A /* YLYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYTextField.h; sourceTree = "<group>"; };
+		9A54E799204060D70054D38A /* YLYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYTextField.m; sourceTree = "<group>"; };
 		9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eyuemeiche.entitlements; sourceTree = "<group>"; };
 		9AEBD379202AE72A009E5FC2 /* YLYRootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootModel.h; sourceTree = "<group>"; };
 		9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootModel.m; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				9A186B2E1FB0A180008E2EB1 /* YLYRootCell.m */,
 				9A186B2F1FB0A180008E2EB1 /* YLYRootView.h */,
 				9A186B301FB0A180008E2EB1 /* YLYRootView.m */,
+				9A54E798204060D70054D38A /* YLYTextField.h */,
+				9A54E799204060D70054D38A /* YLYTextField.m */,
 			);
 			path = YLYRootView;
 			sourceTree = "<group>";
@@ -619,11 +624,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Eyuemeiche/Pods-Eyuemeiche-resources.sh",
 				"${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Twitter/TwitterKit.framework/Resources/TwitterKitResources.bundle",
-				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html",
 				"${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png",
@@ -633,11 +633,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKPromptResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TencentOpenApi_IOS_Bundle.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-back.png",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-help.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zbar-helpicons.png",
@@ -686,6 +681,7 @@
 				9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */,
 				9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */,
 				9A54E79120318BCC0054D38A /* BootUnit.m in Sources */,
+				9A54E79A204060D70054D38A /* YLYTextField.m in Sources */,
 				9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
 				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,

@@ -730,17 +730,6 @@ THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-			<string>Copyright 2011 - 2016 UMeng.com. All rights reserved.
-</string>
-			<key>License</key>
-			<string>Copyright</string>
-			<key>Title</key>
-			<string>UMengUShare</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
 			<string>		  GNU LESSER GENERAL PUBLIC LICENSE
 		       Version 2.1, February 1999
 

@@ -44,5 +44,18 @@ typedef void (^notificationBlock)(NSNotification *noti);
 //基于6屏幕适配字体
 + (UIFont *)autoAdjustFont:(CGFloat)fontFloat;
 
+//提示
+/** 显示hud提示 */
++ (void)showHudViewWithString:(NSString *)promptString;
+
+/*
+ showText: 当传nil、@""等空字符时，自动填充为 @"加载中..."
+ */
+/** 打开菊花view */
+- (void)openProcessHudViewText:(NSString *)showText;
+
+/** 手动关闭等待view */
+- (void)closeProcessHudView;
+
 
 @end

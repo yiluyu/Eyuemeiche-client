@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "LoginView.h"
+#import "BootUnit.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
@@ -25,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = CONSTANT_BACKGROUND_COLOR;
     
     [self loadSubviews];
     
@@ -49,6 +51,9 @@
         if (weakSelf.loginView.phoneTextField.isFirstResponder == YES) {
             [weakSelf.loginView.phoneTextField resignFirstResponder];
         }
+        if (weakSelf.loginView.codeTextField.isFirstResponder == YES) {
+            [weakSelf.loginView.codeTextField resignFirstResponder];
+        }
     };
     
     //信息
@@ -60,28 +65,30 @@
     
     
     //点击获取code
-    
-    
+    _loginView.clickBtnGetCodeBlock = ^(LoginView *sender) {
+        YLYLog(@"发送验证码...");
+        [sender alternateStep:@"2"];
+    };
     
     //点击登陆
-    
+    __weak BootUnit *tempBoot = [BootUnit shareUnit];
+    _loginView.clickBtnLoginBlock = ^(LoginView *sender) {
+        YLYLog(@"登陆...");
+        
+        YLYLog(@"登陆成功");
+        [sender.phoneTextField resignFirstResponder];
+        [sender.codeTextField resignFirstResponder];
+        [sender.phoneTextField endEditing:YES];
+        [sender.codeTextField endEditing:YES];
+        [tempBoot closeLoginVC];
+    };
     
     //点击无法登陆
+    _loginView.clickBtnCannotLoginBlock = ^(LoginView *sender) {
+        YLYLog(@"无法登陆跳转...");
+    };
     
-    
-    
-//    UIView *a = [[UIView alloc] init];
-//    a.backgroundColor = COLOR_BLACK;
-//    [self.view addSubview:a];
-//
-//    [a mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.mas_equalTo(YLY6Width(510));
-//        make.right.mas_equalTo(-YLY6Width(20));
-//        make.bottom.mas_equalTo(-YLY6Width(20));
-//        make.height.mas_equalTo(YLY6Width(70));
-//    }];
-//
-//    YLYLog(@"%@", a);
+
 }
 
 

@@ -12,7 +12,7 @@ target 'Eyuemeiche' do
     pod 'UMengAnalytics-NO-IDFA', '~> 4.2.5'
     pod 'AMap3DMap-NO-IDFA', '~> 4.6.1'
     pod 'GTSDK', '~> 1.5.3'
-    pod 'UMengUShare', '~> 6.3.0'
+#    pod 'UMengUShare', '~> 6.3.0'
     pod 'MLeaksFinder', '~> 0.2.1'
     pod 'Masonry', '~> 1.0.2'
 end

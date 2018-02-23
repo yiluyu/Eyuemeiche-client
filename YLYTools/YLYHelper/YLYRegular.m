@@ -8,23 +8,7 @@
 
 #import "YLYRegular.h"
 
-static YLYRegular *instance = nil;
-
 @implementation YLYRegular
-
-+ (instancetype)shareRegular {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[YLYRegular allocWithZone:NULL] init];
-    });
-    return instance;
-}
-
-+ (id)allocWithZone:(struct _NSZone *)zone {
-    return [self shareRegular];
-}
-
-
 
 /*
  **          手机号验证           **
@@ -34,7 +18,7 @@ static YLYRegular *instance = nil;
  @return BOOL YES | NO
  *********************************
  */
-- (BOOL)checkMobilePhone:(NSString *)mobile {
++ (BOOL)checkMobilePhone:(NSString *)mobile {
     NSString *mobileRegex = @"^0?(13[0-9]|15[0123456789]|18[0-9]|14[57]|17[0123456789])[0-9]{8}$";
     NSPredicate *mobilePre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileRegex];
     
@@ -49,7 +33,7 @@ static YLYRegular *instance = nil;
  @return BOOL YES | NO
  *********************************
  */
-- (BOOL)checkTelephone:(NSString *)telephone {
++ (BOOL)checkTelephone:(NSString *)telephone {
     NSString *telephoneRegex = @"^(0[0-9]{2,3})+([2-9][0-9]{6,7})+(\\-[0-9]{1,4})?$";
     NSPredicate *telephonePre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", telephoneRegex];
     
@@ -63,7 +47,7 @@ static YLYRegular *instance = nil;
  @return BOOL YES | NO
  *********************************
  */
-- (BOOL)checkEmail:(NSString *)email {
++ (BOOL)checkEmail:(NSString *)email {
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     NSPredicate *emailPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
     
@@ -77,7 +61,7 @@ static YLYRegular *instance = nil;
  @return BOOL YES | NO
  *********************************
  */
-- (BOOL)checkIdentity:(NSString *)number {
++ (BOOL)checkIdentity:(NSString *)number {
     NSString *numberRegex = @"^(\\d{14}|\\d{17})(\\d[xX])$";
     NSPredicate *numberPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", numberRegex];
     
@@ -91,7 +75,7 @@ static YLYRegular *instance = nil;
  @return BOOL YES | NO
  *********************************
  */
-- (BOOL)checkNumber:(NSString *)number {
++ (BOOL)checkNumber:(NSString *)number {
     NSString *numberRegex = @".*[0-9]+.*";
     NSPredicate *numberPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", numberRegex];
     

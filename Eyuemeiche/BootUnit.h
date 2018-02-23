@@ -26,7 +26,8 @@
 @property (nonatomic, readonly, strong)YLYRootNavigationController *mainNavi;//主流程navi
 @property (nonatomic, readonly, strong)YLYRootNavigationController *loginNavi;//注册流程navi
 
-
+//屏幕尺寸宽度比例
+@property (nonatomic, readonly, assign)double rate;
 
 
 
@@ -36,6 +37,11 @@
 
 /** 推出loginVC */
 - (void)pushLoginVC;
+/** 收回loginVC */
+- (void)closeLoginVC;
+
+
+
 
 
 @end

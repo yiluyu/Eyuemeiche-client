@@ -9,6 +9,14 @@
 #import "YLYHelper.h"
 #import <Reachability/Reachability.h>
 #import "YLYDefine.h"
+#import <MBProgressHUD.h>
+#import "BootUnit.h"
+
+@interface YLYHelper ()
+
+@property (nonatomic, readwrite, strong)MBProgressHUD *processHud;
+
+@end
 
 @implementation YLYHelper
 
@@ -32,87 +40,67 @@
 //自动适配Rect
 + (CGRect)autoAdjustRect:(CGRect)rect {
     CGRect retRect = CGRectMake(0, 0, 0, 0);
-    
-    //倍率 按照设计的6屏幕宽度为标准,高度有偏差
-    CGFloat rate = 0.0f;
-    
-    
-    if (iPhone6P) {
-        rate = 1242.0f/750.0f;
-        rate = rate/3.0f;
-    } else if (iPhone6) {
-        rate = 1.0f;
-        rate = rate/2.0f;
-    } else if (iPhoneX) {
-        rate = 1125.0f/750.0f;
-        rate = rate/3.0f;
-    } else if (iPhone5) {
-        rate = 640.0f/750.0f;
-        rate = rate/2.0f;
-    }
-    
+    CGFloat rate = [BootUnit shareUnit].rate;
     retRect = CGRectMake(rect.origin.x*rate, rect.origin.y*rate, rect.size.width*rate, rect.size.height*rate);
-    
-    
     return retRect;
 }
-
-
-
 
 
 //自动适配长度
 + (CGFloat)autoAdjustWidth:(CGFloat)width {
     CGFloat retFloat = 0.0f;
-    
-    //倍率 按照设计的6屏幕宽度为标准,高度有偏差
-    CGFloat rate = 0.0f;
-    
-    if (iPhone6P) {
-        rate = 1242.0f/750.0f;
-        rate = rate/3.0f;
-    } else if (iPhone6) {
-        rate = 1.0f;
-        rate = rate/2.0f;
-    } else if (iPhoneX) {
-        rate = 1125.0f/750.0f;
-        rate = rate/3.0f;
-    } else {
-        rate = 640.0f/750.0f;
-        rate = rate/2.0f;
-    }
-    
-    retFloat = width*rate;
-    
-    
+    retFloat = width*[BootUnit shareUnit].rate;
     return retFloat;
 }
 
 //自动适配Font
 + (UIFont *)autoAdjustFont:(CGFloat)fontFloat {
     UIFont *retFont = [UIFont systemFontOfSize:0];
-    
-    //倍率 按照设计的6屏幕宽度为标准,高度有偏差
-    CGFloat rate = 0.0f;
-    
-    if (iPhone6P) {
-        rate = 1242.0f/750.0f;
-        rate = rate/3.0f;
-    } else if (iPhone6) {
-        rate = 1.0f;
-        rate = rate/2.0f;
-    } else if (iPhoneX) {
-        rate = 1125.0f/750.0f;
-        rate = rate/3.0f;
-    } else {
-        rate = 640.0f/750.0f;
-        rate = rate/2.0f;
-    }
-    
-    retFont = [UIFont systemFontOfSize:fontFloat*rate];
-    
-    
+    retFont = [UIFont systemFontOfSize:fontFloat*[BootUnit shareUnit].rate];
     return retFont;
 }
+
+
+
+
+
+//显示hub提示
++ (void)showHudViewWithString:(NSString *)promptString {
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:keyWindow animated:YES];
+    [keyWindow addSubview:hud];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = promptString;
+    hud.margin = 10.f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:1];
+}
+
+
+//打开菊花
+- (void)openProcessHudViewText:(NSString *)showText {
+    if (self.processHud == nil) {
+        self.processHud = [[MBProgressHUD alloc] init];
+        _processHud.mode = MBProgressHUDModeAnnularDeterminate;
+        _processHud.label.text = showText;
+        _processHud.label.font = CONSTANT_FONT_SMALL;
+        _processHud.animationType = MBProgressHUDAnimationZoomOut;
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        [keyWindow addSubview:_processHud];
+    }
+    showText = [NSString checkNullString:showText];
+    if (showText.length == 0) {
+        _processHud.label.text = @"加载中...";
+    } else {
+        _processHud.label.text = showText;
+    }
+    
+    [_processHud showAnimated:YES];
+}
+//关闭菊花
+- (void)closeProcessHudView {
+    [_processHud hideAnimated:YES];
+}
+
 
 @end

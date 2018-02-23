@@ -8,6 +8,7 @@
 
 #import "YLYHelper.h"
 #import "YLYConstantDefine.h"
+#import "YLYRegular.h"
 
 /*
  该对象用定义宏
@@ -99,10 +100,12 @@
 
 #define COLOR_CLEAR [UIColor clearColor]
 #define COLOR_RED [UIColor redColor]
+#define COLOR_YELLOW [UIColor yellowColor]
 #define COLOR_BLUE [UIColor blueColor]
 #define COLOR_GREEN [UIColor greenColor]
 #define COLOR_WHITE [UIColor whiteColor]
 #define COLOR_BLACK [UIColor blackColor]
+#define COLOR_GRAY [UIColor grayColor]
 
 
 /** 获取weakSelf */

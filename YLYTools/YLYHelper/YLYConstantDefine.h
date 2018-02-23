@@ -17,31 +17,37 @@
 
 //字体
 /** 超小描述字体 */
-#define CONSTANT_DETAIL_FONT YLY6Font(24)
+#define CONSTANT_FONT_DETAIL YLY6Font(24)
 /** 小号字体 */
-#define CONSTANT_SMALL_FONT YLY6Font(28)
+#define CONSTANT_FONT_SMALL YLY6Font(28)
 /** 中号字体 */
-#define CONSTANT_MEDIAL_FONT YLY6Font(30)
+#define CONSTANT_FONT_MEDIAL YLY6Font(30)
 /** 大号字体 */
-#define CONSTANT_BIG_FONT YLY6Font(36)
+#define CONSTANT_FONT_BIG YLY6Font(36)
 
+//字体颜色
+/** 主体文字颜色 */
+#define CONSTANT_TEXT_COLOR_MAIN COLOR_RGB(255, 255, 255, 1)
+/** 辅助描述性文字淡色 */
+#define CONSTANT_TEXT_COLOR_DESCRIPTION COLOR_RGB(215, 215, 215, 1)
 
 
 /* 本地数据 */
 
+/** 验证码发送间隔 */
+#define CONSTANT_TIME_GETCODE 1
 
 
 
 /* 通知name */
-/** 跳转登陆页面 */
-#define CONSTANT_NOTIY_SKIPLOGIN @"CONSTANT_NOTIY_SKIPLOGIN"
+#define CONSTANT_NOTIFY_SKIPLOGIN @"CONSTANT_NOTIFY_SKIPLOGIN" //跳转登陆页面
 
 
 
 /* 动画时间参数 */
 /** 动画时间短 */
-#define CONSTANT_ShortAnimationTime 0.3f
+#define CONSTANT_TIME_ANIMATION_SHORT 0.3f
 /** 动画时间长 */
-#define CONSTANT_LongAnimationTime 0.5f
+#define CONSTANT_TIME_ANIMATION_LONG 0.6f
 
 

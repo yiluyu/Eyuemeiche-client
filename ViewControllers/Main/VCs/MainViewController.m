@@ -45,7 +45,7 @@
 - (void)addLoginNotificationObserver {
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(skipLoginVC)
-                                                 name:CONSTANT_NOTIY_SKIPLOGIN
+                                                 name:CONSTANT_NOTIFY_SKIPLOGIN
                                                object:nil];
 }
 
@@ -64,7 +64,7 @@
 - (void)loginFaild {
     //3秒后发起登陆失败
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [[NSNotificationCenter defaultCenter] postNotificationName:CONSTANT_NOTIY_SKIPLOGIN object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:CONSTANT_NOTIFY_SKIPLOGIN object:nil];
     });
 }
 

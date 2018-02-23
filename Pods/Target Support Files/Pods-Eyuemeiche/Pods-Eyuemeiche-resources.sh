@@ -86,11 +86,6 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Twitter/TwitterKit.framework/Resources/TwitterKitResources.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png"
@@ -99,11 +94,6 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/AMap3DMap-NO-IDFA/MAMapKit.framework/AMap.bundle"
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/QQ/TencentOpenApi_IOS_Bundle.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Sina/WeiboSDK.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/SocialLibraries/Twitter/TwitterKit.framework/Resources/TwitterKitResources.bundle"
-  install_resource "${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-back.png"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-help.html"
   install_resource "${PODS_ROOT}/ZBarSDK/iphone/res/zbar-helpicons.png"
