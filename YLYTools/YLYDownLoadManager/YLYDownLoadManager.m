@@ -8,6 +8,9 @@
 
 #import "YLYDownLoadManager.h"
 
+#import <AFNetworkReachabilityManager.h>
+#import <AFNetworking.h>
+
 #import "YLYDefine.h"
 
 @interface YLYDownLoadManager ()
@@ -31,6 +34,11 @@
     return [self shareDownLoadManager];
 }
 
+
+//通用请求
+- (void)sendRequest {
+    
+}
 
 #pragma -mark 具体请求
 

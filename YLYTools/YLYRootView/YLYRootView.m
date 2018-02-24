@@ -8,7 +8,6 @@
 
 #import "YLYRootView.h"
 
-#import "YLYDefine.h"
 
 @implementation YLYRootView
 

@@ -9,7 +9,9 @@
 #import "AppDelegate.h"
 
 //vendor
-#import <Reachability/Reachability.h>
+#import <AFNetworking.h>
+#import <AFNetworkReachabilityManager.h>
+#import <MAMapKit/MAMapKit.h>
 
 //root
 #import "BootUnit.h"

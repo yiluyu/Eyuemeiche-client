@@ -8,8 +8,6 @@
 
 #import "YLYRootViewController.h"
 
-#import "YLYDefine.h"
-
 @interface YLYRootViewController ()
 
 @end

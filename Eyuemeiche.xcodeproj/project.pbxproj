@@ -26,6 +26,7 @@
 		9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79320318C270054D38A /* YLYRootTabbarController.m */; };
 		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
 		9A54E79A204060D70054D38A /* YLYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E799204060D70054D38A /* YLYTextField.m */; };
+		9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */; };
 		9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */; };
 		9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */; };
 		9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */; };
@@ -95,6 +96,13 @@
 		9A54E796203950B70054D38A /* YLYRootNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootNavigationController.m; sourceTree = "<group>"; };
 		9A54E798204060D70054D38A /* YLYTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYTextField.h; sourceTree = "<group>"; };
 		9A54E799204060D70054D38A /* YLYTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYTextField.m; sourceTree = "<group>"; };
+		9A54E79B204107DE0054D38A /* UITextField+ExtentMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+ExtentMethod.h"; sourceTree = "<group>"; };
+		9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+ExtentMethod.m"; sourceTree = "<group>"; };
+		9A54E7A120410F4D0054D38A /* LoginConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginConfig.h; sourceTree = "<group>"; };
+		9A54E7A2204110160054D38A /* MainConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainConfig.h; sourceTree = "<group>"; };
+		9A54E7A3204113360054D38A /* CategoryConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryConfig.h; sourceTree = "<group>"; };
+		9A54E7A4204114470054D38A /* YLYConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYConfig.h; sourceTree = "<group>"; };
+		9A54E7A5204114E10054D38A /* CommonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonConfig.h; sourceTree = "<group>"; };
 		9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eyuemeiche.entitlements; sourceTree = "<group>"; };
 		9AEBD379202AE72A009E5FC2 /* YLYRootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootModel.h; sourceTree = "<group>"; };
 		9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootModel.m; sourceTree = "<group>"; };
@@ -150,6 +158,7 @@
 		9A186B0B1FB0A180008E2EB1 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				9A54E7A120410F4D0054D38A /* LoginConfig.h */,
 				9A186B0C1FB0A180008E2EB1 /* Models */,
 				9A186B0D1FB0A180008E2EB1 /* VCs */,
 				9A186B101FB0A180008E2EB1 /* Views */,
@@ -185,6 +194,7 @@
 		9A186B111FB0A180008E2EB1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9A54E7A2204110160054D38A /* MainConfig.h */,
 				9A186B121FB0A180008E2EB1 /* Models */,
 				9A186B131FB0A180008E2EB1 /* VCs */,
 				9A186B161FB0A180008E2EB1 /* Views */,
@@ -330,6 +340,7 @@
 		9A186B311FB0A180008E2EB1 /* YLYRootViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9A54E7A4204114470054D38A /* YLYConfig.h */,
 				9A186B321FB0A180008E2EB1 /* YLYRootViewController.h */,
 				9A186B331FB0A180008E2EB1 /* YLYRootViewController.m */,
 				9AEBD379202AE72A009E5FC2 /* YLYRootModel.h */,
@@ -398,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */,
+				9A54E7A5204114E10054D38A /* CommonConfig.h */,
 				9A3D1FA61FB047DB004F827C /* AppDelegate.h */,
 				9A3D1FA71FB047DB004F827C /* AppDelegate.m */,
 				9A54E78F20318BCC0054D38A /* BootUnit.h */,
@@ -437,10 +449,13 @@
 		9AEBD37C202BE8CD009E5FC2 /* YLYCategory */ = {
 			isa = PBXGroup;
 			children = (
+				9A54E7A3204113360054D38A /* CategoryConfig.h */,
 				9AEBD37D202BE8EE009E5FC2 /* NSString+ExtendMethod.h */,
 				9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */,
 				9AEBD380202BE909009E5FC2 /* UIColor+ExtendMethod.h */,
 				9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */,
+				9A54E79B204107DE0054D38A /* UITextField+ExtentMethod.h */,
+				9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */,
 			);
 			path = YLYCategory;
 			sourceTree = "<group>";
@@ -683,6 +698,7 @@
 				9A54E79120318BCC0054D38A /* BootUnit.m in Sources */,
 				9A54E79A204060D70054D38A /* YLYTextField.m in Sources */,
 				9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */,
+				9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
 				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,
 				9A3D1FA81FB047DB004F827C /* AppDelegate.m in Sources */,

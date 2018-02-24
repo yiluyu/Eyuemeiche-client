@@ -21,8 +21,7 @@
 /*
  扩展类别
  */
-#import "NSString+ExtendMethod.h"
-#import "UIColor+ExtendMethod.h"
+#import "CategoryConfig.h"
 
 
 typedef void (^notificationBlock)(NSNotification *noti);

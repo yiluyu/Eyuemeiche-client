@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "YLYRootView.h"
-#import "YLYDefine.h"
-#import <Masonry.h>
-
 @class YLYRootModel;
 
 @interface YLYRootViewController : UIViewController

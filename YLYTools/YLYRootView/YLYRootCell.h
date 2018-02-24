@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YLYDefine.h"
-#import <Masonry.h>
 
 @interface YLYRootCell : UITableViewCell
 

@@ -7,7 +7,7 @@
 //
 
 #import "LoginView.h"
-#import "YLYTextField.h"
+#import "LoginConfig.h"
 
 @interface LoginView () <UITextFieldDelegate>
 
@@ -20,14 +20,14 @@
 //第一步模块
 @property (nonatomic, readwrite, strong)UIImageView *phoneicon;//图标
 @property (nonatomic, readwrite, strong)YLYRootView *phoneBack;//输入背景
-@property (nonatomic, readwrite, strong)YLYTextField *phoneTextField;//phone输入
+@property (nonatomic, readwrite, strong)UITextField *phoneTextField;//phone输入
 @property (nonatomic, readwrite, strong)UIButton *cannotLogin;//无法登陆
 @property (nonatomic, readwrite, strong)UIButton *getCodeBtn;//获取验证码按钮
 
 //第二步模块
 @property (nonatomic, readwrite, strong)UILabel *phoneLabel;//手机号展示
 @property (nonatomic, readwrite, strong)UIImageView *codeicon;//图标
-@property (nonatomic, readwrite, strong)YLYTextField *codeTextField;//code输入
+@property (nonatomic, readwrite, strong)UITextField *codeTextField;//code输入
 @property (nonatomic, readwrite, strong)UIButton *changePhoneBtn;//重新输入手机号
 @property (nonatomic, readwrite, strong)UIButton *loginBtn;//登陆
 
@@ -93,7 +93,7 @@
     
     
     //phonetext
-    _phoneTextField = [[YLYTextField alloc] init];
+    _phoneTextField = [[UITextField alloc] init];
     _phoneTextField.backgroundColor = COLOR_GRAY;
     _phoneTextField.textAlignment = NSTextAlignmentLeft;
     _phoneTextField.placeholder = @"请输入手机号";
@@ -192,7 +192,7 @@
     _phoneLabel.alpha = 0.0f;
     
     //codetext
-    self.codeTextField = [[YLYTextField alloc] init];
+    self.codeTextField = [[UITextField alloc] init];
     _codeTextField.backgroundColor = COLOR_GRAY;
     _codeTextField.textAlignment = NSTextAlignmentLeft;
     _codeTextField.placeholder = @"请输入验证码";

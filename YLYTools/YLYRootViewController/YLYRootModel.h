@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YLYDefine.h"
 
 @interface YLYRootModel : NSObject <NSCoding>
 

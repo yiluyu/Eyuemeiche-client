@@ -7,10 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "BootUnit.h"
-
-/* 跳转页面 */
-#import "LoginViewController.h"
+#import "MainConfig.h"
 
 
 @interface MainViewController ()

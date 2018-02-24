@@ -7,8 +7,7 @@
 //
 
 #import "LoginViewController.h"
-#import "LoginView.h"
-#import "BootUnit.h"
+#import "LoginConfig.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 

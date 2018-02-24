@@ -15,6 +15,7 @@
 #import "LoginViewController.h"
 
 #import "UserManager.h"
+#import "YLYDefine.h"
 
 #import "YLYPropertyManager.h"
 
