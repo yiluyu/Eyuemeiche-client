@@ -12,11 +12,15 @@
 #import "CommonConfig.h"
 
 #import "MainViewController.h"
-
-/* 跳转页面 */
 #import "LoginViewController.h"
 
-//vendor
-#import <MAMapKit/MAMapKit.h>
+//views
+#import "MainView.h"
+#import "SwitchView.h"
+#import "MainHeaderView.h"
+#import "MainMap.h"
+
+
+
 
 #endif /* MainConfig_h */

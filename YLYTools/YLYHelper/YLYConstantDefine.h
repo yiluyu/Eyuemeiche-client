@@ -34,8 +34,13 @@
 
 /* 本地数据 */
 
-/** 验证码发送间隔 */
-#define CONSTANT_TIME_GETCODE 1
+/* 验证码发送间隔 */
+#ifndef YLYTest
+#define CONSTANT_TIME_GETCODE 3
+#else
+#define CONSTANT_TIME_GETCODE 60
+#endif
+
 
 
 
