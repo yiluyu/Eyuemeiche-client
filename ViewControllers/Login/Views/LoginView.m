@@ -21,15 +21,15 @@
 @property (nonatomic, readwrite, strong)UIImageView *phoneicon;//图标
 @property (nonatomic, readwrite, strong)YLYRootView *phoneBack;//输入背景
 @property (nonatomic, readwrite, strong)UITextField *phoneTextField;//phone输入
-@property (nonatomic, readwrite, strong)UIButton *cannotLogin;//无法登陆
-@property (nonatomic, readwrite, strong)UIButton *getCodeBtn;//获取验证码按钮
+@property (nonatomic, readwrite, strong)YLYRootButton *cannotLogin;//无法登陆
+@property (nonatomic, readwrite, strong)YLYRootButton *getCodeBtn;//获取验证码按钮
 
 //第二步模块
-@property (nonatomic, readwrite, strong)UILabel *phoneLabel;//手机号展示
+@property (nonatomic, readwrite, strong)YLYRootLabel *phoneLabel;//手机号展示
 @property (nonatomic, readwrite, strong)UIImageView *codeicon;//图标
 @property (nonatomic, readwrite, strong)UITextField *codeTextField;//code输入
-@property (nonatomic, readwrite, strong)UIButton *changePhoneBtn;//重新输入手机号
-@property (nonatomic, readwrite, strong)UIButton *loginBtn;//登陆
+@property (nonatomic, readwrite, strong)YLYRootButton *changePhoneBtn;//重新输入手机号
+@property (nonatomic, readwrite, strong)YLYRootButton *loginBtn;//登陆
 
 
 //计时器
@@ -116,7 +116,7 @@
     
     
     //无法登陆
-    _cannotLogin = [UIButton buttonWithType:UIButtonTypeCustom];
+    _cannotLogin = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     _cannotLogin.backgroundColor = COLOR_CLEAR;
     _cannotLogin.titleLabel.font = CONSTANT_FONT_SMALL;
     [_cannotLogin setTitle:@"无法登陆?" forState:UIControlStateNormal];
@@ -134,7 +134,7 @@
     
     
     //获取验证码按钮
-    _getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    _getCodeBtn = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     [_getCodeBtn setTitleColor:COLOR_WHITE forState:UIControlStateNormal];
     [_getCodeBtn addTarget:self
                     action:@selector(getCodeSend)
@@ -179,7 +179,7 @@
     _codeicon.alpha = 0.0f;
     
     //phoneLabel
-    self.phoneLabel = [[UILabel alloc] init];
+    self.phoneLabel = [[YLYRootLabel alloc] init];
     _phoneLabel.textColor = COLOR_WHITE;
     _phoneLabel.font = CONSTANT_FONT_SMALL;
     _phoneLabel.backgroundColor = COLOR_BLUE;
@@ -214,7 +214,7 @@
     _codeTextField.alpha = 0.0f;
     
     //更换手机号
-    self.changePhoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.changePhoneBtn = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     _changePhoneBtn.backgroundColor = COLOR_CLEAR;
     _changePhoneBtn.titleLabel.font = CONSTANT_FONT_SMALL;
     [_changePhoneBtn setTitle:@"重新输入手机号" forState:UIControlStateNormal];
@@ -231,7 +231,7 @@
     _changePhoneBtn.alpha = 0.0f;
     
     //获取验证码按钮
-    self.loginBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.loginBtn = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     [_loginBtn setTitleColor:COLOR_WHITE forState:UIControlStateNormal];
     _loginBtn.backgroundColor = COLOR_GREEN;
     [_loginBtn addTarget:self

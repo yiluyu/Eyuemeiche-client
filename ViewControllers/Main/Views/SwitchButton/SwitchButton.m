@@ -1,14 +1,14 @@
 //
-//  MainMap.m
+//  SwitchButton.m
 //  Eyuemeiche
 //
-//  Created by yu on 26/02/2018.
+//  Created by yu on 27/02/2018.
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "MainMap.h"
+#import "SwitchButton.h"
 
-@implementation MainMap
+@implementation SwitchButton
 
 /*
 // Only override drawRect: if you perform custom drawing.

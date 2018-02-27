@@ -13,7 +13,8 @@
 
 #import "LoginView.h"
 #import "BootUnit.h"
-
+#import "YLYRootButton.h"
+#import "YLYRootLabel.h"
 
 
 #endif /* LoginConfig_h */

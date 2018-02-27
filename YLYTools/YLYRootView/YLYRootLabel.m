@@ -1,14 +1,14 @@
 //
-//  MainHeaderView.m
+//  YLYRootLabel.m
 //  Eyuemeiche
 //
-//  Created by yu on 26/02/2018.
+//  Created by yu on 27/02/2018.
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "MainHeaderView.h"
+#import "YLYRootLabel.h"
 
-@implementation MainHeaderView
+@implementation YLYRootLabel
 
 /*
 // Only override drawRect: if you perform custom drawing.

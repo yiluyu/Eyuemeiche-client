@@ -1,14 +1,14 @@
 //
-//  SwitchView.m
+//  YLYRootButton.m
 //  Eyuemeiche
 //
-//  Created by yu on 26/02/2018.
+//  Created by yu on 27/02/2018.
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "SwitchView.h"
+#import "YLYRootButton.h"
 
-@implementation SwitchView
+@implementation YLYRootButton
 
 /*
 // Only override drawRect: if you perform custom drawing.

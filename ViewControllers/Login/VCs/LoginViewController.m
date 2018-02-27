@@ -171,21 +171,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     //注册通知
     [self registerNotification];
-    
-    
 }
 - (void)viewWillDisappear:(BOOL)animated {
     //注销通知
     [self cancelNotification];
-    
 }
 
 
 #pragma -mark 内存
 /* 释放内存 */
 - (void)dealloc {
+    //关掉定时器
     [self.loginView closeTimer];
-    
 }
 
 

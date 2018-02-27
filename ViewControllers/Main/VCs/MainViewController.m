@@ -12,6 +12,8 @@
 
 @interface MainViewController ()
 
+@property (nonatomic, readwrite, strong)MainView *mainView;//主页面
+
 @end
 
 @implementation MainViewController
@@ -25,11 +27,15 @@
     //监听登陆状态
     [self addLoginNotificationObserver];
     
+    //主页subviews
+    [self creatMainView];
+    
+    
+    
+    
+    
     //模拟登陆失败
     [self loginFaild];
-    
-
-    
 }
 
 
@@ -66,6 +72,16 @@
 }
 
 
+
+/* 页面 */
+//主页面初始化
+- (void)creatMainView {
+    self.mainView = [[MainView alloc] init];
+    [self.view addSubview:_mainView];
+    [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+}
 
 
 - (void)viewWillAppear:(BOOL)animated {
