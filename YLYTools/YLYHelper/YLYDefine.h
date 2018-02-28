@@ -43,11 +43,11 @@
 /** 获取当前屏幕尺寸与6屏幕适配比例 */
 #define SCREEN_SCALE (SCREEN_WIDTH/375.0)
 /** 安全区高度 */
-#define SAFETY_AREA_HEIGHT ([General deviceType] == iPhoneX?34.0:0)
+#define SAFETY_AREA_HEIGHT (iPhoneX?34.0:0)
 /** tabbar高度 */
 #define TABBAR_HEIGHT 49.0
 /** 状态栏高度 */
-#define STATUEBAR_HEIGHT [UIApplication shareApplication].statusBarFrame.size.height
+#define STATUEBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
 /** 导航栏高度 */
 #define NAVIGATIONBAR_HEIGHT 44.0
 
@@ -88,7 +88,7 @@
 
 /* 数据存储 */
 /** NSUserDefaults */
-#define USERDEFAULTS [NSUserDefaults standardUserDefaults]
+#define USERDEFAULTS(keyName) [[NSUserDefaults standardUserDefaults] objectForKey:keyName]
 
 
 

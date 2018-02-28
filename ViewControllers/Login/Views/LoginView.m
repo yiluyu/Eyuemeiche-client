@@ -293,7 +293,7 @@
 //登陆
 - (void)loginSend {
     if ([YLYRegular checkNumber:self.codeTextField.text] == NO || self.codeTextField.text.length < 6) {
-        [YLYHelper showHudViewWithString:@"验证码格式不对"];
+        [[YLYHelper shareHelper] showHudViewWithString:@"验证码格式错误!"];
         if (_codeTextField.isFirstResponder == NO) {
             [_codeTextField becomeFirstResponder];
         }
@@ -312,7 +312,7 @@
         return;
     }
     if ([YLYRegular checkMobilePhone:self.phoneTextField.text] == NO) {
-        [YLYHelper showHudViewWithString:@"请输入正确的手机号!"];
+        [[YLYHelper shareHelper] showHudViewWithString:@"请输入正确的手机号!"];
         if (_phoneTextField.isFirstResponder == NO) {
             [_phoneTextField becomeFirstResponder];
         }

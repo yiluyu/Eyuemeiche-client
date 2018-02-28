@@ -36,7 +36,7 @@
         return _localUserToken;
     } else {
         //第一次获取从存储读
-        NSString *ret = [USERDEFAULTS objectForKey:@"localUserToken"];
+        NSString *ret = USERDEFAULTS(CONSTANT_USERDEFAULTS_LOCALUSERTOKEN);
         if (![ret isKindOfClass:[NSNull class]] && ret != nil && ret.length != 0) {
             return ret;
         } else {
@@ -59,7 +59,7 @@
         return _deviceToken;
     } else {
         //第一次获取从存储读
-        NSString *ret = [USERDEFAULTS objectForKey:@"deviceToken"];
+        NSString *ret = USERDEFAULTS(CONSTANT_USERDEFAULTS_LOCALDEVICETOKEN);
         if (![ret isKindOfClass:[NSNull class]] && ret != nil && ret.length != 0) {
             return ret;
         } else {

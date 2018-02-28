@@ -29,6 +29,9 @@ typedef void (^notificationBlock)(NSNotification *noti);
 
 @interface YLYHelper : NSObject
 
++ (instancetype)shareHelper;
+
+//类方法
 //通知
 /** 添加通知 */
 + (void)registerNotificationName:(NSString *)notiName observer:(id)observer event:(notificationBlock)block;
@@ -43,9 +46,13 @@ typedef void (^notificationBlock)(NSNotification *noti);
 //基于6屏幕适配字体
 + (UIFont *)autoAdjustFont:(CGFloat)fontFloat;
 
+
+
+
+//实例方法
 //提示
 /** 显示hud提示 */
-+ (void)showHudViewWithString:(NSString *)promptString;
+- (void)showHudViewWithString:(NSString *)promptString;
 
 /*
  showText: 当传nil、@""等空字符时，自动填充为 @"加载中..."

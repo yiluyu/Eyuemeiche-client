@@ -13,11 +13,30 @@
 
 @interface YLYHelper ()
 
+@property (nonatomic, readwrite, strong)MBProgressHUD *textHud;
 @property (nonatomic, readwrite, strong)MBProgressHUD *processHud;
+
+@property (nonatomic, readwrite, assign)BOOL textShowing;//文字正在显示
+@property (nonatomic, readwrite, assign)BOOL processShowing;//菊花正在显示
 
 @end
 
 @implementation YLYHelper
+
+static YLYHelper *helper = nil;
+
++ (instancetype)shareHelper {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        helper = [[super allocWithZone:NULL] init];
+    });
+    
+    return helper;
+}
+
++ (id)allocWithZone:(struct _NSZone *)zone {
+    return [self shareHelper];
+}
 
 + (void)registerNotificationName:(NSString *)notiName observer:(id)observer event:(notificationBlock)block {
     [[NSNotificationCenter defaultCenter] addObserverForName:notiName
@@ -64,20 +83,35 @@
 
 
 //显示hub提示
-+ (void)showHudViewWithString:(NSString *)promptString {
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:keyWindow animated:YES];
-    [keyWindow addSubview:hud];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = promptString;
-    hud.margin = 10.f;
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:1];
+- (void)showHudViewWithString:(NSString *)promptString {
+    if (self.textShowing == YES) {
+        return;
+    }
+    
+    if (self.textHud == nil) {
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        self.textHud = [MBProgressHUD showHUDAddedTo:keyWindow animated:YES];
+        [keyWindow addSubview:_textHud];
+        _textHud.mode = MBProgressHUDModeText;
+        _textHud.label.text = promptString;
+        _textHud.margin = 10.f;
+        _textHud.removeFromSuperViewOnHide = YES;
+        [_textHud hideAnimated:YES afterDelay:1];
+        
+        SELF_WEAK();
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            weakSelf.textShowing = NO;
+        });
+    }
 }
 
 
 //打开菊花
 - (void)openProcessHudViewText:(NSString *)showText {
+    if (self.processShowing == YES) {
+        return;
+    }
+    
     if (self.processHud == nil) {
         self.processHud = [[MBProgressHUD alloc] init];
         _processHud.mode = MBProgressHUDModeAnnularDeterminate;
@@ -99,6 +133,7 @@
 //关闭菊花
 - (void)closeProcessHudView {
     [_processHud hideAnimated:YES];
+    self.processShowing = NO;
 }
 
 

@@ -33,6 +33,10 @@
 
 
 /* 本地数据 */
+/** 当前启动存储 userToken */
+#define CONSTANT_USERDEFAULTS_LOCALUSERTOKEN @"localUserToken"
+/** 当前启动存储 deviceToken */
+#define CONSTANT_USERDEFAULTS_LOCALDEVICETOKEN @"localDeviceToken"
 
 /* 验证码发送间隔 */
 #ifndef YLYTest

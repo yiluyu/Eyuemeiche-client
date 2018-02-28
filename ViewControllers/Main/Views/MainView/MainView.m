@@ -7,7 +7,6 @@
 //
 
 #import "MainView.h"
-
 #import "MainConfig.h"
 
 @interface MainView ()
@@ -29,9 +28,6 @@
 @property (nonatomic, readwrite, strong)YLYRootLabel *localLabel;//显示
 @property (nonatomic, readwrite, strong)YLYRootButton *bookOrderBtn;//下订单
 
-
-//底部
-@property (nonatomic, readwrite, strong)YLYRootView *switchView;
 
 
 @end
@@ -70,23 +66,46 @@
 
 - (void)creatHeaderView {
     self.headerView = [[YLYRootView alloc] init];
-    _headerView.backgroundColor = COLOR_CLEAR;
+    _headerView.backgroundColor = COLOR_GREEN;
     [self addSubview:_headerView];
     [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(YLY6Width(750), YLY6Width(100)));
-        make.top.mas_equalTo(YLY6Width(20));
+        make.top.mas_equalTo(STATUEBAR_HEIGHT);
     }];
     
-    //我的
     
+    //我的
+    self.myButton = [[YLYRootButton alloc] init];
+    _myButton.backgroundColor = COLOR_BLUE;
+    [_headerView addSubview:_myButton];
+    [_myButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(YLY6Width(38));
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(36), YLY6Width(36)));
+        make.top.mas_equalTo(YLY6Width(32));
+    }];
     
     
     //显示城市
-    
+    self.cityButton = [[YLYRootButton alloc] init];
+    _cityButton.backgroundColor = COLOR_RED;
+    [_headerView addSubview:_cityButton];
+    [_cityButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(YLY6Width(260));
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(230), YLY6Width(100)));
+        make.top.mas_equalTo(YLY6Width(0));
+    }];
+    _cityButton.titleLabel.font = CONSTANT_FONT_BIG;
     
     //信息
-    
+    self.messageButton = [[YLYRootButton alloc] init];
+    _messageButton.backgroundColor = COLOR_GRAY;
+    [_headerView addSubview:_messageButton];
+    [_messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(YLY6Width(676));
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(38), YLY6Width(28)));
+        make.top.mas_equalTo(YLY6Width(33));
+    }];
     
 }
 
@@ -97,12 +116,13 @@
     
     
     //选择器
-    self.switchView = [[YLYRootView alloc] init];
-    _switchView.backgroundColor = COLOR_CLEAR;
-    [self addSubview:_switchView];
-    [_switchView mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.orderSwitchButton = [[SwitchButton alloc] init];
+    _orderSwitchButton.backgroundColor = COLOR_CLEAR;
+    [self addSubview:_orderSwitchButton];
+    [_orderSwitchButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
+    
     
     //地址
     

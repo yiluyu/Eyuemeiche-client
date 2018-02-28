@@ -121,7 +121,12 @@
 
 #pragma -mark 页面跳转
 //推出loginVC
-- (void)pushLoginVC {\
+- (void)pushLoginVC {
+    __block __weak YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
+    if (propertyManager.loginVCShowing == YES) {
+        return;
+    }
+    
     if (_loginNavi == nil) {
         //登录页
         LoginViewController *loginVC = [[LoginViewController alloc] init];
@@ -130,7 +135,7 @@
         _loginNavi.navigationBar.hidden = YES;
     }
     
-    __block __weak YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
+    
     [_mainNavi presentViewController:_loginNavi animated:YES completion:^{
         propertyManager.loginVCShowing = YES;
         _tabbarController.selectedIndex = 0;

@@ -10,6 +10,7 @@
 #import "MainConfig.h"
 
 
+
 @interface MainViewController ()
 
 @property (nonatomic, readwrite, strong)MainView *mainView;//主页面
