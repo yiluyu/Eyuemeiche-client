@@ -27,6 +27,7 @@
 		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
 		9A54E79A204060D70054D38A /* YLYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E799204060D70054D38A /* YLYTextField.m */; };
 		9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */; };
+		9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */; };
 		9A73F3472043DFF9000F01B2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F3462043DFF9000F01B2 /* MainView.m */; };
 		9A73F35820456E74000F01B2 /* SwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35720456E74000F01B2 /* SwitchButton.m */; };
 		9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */; };
@@ -107,6 +108,8 @@
 		9A54E7A3204113360054D38A /* CategoryConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryConfig.h; sourceTree = "<group>"; };
 		9A54E7A4204114470054D38A /* YLYConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYConfig.h; sourceTree = "<group>"; };
 		9A54E7A5204114E10054D38A /* CommonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonConfig.h; sourceTree = "<group>"; };
+		9A721C0E204D28D600787753 /* UILabel+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ExtendMethod.h"; sourceTree = "<group>"; };
+		9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ExtendMethod.m"; sourceTree = "<group>"; };
 		9A73F3452043DFF9000F01B2 /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		9A73F3462043DFF9000F01B2 /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		9A73F35620456E74000F01B2 /* SwitchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchButton.h; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 				9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */,
 				9A54E79B204107DE0054D38A /* UITextField+ExtentMethod.h */,
 				9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */,
+				9A721C0E204D28D600787753 /* UILabel+ExtendMethod.h */,
+				9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */,
 			);
 			path = YLYCategory;
 			sourceTree = "<group>";
@@ -720,6 +725,7 @@
 				9A186B451FBAFE7B008E2EB1 /* UserManager.m in Sources */,
 				9A186B361FB0A180008E2EB1 /* YLYDownLoadManager.m in Sources */,
 				9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */,
+				9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */,
 				9A186B421FBAFE65008E2EB1 /* UserInfoModel.m in Sources */,
 				9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */,
 				9A186B3B1FB0A180008E2EB1 /* YLYRootView.m in Sources */,

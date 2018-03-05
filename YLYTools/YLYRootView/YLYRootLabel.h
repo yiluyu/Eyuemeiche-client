@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YLYRootLabel;
 
 @interface YLYRootLabel : UILabel
+
+/** 常规label创建 */
++ (YLYRootLabel *)creatLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor;
 
 @end

@@ -179,9 +179,7 @@
     _codeicon.alpha = 0.0f;
     
     //phoneLabel
-    self.phoneLabel = [[YLYRootLabel alloc] init];
-    _phoneLabel.textColor = COLOR_WHITE;
-    _phoneLabel.font = CONSTANT_FONT_SMALL;
+    self.phoneLabel = [YLYRootLabel creatLabelText:@"" font:CONSTANT_FONT_SMALL color:COLOR_WHITE];
     _phoneLabel.backgroundColor = COLOR_BLUE;
     [_backView addSubview:_phoneLabel];
     [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {

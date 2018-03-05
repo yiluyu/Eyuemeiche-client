@@ -76,7 +76,7 @@
  *********************************
  */
 + (BOOL)checkNumber:(NSString *)number {
-    NSString *numberRegex = @".*[0-9]+.*";
+    NSString *numberRegex = @"\\d+";
     NSPredicate *numberPre = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", numberRegex];
     
     return [numberPre evaluateWithObject:number];

@@ -7,15 +7,23 @@
 //
 
 #import "YLYRootLabel.h"
+#import "NSString+ExtendMethod.h"
+#import "YLYDefine.h"
 
 @implementation YLYRootLabel
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (UILabel *)creatLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor {
+    YLYRootLabel *label = [[YLYRootLabel alloc] init];
+    if ([NSString checkNullString:showText].length != 0) {
+        label.text = showText;
+    } else {
+        label.text = @"";
+    }
+    label.font = font;
+    label.textColor = textColor;
+    label.backgroundColor = COLOR_CLEAR;
+    
+    return label;
 }
-*/
 
 @end
