@@ -140,7 +140,6 @@
                                       [timeValue getValue:&duration];
                                       
                                       YLYLog(@"time = %f", duration);
-                                      
                                       //动画
                                       [weakSelf closeKeyboard:duration];
                                   }

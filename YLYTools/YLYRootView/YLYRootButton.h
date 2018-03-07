@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class YLYRootButton;
 
 @interface YLYRootButton : UIButton
+
+/** 常规创建btn */
++ (YLYRootButton *)creatButtonText:(NSString *)title titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont backgroundImageName:(NSString *)BGImageName target:(id)target SEL:(SEL)methodNameSEL;
 
 @end

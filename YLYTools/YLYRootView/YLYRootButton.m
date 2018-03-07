@@ -7,15 +7,20 @@
 //
 
 #import "YLYRootButton.h"
+#import "YLYDefine.h"
 
 @implementation YLYRootButton
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
++ (YLYRootButton *)creatButtonText:(NSString *)title titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont backgroundImageName:(NSString *)BGImageName target:(id)target SEL:(SEL)methodNameSEL {
+    YLYRootButton *btn = [[YLYRootButton alloc] init];
+    btn.backgroundColor = COLOR_CLEAR;
+    btn.titleLabel.font = titleFont;
+    [btn setTitle:[NSString checkNullString:title] forState:UIControlStateNormal];
+    [btn setTitleColor:titleColor forState:UIControlStateNormal];
+    [btn setBackgroundImage:[UIImage imageNamed:[NSString checkNullString:BGImageName]] forState:UIControlStateNormal];
+    [btn addTarget:target action:methodNameSEL forControlEvents:UIControlEventTouchUpInside];
+    
+    return btn;
 }
-*/
 
 @end

@@ -18,5 +18,7 @@
 #import <AFNetworkReachabilityManager.h>
 
 #import "YLYRootView.h"
+#import "YLYRootButton.h"
+#import "YLYRootLabel.h"
 
 #endif /* CommonConfig_h */

@@ -57,7 +57,7 @@
     
     
     //logo
-    _logoImage = [[UIImageView alloc] init];
+    self.logoImage = [[UIImageView alloc] init];
     _logoImage.backgroundColor = COLOR_GREEN;
     _logoImage.image = [UIImage imageNamed:@"loginLogo"];
     [_backView addSubview:_logoImage];
@@ -69,7 +69,7 @@
     
     
     //iphoneInput
-    _phoneBack = [[YLYRootView alloc] init];
+    self.phoneBack = [[YLYRootView alloc] init];
     _phoneBack.backgroundColor = COLOR_GRAY;
     [_backView addSubview:_phoneBack];
     [_phoneBack mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -80,7 +80,7 @@
     
     
     //phoneicon
-    _phoneicon = [[UIImageView alloc] init];
+    self.phoneicon = [[UIImageView alloc] init];
     _phoneicon.backgroundColor = COLOR_YELLOW;
     _phoneicon.image = [UIImage imageNamed:@"phonecion"];
     [_backView addSubview:_phoneicon];
@@ -93,7 +93,7 @@
     
     
     //phonetext
-    _phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField = [[UITextField alloc] init];
     _phoneTextField.backgroundColor = COLOR_GRAY;
     _phoneTextField.textAlignment = NSTextAlignmentLeft;
     _phoneTextField.placeholder = @"请输入手机号";
@@ -116,7 +116,7 @@
     
     
     //无法登陆
-    _cannotLogin = [YLYRootButton buttonWithType:UIButtonTypeCustom];
+    self.cannotLogin = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     _cannotLogin.backgroundColor = COLOR_CLEAR;
     _cannotLogin.titleLabel.font = CONSTANT_FONT_SMALL;
     [_cannotLogin setTitle:@"无法登陆?" forState:UIControlStateNormal];
@@ -134,7 +134,7 @@
     
     
     //获取验证码按钮
-    _getCodeBtn = [YLYRootButton buttonWithType:UIButtonTypeCustom];
+    self.getCodeBtn = [YLYRootButton buttonWithType:UIButtonTypeCustom];
     [_getCodeBtn setTitleColor:COLOR_WHITE forState:UIControlStateNormal];
     [_getCodeBtn addTarget:self
                     action:@selector(getCodeSend)
@@ -155,7 +155,7 @@
     [self refreshSendCodeState];
     
     //在主线程中创建timer
-    _sendingTimer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture]
+    self.sendingTimer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture]
                                              interval:1
                                                target:self
                                              selector:@selector(refreshTimer)
