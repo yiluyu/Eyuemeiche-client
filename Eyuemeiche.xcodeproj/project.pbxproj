@@ -81,6 +81,8 @@
 		9A186B411FBAFE65008E2EB1 /* UserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfoModel.m; sourceTree = "<group>"; };
 		9A186B431FBAFE7B008E2EB1 /* UserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserManager.h; sourceTree = "<group>"; };
 		9A186B441FBAFE7B008E2EB1 /* UserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserManager.m; sourceTree = "<group>"; };
+		9A1EF1BC205270AD00A156C0 /* URLConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLConfig.h; sourceTree = "<group>"; };
+		9A1EF1BD205270DB00A156C0 /* NetConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetConfig.h; sourceTree = "<group>"; };
 		9A3D1FA31FB047DB004F827C /* Eyuemeiche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyuemeiche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3D1FA61FB047DB004F827C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A3D1FA71FB047DB004F827C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -320,6 +322,8 @@
 		9A186B201FB0A180008E2EB1 /* YLYDownLoadManager */ = {
 			isa = PBXGroup;
 			children = (
+				9A1EF1BB2052706F00A156C0 /* Config */,
+				9A1EF1BD205270DB00A156C0 /* NetConfig.h */,
 				9A186B211FB0A180008E2EB1 /* YLYDownLoadManager.h */,
 				9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */,
 			);
@@ -399,6 +403,14 @@
 				9A186B411FBAFE65008E2EB1 /* UserInfoModel.m */,
 			);
 			path = UserInfoModel;
+			sourceTree = "<group>";
+		};
+		9A1EF1BB2052706F00A156C0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9A1EF1BC205270AD00A156C0 /* URLConfig.h */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		9A3D1F9A1FB047DB004F827C = {

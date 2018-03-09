@@ -8,6 +8,13 @@
 
 #import "YLYRootView.h"
 
+typedef enum : NSUInteger {
+    /** 现在下单 */
+    kOrderTypeNow,
+    /** 预约 */
+    kOrderTypeReserve,
+} ORDERTYPE;
+
 @interface SwitchButton : YLYRootView
 
 @end

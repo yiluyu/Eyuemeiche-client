@@ -10,13 +10,16 @@
 #import "MainConfig.h"
 
 @interface MainView ()
+{
+    ORDERTYPE orderType;//当前预约类型
+}
 
 @property (nonatomic, readwrite, strong)YLYRootView *backView;
 //地图
 @property (nonatomic, readwrite, strong)MAMapView *mapView;
 
 //头部
-@property (nonatomic, readwrite, strong)YLYRootView *headerView;
+@property (nonatomic, readwrite, strong)YLYRootView *headerBarView;
 @property (nonatomic, readwrite, strong)UIButton *myButton;//我的
 @property (nonatomic, readwrite, strong)UIButton *cityButton;//修改城市
 @property (nonatomic, readwrite, strong)UIButton *messageButton;//信息
@@ -46,7 +49,7 @@
     [self creatMapView];
     
     //上半部分
-    [self creatHeaderView];
+    [self creatHeaderBarView];
     
     //下半部分
     [self creatBottomView];
@@ -57,18 +60,18 @@
 - (void)creatMapView {
 //    self.mapView = [[MAMapView alloc] init];
 //    _mainMap.backgroundColor = COLOR_CLEAR;
-//    [self addSubview:_mainMap];
+//    [_backView addSubview:_mainMap];
 //    [_mainMap mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.mas_equalTo(0);
 //    }];
 }
 
 
-- (void)creatHeaderView {
-    self.headerView = [[YLYRootView alloc] init];
-    _headerView.backgroundColor = COLOR_GREEN;
-    [self addSubview:_headerView];
-    [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+- (void)creatHeaderBarView {
+    self.headerBarView = [[YLYRootView alloc] init];
+    _headerBarView.backgroundColor = COLOR_GREEN;
+    [_backView addSubview:_headerBarView];
+    [_headerBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.size.mas_equalTo(CGSizeMake(YLY6Width(750), YLY6Width(100)));
         make.top.mas_equalTo(STATUEBAR_HEIGHT);
@@ -78,7 +81,7 @@
     //我的
     self.myButton = [[YLYRootButton alloc] init];
     _myButton.backgroundColor = COLOR_BLUE;
-    [_headerView addSubview:_myButton];
+    [_headerBarView addSubview:_myButton];
     [_myButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(YLY6Width(38));
         make.size.mas_equalTo(CGSizeMake(YLY6Width(36), YLY6Width(36)));
@@ -89,7 +92,7 @@
     //显示城市
     self.cityButton = [[YLYRootButton alloc] init];
     _cityButton.backgroundColor = COLOR_RED;
-    [_headerView addSubview:_cityButton];
+    [_headerBarView addSubview:_cityButton];
     [_cityButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(YLY6Width(260));
         make.size.mas_equalTo(CGSizeMake(YLY6Width(230), YLY6Width(100)));
@@ -100,7 +103,7 @@
     //信息
     self.messageButton = [[YLYRootButton alloc] init];
     _messageButton.backgroundColor = COLOR_GRAY;
-    [_headerView addSubview:_messageButton];
+    [_headerBarView addSubview:_messageButton];
     [_messageButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(YLY6Width(676));
         make.size.mas_equalTo(CGSizeMake(YLY6Width(38), YLY6Width(28)));
@@ -112,15 +115,24 @@
 
 - (void)creatBottomView {
     //回到当前定位点
-    
+    self.returnMyLocationBtn = [YLYRootButton creatButtonText:nil titleColor:nil titleFont:nil backgroundImageName:@"回到当前定位" target:self SEL:@selector(backMyLocation)];
+    [_backView addSubview:_returnMyLocationBtn];
+    _returnMyLocationBtn.backgroundColor = COLOR_BLACK;
+    [_returnMyLocationBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(YLY6Width(24));
+        make.bottom.mas_equalTo(-YLY6Width(415)-SafeAreaBottomHeight);
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(54), YLY6Width(54)));
+    }];
     
     
     //选择器
     self.orderSwitchButton = [[SwitchButton alloc] init];
-    _orderSwitchButton.backgroundColor = COLOR_CLEAR;
-    [self addSubview:_orderSwitchButton];
+    _orderSwitchButton.backgroundColor = COLOR_YELLOW;
+    [_backView addSubview:_orderSwitchButton];
     [_orderSwitchButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.left.mas_equalTo(YLY6Width(20));
+        make.bottom.mas_equalTo(-YLY6Width(290)-SafeAreaBottomHeight);
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(236), YLY6Width(80)));
     }];
     
     
@@ -131,7 +143,12 @@
     //预定
 }
 
-
+#pragma -mark click
+- (void)backMyLocation {
+    YLYLog(@"回到当前定位");
+    
+    
+}
 
 
 

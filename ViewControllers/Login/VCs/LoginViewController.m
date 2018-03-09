@@ -90,17 +90,30 @@
 
 }
 
-
-#pragma -mark 事件处理
-/* 事件 */
-
+#pragma -mark 通知
 //收回键盘时view的变化
 - (void)closeKeyboard:(CGFloat)durationTime {
     YLYLog(@"收键盘其他view变化");
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:durationTime];
+    [_loginView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(0);
+    }];
+    [_backView layoutIfNeeded];
+    [UIView commitAnimations];
 }
 //键盘弹起时其他view变化
 - (void)openKeyboard:(CGFloat)keyboardHeight time:(CGFloat)durationTime {
     YLYLog(@"弹键盘其他view变化");
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:durationTime];
+    [_loginView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(-100);
+    }];
+    [_backView layoutIfNeeded];
+    [UIView commitAnimations];
 }
 
 //注册通知
@@ -109,7 +122,7 @@
     //键盘
     //键盘即将显示
     [YLYHelper registerNotificationName:UIKeyboardWillShowNotification
-                               observer:self
+                                 object:nil
                                   event:^(NSNotification *noti) {
                                       //获取最终键盘高度
                                       NSDictionary *userInfo = [noti userInfo];
@@ -121,25 +134,20 @@
                                       NSValue *timeValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
                                       double duration = 0.0f;
                                       [timeValue getValue:&duration];
-                                      
-                                      YLYLog(@"keyboardHeight = %f, time = %f", height, duration);
-                                      
                                       //动画
                                       [weakSelf openKeyboard:height time:duration];
                                   }
      ];
-
+    
     //键盘即将收起
     [YLYHelper registerNotificationName:UIKeyboardWillHideNotification
-                               observer:self
+                                 object:nil
                                   event:^(NSNotification *noti) {
                                       //获取弹出动画时间
                                       NSDictionary *userInfo = [noti userInfo];
                                       NSValue *timeValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
                                       double duration = 0.0f;
                                       [timeValue getValue:&duration];
-                                      
-                                      YLYLog(@"time = %f", duration);
                                       //动画
                                       [weakSelf closeKeyboard:duration];
                                   }
@@ -154,13 +162,16 @@
 }
 
 
-
-
-#pragma -mark UITextFieldDelegate
-/* UITextFieldDelegate */
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    [textField becomeFirstResponder];
+#pragma -mark 网络
+//获取验证码
+- (void)sendCodeNetRequest {
+    
 }
+//登陆
+- (void)sendLoginNetRequest {
+    
+}
+
 
 
 

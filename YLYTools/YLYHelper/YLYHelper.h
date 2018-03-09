@@ -34,7 +34,7 @@ typedef void (^notificationBlock)(NSNotification *noti);
 //类方法
 //通知
 /** 添加通知 */
-+ (void)registerNotificationName:(NSString *)notiName observer:(id)observer event:(notificationBlock)block;
++ (void)registerNotificationName:(NSString *)notiName object:(id)object event:(notificationBlock)block;
 /** 注销通知 */
 + (void)removeNotificationName:(NSString *)notiName observer:(id)observer;
 

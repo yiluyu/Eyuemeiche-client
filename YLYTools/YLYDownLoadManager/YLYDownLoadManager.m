@@ -7,10 +7,8 @@
 //
 
 #import "YLYDownLoadManager.h"
-
-#import <AFNetworkReachabilityManager.h>
+#import "URLConfig.h"
 #import <AFNetworking.h>
-
 #import "YLYDefine.h"
 
 @interface YLYDownLoadManager ()
@@ -34,8 +32,24 @@
     return [self shareDownLoadManager];
 }
 
+- (void)postRequest:(NSString *)URLString parameters:(NSDictionary *)paramDic tagName:(NSString *)requestName {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
+    
+    [manager POST:URLString
+       parameters:paramDic
+         progress:^(NSProgress * _Nonnull uploadProgress) {
+             ;
+         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+             YLYLog(@"%@请求成功!", requestName);
+         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+             YLYLog(@"\nxxxxxxxxxxxxxxxxxxxxx\n%@请求失败!\n", requestName);
+         }
+     ];
+}
 
-//通用请求
+
+#pragma -mark 通用请求
 - (void)sendRequest {
     
 }

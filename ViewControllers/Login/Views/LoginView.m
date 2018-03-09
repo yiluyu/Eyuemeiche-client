@@ -196,7 +196,6 @@
     _codeTextField.placeholder = @"请输入验证码";
     _codeTextField.font = CONSTANT_FONT_SMALL;
     _codeTextField.textColor = CONSTANT_TEXT_COLOR_DESCRIPTION;
-    [_codeTextField becomeFirstResponder];
     _codeTextField.keyboardType = UIKeyboardTypePhonePad;
     _codeTextField.delegate = self;
     [_backView addSubview:_codeTextField];
@@ -413,6 +412,10 @@ static int maxTime = CONSTANT_TIME_GETCODE;
     SELF_WEAK();
     if ([step integerValue] == 1) {
         self.stepStatus = @"1";
+        if (_phoneTextField.isFirstResponder == NO) {
+            [_codeTextField resignFirstResponder];
+            [_phoneTextField becomeFirstResponder];
+        }
         
         //从上往下推
         //block2
@@ -469,6 +472,10 @@ static int maxTime = CONSTANT_TIME_GETCODE;
     
     if ([step integerValue] == 2) {
         self.stepStatus = @"2";
+        if (_codeTextField.isFirstResponder == NO) {
+            [_phoneTextField resignFirstResponder];
+            [_codeTextField becomeFirstResponder];
+        }
         
         //可以触发
         _isSendingCode = YES;

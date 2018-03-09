@@ -38,9 +38,9 @@ static YLYHelper *helper = nil;
     return [self shareHelper];
 }
 
-+ (void)registerNotificationName:(NSString *)notiName observer:(id)observer event:(notificationBlock)block {
++ (void)registerNotificationName:(NSString *)notiName object:(id)object event:(notificationBlock)block {
     [[NSNotificationCenter defaultCenter] addObserverForName:notiName
-                                                      object:observer
+                                                      object:nil
                                                        queue:[NSOperationQueue mainQueue] /*暂时放在主线程*/ usingBlock:^(NSNotification * _Nonnull note) {
                                                            if (block != nil) {
                                                                block(note);
