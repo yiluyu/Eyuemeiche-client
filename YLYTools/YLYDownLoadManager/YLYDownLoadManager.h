@@ -7,18 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@class YLYNetModel;
 
 @interface YLYDownLoadManager : NSObject
 
 /** 获取 netManager */
 + (instancetype)shareDownLoadManager;
-
-
-
-/*
- 单独的请求需求管理
- */
 
 
 

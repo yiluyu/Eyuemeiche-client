@@ -10,6 +10,7 @@
 #import "URLConfig.h"
 #import <AFNetworking.h>
 #import "YLYDefine.h"
+#import "YLYNetModel.h"
 
 @interface YLYDownLoadManager ()
 
@@ -51,7 +52,7 @@
 
 #pragma -mark 通用请求
 - (void)sendRequest {
-    
+    ;
 }
 
 #pragma -mark 具体请求

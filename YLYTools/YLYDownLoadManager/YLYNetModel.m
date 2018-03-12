@@ -1,11 +1,13 @@
 //
-//  NetConfig.h
+//  YLYNetModel.m
 //  Eyuemeiche
 //
-//  Created by yu on 09/03/2018.
+//  Created by yu on 12/03/2018.
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "YLYDownLoadManager.h"
-
 #import "YLYNetModel.h"
+
+@implementation YLYNetModel
+
+@end
