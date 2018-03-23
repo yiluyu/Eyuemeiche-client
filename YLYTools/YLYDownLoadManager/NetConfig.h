@@ -8,4 +8,4 @@
 
 #import "YLYDownLoadManager.h"
 
-#import "YLYNetModel.h"
+#import "YLYNetBox.h"

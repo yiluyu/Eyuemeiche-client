@@ -10,7 +10,6 @@
 #import "URLConfig.h"
 #import <AFNetworking.h>
 #import "YLYDefine.h"
-#import "YLYNetModel.h"
 
 @interface YLYDownLoadManager ()
 

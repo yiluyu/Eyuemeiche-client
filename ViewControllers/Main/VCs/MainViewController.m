@@ -29,7 +29,7 @@
     [self addLoginNotificationObserver];
     
     //主页subviews
-    [self creatMainView];
+    [self creatSubViews];
     
     
     
@@ -76,7 +76,7 @@
 
 /* 页面 */
 //主页面初始化
-- (void)creatMainView {
+- (void)creatSubViews {
     self.mainView = [[MainView alloc] init];
     [self.view addSubview:_mainView];
     [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
