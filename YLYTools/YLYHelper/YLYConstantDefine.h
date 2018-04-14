@@ -17,13 +17,13 @@
 
 //字体
 /** 超小描述字体 */
-#define CONSTANT_FONT_DETAIL YLY6Font(24)
+#define CONSTANT_FONT_DETAIL YLY6Font(12)
 /** 小号字体 */
-#define CONSTANT_FONT_SMALL YLY6Font(28)
+#define CONSTANT_FONT_SMALL YLY6Font(14)
 /** 中号字体 */
-#define CONSTANT_FONT_MEDIAL YLY6Font(30)
+#define CONSTANT_FONT_MEDIAL YLY6Font(15)
 /** 大号字体 */
-#define CONSTANT_FONT_BIG YLY6Font(36)
+#define CONSTANT_FONT_BIG YLY6Font(18)
 
 //字体颜色
 /** 主体文字颜色 */
@@ -33,10 +33,14 @@
 
 
 /* 本地数据 */
-/** 当前启动存储 userToken */
+///当前启动存储 userToken
 #define CONSTANT_USERDEFAULTS_LOCALUSERTOKEN @"localUserToken"
-/** 当前启动存储 deviceToken */
+///当前启动存储 推送 deviceToken
 #define CONSTANT_USERDEFAULTS_LOCALDEVICETOKEN @"localDeviceToken"
+///当前启动存储 UUID
+#define CONSTANT_USERDEFAULTS_LOCALUUID @"localUUID"
+///是否第一次启动
+#define CONSTANT_USERDEFAULTS_APPFIRSTLAUNCH @"localFirstLaunchApp" //1:第一次启动, 0:非第一次启动
 
 /* 验证码发送间隔 */
 #ifndef YLYTest
@@ -49,7 +53,8 @@
 
 
 /* 通知name */
-#define CONSTANT_NOTIFY_SKIPLOGIN @"CONSTANT_NOTIFY_SKIPLOGIN" //跳转登陆页面
+///跳转登陆页面
+#define CONSTANT_NOTIFY_SKIPLOGIN @"CONSTANT_NOTIFY_SKIPLOGIN"
 
 
 

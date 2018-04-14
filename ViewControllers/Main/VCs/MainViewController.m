@@ -9,11 +9,11 @@
 #import "MainViewController.h"
 #import "MainConfig.h"
 
-
-
 @interface MainViewController ()
 
 @property (nonatomic, readwrite, strong)MainView *mainView;//主页面
+
+@property (nonatomic, readwrite, strong)MainSlideView *slideView;//侧滑栏
 
 @end
 
@@ -31,14 +31,14 @@
     //主页subviews
     [self creatSubViews];
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-    
-    
+#ifdef YLYUIDemo
     //模拟登陆失败
     [self loginFaild];
+#endif
 }
-
 
 
 
@@ -55,13 +55,8 @@
 
 //跳转登陆页
 - (void)skipLoginVC {
-    YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
-    if (propertyManager.loginVCShowing == YES) {
-        return;
-    } else {
-        BootUnit *bu = [BootUnit shareUnit];
-        [bu pushLoginVC];
-    }
+    BootUnit *bu = [BootUnit shareUnit];
+    [bu pushLoginVC];
 }
 
 //登陆失败
@@ -82,11 +77,34 @@
     [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
+    
+    SELF_WEAK();
+    //点击侧边栏
+    _mainView.myBtnBlock = ^{
+        YLYLog(@"-----打开左侧边栏 未完成");
+        [weakSelf openLeftSideView];
+    };
+    //点击消息盒子
+    _mainView.messageBtnBlock = ^{
+        YLYLog(@"-----进入消息盒子页 未完成");
+    };
+    //点击我要洗车
+    _mainView.callBtnBlock = ^(NSDictionary *dict) {
+        YLYLog(@"-----进入制作订单页 未完成");
+    };
+    
+    //每次从地图坐标搜索服务器时间
+    _mainView.mapSearchBlock = ^(CLLocationCoordinate2D location) {
+        ;
+    };
 }
 
 
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    //请求
+    [self requestWillAppear];
     
     [super viewWillAppear:animated];
 }
@@ -102,16 +120,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma -mark request
+//即将进入主页请求
+- (void)requestWillAppear {
+    //message盒子请求
+    [self requestMessage];
 }
-*/
+
+//信息请求
+- (void)requestMessage {
+    YLYLog(@"-----私信数量请求待定");
+}
+
+#pragma -mark method
+//打开左侧栏
+- (void)openLeftSideView {
+    if (self.slideView == nil) {
+        self.slideView = [[MainSlideView alloc] init];
+        
+        SELF_WEAK();
+        //cell点击
+        _slideView.slideViewCellClick = ^(NSIndexPath *indexPath) {
+            YLYLog(@"----- 侧边栏点击cell 未完成");
+        };
+        
+        //header点击
+        _slideView.slideViewHeaderClick = ^{
+            YLYLog(@"----- 侧边栏点击header 未完成");
+        };
+    }
+    [_slideView show];
+}
 
 @end

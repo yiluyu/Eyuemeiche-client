@@ -40,7 +40,6 @@
      */
     self.bootUnit = [BootUnit shareUnit];
     
-    
     //window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = _bootUnit.tabbarController;

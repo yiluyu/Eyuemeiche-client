@@ -13,9 +13,9 @@
 @interface LoginView : YLYRootView
 
 /** 点击获取验证码事件 */
-@property (nonatomic, readwrite, copy)void(^clickBtnGetCodeBlock)(LoginView *sender);
+@property (nonatomic, readwrite, copy)void(^clickBtnGetCodeBlock)(NSDictionary *sendDict);
 /** 点击登陆按钮事件处理 */
-@property (nonatomic, readwrite, copy)void(^clickBtnLoginBlock)(LoginView *sender);
+@property (nonatomic, readwrite, copy)void(^clickBtnLoginBlock)(NSDictionary *sendDict);
 /** 无法登陆按钮事件 */
 @property (nonatomic, readwrite, copy)void(^clickBtnCannotLoginBlock)(LoginView *sender);
 

@@ -10,4 +10,7 @@
 
 @interface YLYRootModel : NSObject <NSCoding>
 
+///从 Dict 转化成 model
+- (instancetype)initWithDict:(NSDictionary *)dataDict;
+
 @end

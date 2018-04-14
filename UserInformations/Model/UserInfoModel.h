@@ -11,7 +11,9 @@
 @interface UserInfoModel : YLYRootModel
 
 @property (nonatomic, readwrite, copy)NSString *nickName;//昵称
-
+@property (nonatomic, readwrite, copy)NSString *phoneNumber;//手机号
+@property (nonatomic, readwrite, copy)NSString *sex;//性别
+@property (nonatomic, readwrite, copy)NSString *headerImageURL;//头像URL
 
 /** 重置user数据 */
 - (void)renewUserData;

@@ -12,10 +12,10 @@
 #import "CommonConfig.h"
 
 #import "LoginView.h"
-#import "BootUnit.h"
+
+#import "YLYRootView.h"
 #import "YLYRootButton.h"
 #import "YLYRootLabel.h"
-
 
 #endif /* LoginConfig_h */
 

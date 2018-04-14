@@ -16,9 +16,10 @@
 
 //views
 #import "MainView.h"
-#import "SwitchButton.h"
 #import "YLYRootLabel.h"
 #import "YLYRootButton.h"
+#import "YLYRootView.h"
+#import "MainSlideView.h"
 
 #import <MAMapKit/MAMapKit.h>
 

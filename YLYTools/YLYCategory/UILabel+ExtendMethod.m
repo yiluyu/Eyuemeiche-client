@@ -8,7 +8,6 @@
 
 #import "UILabel+ExtendMethod.h"
 
-
 @implementation UILabel (ExtendMethod)
 
 

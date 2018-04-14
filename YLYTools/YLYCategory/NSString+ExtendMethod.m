@@ -16,7 +16,8 @@
         && inputString != nil
         && inputString.length != 0
         && ![inputString isEqualToString:@"(null)"]
-        && ![inputString isEqualToString:@"<null>"]) {
+        && ![inputString isEqualToString:@"<null>"]
+        && ![inputString isEqualToString:@"null"]) {
         return inputString;
     } else {
         return @"";

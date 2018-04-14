@@ -11,6 +11,13 @@
 
 @implementation YLYRootModel
 
+- (instancetype)initWithDict:(NSDictionary *)dataDict {
+    if (self = [super init]) {
+        ;
+    }
+    return self;
+}
+
 /*
  序列化NSCoding
  */

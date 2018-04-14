@@ -11,7 +11,7 @@
 
 @interface LoginView () <UITextFieldDelegate>
 
-@property (nonatomic, readwrite, strong)NSString *stepStatus;
+@property (nonatomic, readwrite, strong)NSString *stepStatus;//当前步骤状态
 
 @property (nonatomic, readwrite, strong)UIImageView *logoImage;//logo
 
@@ -62,20 +62,21 @@
     _logoImage.image = [UIImage imageNamed:@"loginLogo"];
     [_backView addSubview:_logoImage];
     [_logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(212), YLY6Width(64)));
-        make.left.mas_equalTo(_backView).with.offset(YLY6Width(268));
-        make.top.mas_equalTo(_backView).with.offset(YLY6Width(170));
+        make.size.mas_equalTo(CGSizeMake(FIT(107), FIT(107)));
+        make.centerX.mas_equalTo(_backView);
+        make.top.mas_equalTo(FIT(52)+SAFETY_AREA_HEIGHT);
     }];
     
     
     //iphoneInput
     self.phoneBack = [[YLYRootView alloc] init];
-    _phoneBack.backgroundColor = COLOR_GRAY;
+    _phoneBack.backgroundColor = [UIColor colorWithHexString:@"#FBFAFF"];
     [_backView addSubview:_phoneBack];
     [_phoneBack mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(56));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(630), YLY6Width(126)));
-        make.top.mas_equalTo(YLY6Width(374));
+        make.left.mas_equalTo(FIT(30));
+        make.height.mas_equalTo(FIT(64));
+        make.right.mas_equalTo(FIT(-30));
+        make.top.mas_equalTo(FIT(187)+SAFETY_AREA_HEIGHT);
     }];
     
     
@@ -85,28 +86,29 @@
     _phoneicon.image = [UIImage imageNamed:@"phonecion"];
     [_backView addSubview:_phoneicon];
     [_phoneicon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(100));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(28), YLY6Width(28)));
-        make.top.mas_equalTo(YLY6Width(422));
+        make.left.mas_equalTo(FIT(52));
+        make.size.mas_equalTo(CGSizeMake(FIT(13), FIT(13)));
+        make.top.mas_equalTo(FIT(212)+SAFETY_AREA_HEIGHT);
     }];
     _phoneicon.alpha = 1.0f;
     
     
     //phonetext
     self.phoneTextField = [[UITextField alloc] init];
-    _phoneTextField.backgroundColor = COLOR_GRAY;
+    _phoneTextField.backgroundColor = COLOR_CLEAR;
     _phoneTextField.textAlignment = NSTextAlignmentLeft;
     _phoneTextField.placeholder = @"请输入手机号";
     _phoneTextField.font = CONSTANT_FONT_SMALL;
-    _phoneTextField.textColor = CONSTANT_TEXT_COLOR_DESCRIPTION;
+    _phoneTextField.textColor = [UIColor colorWithHexString:@"#5F5D70"];
     [_phoneTextField becomeFirstResponder];
     _phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     _phoneTextField.delegate = self;
     [_backView addSubview:_phoneTextField];
     [_phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(164));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(500), YLY6Width(126)));
-        make.top.mas_equalTo(YLY6Width(374));
+        make.left.mas_equalTo(FIT(83));
+        make.right.mas_equalTo(FIT(-30));
+        make.top.mas_equalTo(FIT(187)+SAFETY_AREA_HEIGHT);
+        make.height.mas_equalTo(FIT(64));
     }];
     _phoneTextField.alpha = 1.0f;
     
@@ -126,9 +128,9 @@
     [_cannotLogin setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_backView addSubview:_cannotLogin];
     [_cannotLogin mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(540));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(138), YLY6Width(33)));
-        make.top.mas_equalTo(YLY6Width(515));
+        make.right.mas_equalTo(YLY6Width(-30));
+        make.size.mas_equalTo(CGSizeMake(YLY6Width(72), YLY6Width(17)));
+        make.top.mas_equalTo(FIT(256)+SAFETY_AREA_HEIGHT);
     }];
     _cannotLogin.alpha = 1.0f;
     
@@ -140,12 +142,14 @@
                     action:@selector(getCodeSend)
           forControlEvents:UIControlEventTouchUpInside];
     _getCodeBtn.layer.masksToBounds = YES;
-    _getCodeBtn.titleLabel.font = YLY6Font(36);
+    _getCodeBtn.layer.cornerRadius = FIT(3.0f);
+    _getCodeBtn.titleLabel.font = CONSTANT_FONT_BIG;
     [_backView addSubview:_getCodeBtn];
     [_getCodeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(630), YLY6Width(98)));
-        make.left.mas_equalTo(YLY6Width(56));
-        make.top.mas_equalTo(YLY6Width(570));
+        make.height.mas_equalTo(FIT(48));
+        make.left.mas_equalTo(FIT(27));
+        make.right.mas_equalTo(FIT(-27));
+        make.top.mas_equalTo(FIT(285)+SAFETY_AREA_HEIGHT);
     }];
     _getCodeBtn.alpha = 1.0f;
     
@@ -156,11 +160,11 @@
     
     //在主线程中创建timer
     self.sendingTimer = [[NSTimer alloc] initWithFireDate:[NSDate distantFuture]
-                                             interval:1
-                                               target:self
-                                             selector:@selector(refreshTimer)
-                                             userInfo:nil
-                                              repeats:YES];
+                                                 interval:1
+                                                   target:self
+                                                 selector:@selector(refreshTimer)
+                                                 userInfo:nil
+                                                  repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:_sendingTimer forMode:NSRunLoopCommonModes];
 }
 
@@ -172,37 +176,39 @@
     _codeicon.image = [UIImage imageNamed:@"codeicon"];
     [_backView addSubview:_codeicon];
     [_codeicon mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(100));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(28), YLY6Width(28)));
-        make.top.mas_equalTo(YLY6Width(442+100));
+        make.left.mas_equalTo(FIT(53));
+        make.size.mas_equalTo(CGSizeMake(FIT(11), FIT(14)));
+        make.top.mas_equalTo(FIT(221+100)+SAFETY_AREA_HEIGHT);
     }];
     _codeicon.alpha = 0.0f;
     
     //phoneLabel
-    self.phoneLabel = [YLYRootLabel creatLabelText:@"" font:CONSTANT_FONT_SMALL color:COLOR_WHITE];
-    _phoneLabel.backgroundColor = COLOR_BLUE;
+    self.phoneLabel = [YLYRootLabel creatLabelText:@""
+                                              font:CONSTANT_FONT_SMALL
+                                             color:[UIColor colorWithHexString:@"#5F5D70"]];
+    _phoneLabel.backgroundColor = COLOR_CLEAR;
     [_backView addSubview:_phoneLabel];
     [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(56));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(630), YLY6Width(46)));
-        make.top.mas_equalTo(YLY6Width(328+100));
+        make.left.mas_equalTo(FIT(30));
+        make.height.mas_equalTo(FIT(17));
+        make.top.mas_equalTo(FIT(165+100)+SAFETY_AREA_HEIGHT);
     }];
     _phoneLabel.alpha = 0.0f;
     
     //codetext
     self.codeTextField = [[UITextField alloc] init];
-    _codeTextField.backgroundColor = COLOR_GRAY;
+    _codeTextField.backgroundColor = [UIColor colorWithHexString:@"#FBFAFF"];
     _codeTextField.textAlignment = NSTextAlignmentLeft;
     _codeTextField.placeholder = @"请输入验证码";
     _codeTextField.font = CONSTANT_FONT_SMALL;
-    _codeTextField.textColor = CONSTANT_TEXT_COLOR_DESCRIPTION;
+    _codeTextField.textColor = [UIColor colorWithHexString:@"#5F5D70"];
     _codeTextField.keyboardType = UIKeyboardTypePhonePad;
     _codeTextField.delegate = self;
     [_backView addSubview:_codeTextField];
     [_codeTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(164));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(500), YLY6Width(126)));
-        make.top.mas_equalTo(YLY6Width(394+100));
+        make.left.mas_equalTo(FIT(83));
+        make.size.mas_equalTo(CGSizeMake(FIT(262), FIT(64)));
+        make.top.mas_equalTo(FIT(197+100)+SAFETY_AREA_HEIGHT);
     }];
     
     [_codeTextField addTarget:self
@@ -221,9 +227,9 @@
     [_changePhoneBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [_backView addSubview:_changePhoneBtn];
     [_changePhoneBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(YLY6Width(488));
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(202), YLY6Width(33)));
-        make.top.mas_equalTo(YLY6Width(556+100));
+        make.right.mas_equalTo(FIT(-30));
+        make.size.mas_equalTo(CGSizeMake(FIT(100), FIT(17)));
+        make.top.mas_equalTo(FIT(276+100)+SAFETY_AREA_HEIGHT);
     }];
     _changePhoneBtn.alpha = 0.0f;
     
@@ -236,12 +242,13 @@
         forControlEvents:UIControlEventTouchUpInside];
     _loginBtn.layer.masksToBounds = YES;
     [_loginBtn setTitle:@"登陆" forState:UIControlStateNormal];
-    _loginBtn.titleLabel.font = YLY6Font(36);
+    _loginBtn.titleLabel.font = CONSTANT_FONT_BIG;
     [_backView addSubview:_loginBtn];
     [_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(YLY6Width(630), YLY6Width(98)));
-        make.left.mas_equalTo(YLY6Width(56));
-        make.top.mas_equalTo(YLY6Width(669+100));
+        make.left.mas_equalTo(FIT(27));
+        make.right.mas_equalTo(FIT(-27));
+        make.height.mas_equalTo(FIT(48));
+        make.top.mas_equalTo(FIT(334+100)+SAFETY_AREA_HEIGHT);
     }];
     _loginBtn.alpha = 0.0f;
     
@@ -298,7 +305,8 @@
     }
     
     if (self.clickBtnLoginBlock) {
-        self.clickBtnLoginBlock(self);
+        NSDictionary *sendDict = @{@"mobile":_phoneTextField.text, @"msg_token":_codeTextField.text};
+        self.clickBtnLoginBlock(sendDict);
     }
 }
 
@@ -318,7 +326,8 @@
 
     
     if (self.clickBtnGetCodeBlock) {
-        self.clickBtnGetCodeBlock(self);
+        NSDictionary *sendDict = @{@"mobile":_phoneTextField.text};
+        self.clickBtnGetCodeBlock(sendDict);
     }
 }
 
@@ -420,36 +429,36 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         //从上往下推
         //block2
         [weakSelf.codeicon mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(442+100));
+            make.top.mas_equalTo(FIT(221+100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(328+100));
+            make.top.mas_equalTo(FIT(165+100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.codeTextField mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(394+100));
+            make.top.mas_equalTo(FIT(197+100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.changePhoneBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(556+100));
+            make.top.mas_equalTo(FIT(276+100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.loginBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(669+100));
+            make.top.mas_equalTo(FIT(334+100)+SAFETY_AREA_HEIGHT);
         }];
         
         //block1
         [weakSelf.phoneicon mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(422));
+            make.top.mas_equalTo(FIT(212)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneTextField mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(374));
+            make.top.mas_equalTo(FIT(187)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.cannotLogin mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(515));
+            make.top.mas_equalTo(FIT(256)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.getCodeBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(570));
+            make.top.mas_equalTo(FIT(285)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneBack mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(374));
+            make.top.mas_equalTo(FIT(187)+SAFETY_AREA_HEIGHT);
         }];
         
         
@@ -489,36 +498,36 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         //从下往上顶
         //block2
         [weakSelf.codeicon mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(442));
+            make.top.mas_equalTo(FIT(221)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneLabel mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(328));
+            make.top.mas_equalTo(FIT(165)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.codeTextField mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(394));
+            make.top.mas_equalTo(FIT(197)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.changePhoneBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(556));
+            make.top.mas_equalTo(FIT(276)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.loginBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(669));
+            make.top.mas_equalTo(FIT(334)+SAFETY_AREA_HEIGHT);
         }];
         
         //block1
         [weakSelf.phoneicon mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(422-100));
+            make.top.mas_equalTo(YLY6Width(212-100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneTextField mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(374-100));
+            make.top.mas_equalTo(YLY6Width(187-100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.cannotLogin mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(515-100));
+            make.top.mas_equalTo(YLY6Width(256-100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.getCodeBtn mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(570-100));
+            make.top.mas_equalTo(YLY6Width(285-100)+SAFETY_AREA_HEIGHT);
         }];
         [weakSelf.phoneBack mas_updateConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(YLY6Width(394));
+            make.top.mas_equalTo(YLY6Width(187)+SAFETY_AREA_HEIGHT);
         }];
         
         [UIView animateWithDuration:CONSTANT_TIME_ANIMATION_LONG animations:^{

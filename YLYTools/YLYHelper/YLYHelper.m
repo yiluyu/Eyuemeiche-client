@@ -84,9 +84,10 @@ static YLYHelper *helper = nil;
 
 //显示hub提示
 - (void)showHudViewWithString:(NSString *)promptString {
-    if (self.textShowing == YES) {
+    if (self.textShowing == YES || self.processShowing == YES) {
         return;
     }
+    self.textShowing = YES;
     
     if (self.textHud == nil) {
         UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
@@ -96,21 +97,29 @@ static YLYHelper *helper = nil;
         _textHud.label.text = promptString;
         _textHud.margin = 10.f;
         _textHud.removeFromSuperViewOnHide = YES;
-        [_textHud hideAnimated:YES afterDelay:1];
-        
-        SELF_WEAK();
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            weakSelf.textShowing = NO;
-        });
+        [_textHud showAnimated:YES];
+        [_textHud hideAnimated:YES afterDelay:1.0f];
+    } else {
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        [keyWindow addSubview:_textHud];
+        _textHud.label.text = promptString;
+        [_textHud showAnimated:YES];
+        [_textHud hideAnimated:YES afterDelay:1.0f];
     }
+    
+    SELF_WEAK();
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        weakSelf.textShowing = NO;
+    });
 }
 
 
 //打开菊花
 - (void)openProcessHudViewText:(NSString *)showText {
-    if (self.processShowing == YES) {
+    if (self.processShowing == YES || self.textShowing == YES) {
         return;
     }
+    self.processShowing = YES;
     
     if (self.processHud == nil) {
         self.processHud = [[MBProgressHUD alloc] init];

@@ -10,11 +10,9 @@
 
 @class YLYRootView;
 
-typedef void (^viewTouchBlock) (YLYRootView *sender);
-
 @interface YLYRootView : UIView
 
 //touchView事件
-@property (nonatomic, readwrite, copy)viewTouchBlock touchBlock;
+@property (nonatomic, readwrite, copy)void (^viewTouchBlock)(YLYRootView *sender);
 
 @end

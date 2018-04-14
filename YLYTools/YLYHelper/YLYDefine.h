@@ -17,8 +17,7 @@
 /* debug总开关 */
 #define YLYTest    //开发状态,注释掉则为发布状态
 
-
-
+#define YLYUIDemo    //纯 UI 展示模式
 
 /* 自定义log输出,替换系统NSLog
  NSLog does 2 things:
@@ -50,7 +49,8 @@
 #define STATUEBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
 /** 导航栏高度 */
 #define NAVIGATIONBAR_HEIGHT 44.0
-
+///iPhoneX安全高度
+#define NAVI_FIT_HEIGHT NAVIGATIONBAR_HEIGHT+STATUEBAR_HEIGHT
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -64,7 +64,7 @@
 //#define iPhoneX ((SCREEN_WIDTH == 375) && (SCREEN_HEIGHT == 812)?YES:NO)//375.000000, 812.000000
 
 //安全SafeArea间隙
-#define SafeAreaTopHeight iPhoneX?88:64
+//#define SafeAreaTopHeight iPhoneX?88:64
 #define SafeAreaBottomHeight (iPhoneX?34:0)
 /** 以iPhone6屏幕为基准rect */
 #define YLY6Rect(x, y, width, height) [YLYHelper autoAdjustRect:CGRectMake(x, y, width, height)]
@@ -87,10 +87,12 @@
 
 
 /* 数据存储 */
-/** NSUserDefaults */
-#define USERDEFAULTS(keyName) [[NSUserDefaults standardUserDefaults] objectForKey:keyName]
-
-
+///NSUserDefaults
+#define USERDEFAULTS_GET(keyName) [[NSUserDefaults standardUserDefaults] objectForKey:keyName]
+///设置 NSUserDefaults
+#define USERDEFAULTS_SET(object, keyName) [[NSUserDefaults standardUserDefaults] setObject:object forKey:keyName];[[NSUserDefaults standardUserDefaults] synchronize]
+///直接获取用户token
+#define USERTOKEN USERDEFAULTS_GET(CONSTANT_USERDEFAULTS_LOCALUSERTOKEN)
 
 /* 颜色 */
 /** RGB设置颜色 */
@@ -112,6 +114,4 @@
 #define SELF_WEAK() __weak typeof(&*self) weakSelf = self
 /** 获取strongSelf */
 #define SELF_STRONG() __strong typeof(&*self) strongSelf = weakSelf
-
-
 

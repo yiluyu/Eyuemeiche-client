@@ -30,9 +30,10 @@
 		9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */; };
 		9A721C13204F845800787753 /* YLYRootTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C12204F845800787753 /* YLYRootTextField.m */; };
 		9A73F3472043DFF9000F01B2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F3462043DFF9000F01B2 /* MainView.m */; };
-		9A73F35820456E74000F01B2 /* SwitchButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35720456E74000F01B2 /* SwitchButton.m */; };
 		9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */; };
 		9A73F35E204571B0000F01B2 /* YLYRootButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35D204571B0000F01B2 /* YLYRootButton.m */; };
+		9A82F5E3207F1B6B002EC44F /* https.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9A82F5E2207F1B6B002EC44F /* https.cer */; };
+		9A82F5E7207F4132002EC44F /* MainSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A82F5E6207F4132002EC44F /* MainSlideView.m */; };
 		9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */; };
 		9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */; };
 		9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD381202BE909009E5FC2 /* UIColor+ExtendMethod.m */; };
@@ -117,12 +118,13 @@
 		9A721C12204F845800787753 /* YLYRootTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootTextField.m; sourceTree = "<group>"; };
 		9A73F3452043DFF9000F01B2 /* MainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		9A73F3462043DFF9000F01B2 /* MainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
-		9A73F35620456E74000F01B2 /* SwitchButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwitchButton.h; sourceTree = "<group>"; };
-		9A73F35720456E74000F01B2 /* SwitchButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwitchButton.m; sourceTree = "<group>"; };
 		9A73F35920456F3B000F01B2 /* YLYRootLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootLabel.h; sourceTree = "<group>"; };
 		9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootLabel.m; sourceTree = "<group>"; };
 		9A73F35C204571B0000F01B2 /* YLYRootButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootButton.h; sourceTree = "<group>"; };
 		9A73F35D204571B0000F01B2 /* YLYRootButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootButton.m; sourceTree = "<group>"; };
+		9A82F5E2207F1B6B002EC44F /* https.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = https.cer; sourceTree = "<group>"; };
+		9A82F5E5207F4132002EC44F /* MainSlideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSlideView.h; sourceTree = "<group>"; };
+		9A82F5E6207F4132002EC44F /* MainSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSlideView.m; sourceTree = "<group>"; };
 		9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eyuemeiche.entitlements; sourceTree = "<group>"; };
 		9AEBD379202AE72A009E5FC2 /* YLYRootModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootModel.h; sourceTree = "<group>"; };
 		9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootModel.m; sourceTree = "<group>"; };
@@ -241,7 +243,7 @@
 		9A186B161FB0A180008E2EB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9A73F35520456E5A000F01B2 /* SwitchButton */,
+				9A82F5E4207F39D4002EC44F /* SlideView */,
 				9A73F34820442132000F01B2 /* MainView */,
 			);
 			path = Views;
@@ -326,11 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				9A1EF1BB2052706F00A156C0 /* Config */,
-				9A1EF1BD205270DB00A156C0 /* NetConfig.h */,
-				9A186B211FB0A180008E2EB1 /* YLYDownLoadManager.h */,
-				9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */,
-				9A3E6A42205A581200B22928 /* YLYNetBox.h */,
-				9A3E6A43205A581200B22928 /* YLYNetBox.m */,
+				9A82F5DA207DE8CA002EC44F /* Tool */,
 			);
 			path = YLYDownLoadManager;
 			sourceTree = "<group>";
@@ -353,16 +351,11 @@
 		9A186B2C1FB0A180008E2EB1 /* YLYRootView */ = {
 			isa = PBXGroup;
 			children = (
-				9A186B2D1FB0A180008E2EB1 /* YLYRootCell.h */,
-				9A186B2E1FB0A180008E2EB1 /* YLYRootCell.m */,
-				9A186B2F1FB0A180008E2EB1 /* YLYRootView.h */,
-				9A186B301FB0A180008E2EB1 /* YLYRootView.m */,
-				9A73F35920456F3B000F01B2 /* YLYRootLabel.h */,
-				9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */,
-				9A73F35C204571B0000F01B2 /* YLYRootButton.h */,
-				9A73F35D204571B0000F01B2 /* YLYRootButton.m */,
-				9A721C11204F845800787753 /* YLYRootTextField.h */,
-				9A721C12204F845800787753 /* YLYRootTextField.m */,
+				9A82F5E0207DEAFD002EC44F /* UITextField */,
+				9A82F5DE207DEAE9002EC44F /* UIButton */,
+				9A82F5DD207DEADA002EC44F /* UILabel */,
+				9A82F5DC207DEAC8002EC44F /* UIView */,
+				9A82F5DB207DEABB002EC44F /* UITableView */,
 			);
 			path = YLYRootView;
 			sourceTree = "<group>";
@@ -386,33 +379,34 @@
 		9A186B3D1FBAEABB008E2EB1 /* UserInformations */ = {
 			isa = PBXGroup;
 			children = (
-				9A186B3E1FBAEABB008E2EB1 /* UserHelper */,
-				9A186B3F1FBAEABB008E2EB1 /* UserInfoModel */,
+				9A186B3E1FBAEABB008E2EB1 /* Helper */,
+				9A186B3F1FBAEABB008E2EB1 /* Model */,
 			);
 			path = UserInformations;
 			sourceTree = "<group>";
 		};
-		9A186B3E1FBAEABB008E2EB1 /* UserHelper */ = {
+		9A186B3E1FBAEABB008E2EB1 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				9A186B431FBAFE7B008E2EB1 /* UserManager.h */,
 				9A186B441FBAFE7B008E2EB1 /* UserManager.m */,
 			);
-			path = UserHelper;
+			path = Helper;
 			sourceTree = "<group>";
 		};
-		9A186B3F1FBAEABB008E2EB1 /* UserInfoModel */ = {
+		9A186B3F1FBAEABB008E2EB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				9A186B401FBAFE65008E2EB1 /* UserInfoModel.h */,
 				9A186B411FBAFE65008E2EB1 /* UserInfoModel.m */,
 			);
-			path = UserInfoModel;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9A1EF1BB2052706F00A156C0 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				9A1EF1BD205270DB00A156C0 /* NetConfig.h */,
 				9A1EF1BC205270AD00A156C0 /* URLConfig.h */,
 			);
 			path = Config;
@@ -446,6 +440,7 @@
 		9A3D1FA51FB047DB004F827C /* Eyuemeiche */ = {
 			isa = PBXGroup;
 			children = (
+				9A82F5E2207F1B6B002EC44F /* https.cer */,
 				9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */,
 				9A54E7A5204114E10054D38A /* CommonConfig.h */,
 				9A3D1FA61FB047DB004F827C /* AppDelegate.h */,
@@ -486,13 +481,69 @@
 			path = MainView;
 			sourceTree = "<group>";
 		};
-		9A73F35520456E5A000F01B2 /* SwitchButton */ = {
+		9A82F5DA207DE8CA002EC44F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				9A73F35620456E74000F01B2 /* SwitchButton.h */,
-				9A73F35720456E74000F01B2 /* SwitchButton.m */,
+				9A186B211FB0A180008E2EB1 /* YLYDownLoadManager.h */,
+				9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */,
+				9A3E6A42205A581200B22928 /* YLYNetBox.h */,
+				9A3E6A43205A581200B22928 /* YLYNetBox.m */,
 			);
-			path = SwitchButton;
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9A82F5DB207DEABB002EC44F /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				9A186B2D1FB0A180008E2EB1 /* YLYRootCell.h */,
+				9A186B2E1FB0A180008E2EB1 /* YLYRootCell.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
+		9A82F5DC207DEAC8002EC44F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				9A186B2F1FB0A180008E2EB1 /* YLYRootView.h */,
+				9A186B301FB0A180008E2EB1 /* YLYRootView.m */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		9A82F5DD207DEADA002EC44F /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				9A73F35920456F3B000F01B2 /* YLYRootLabel.h */,
+				9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		9A82F5DE207DEAE9002EC44F /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				9A73F35C204571B0000F01B2 /* YLYRootButton.h */,
+				9A73F35D204571B0000F01B2 /* YLYRootButton.m */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		9A82F5E0207DEAFD002EC44F /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				9A721C11204F845800787753 /* YLYRootTextField.h */,
+				9A721C12204F845800787753 /* YLYRootTextField.m */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
+		9A82F5E4207F39D4002EC44F /* SlideView */ = {
+			isa = PBXGroup;
+			children = (
+				9A82F5E5207F4132002EC44F /* MainSlideView.h */,
+				9A82F5E6207F4132002EC44F /* MainSlideView.m */,
+			);
+			path = SlideView;
 			sourceTree = "<group>";
 		};
 		9AEBD372202AE5FE009E5FC2 /* YLYRuntime */ = {
@@ -649,6 +700,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A82F5E3207F1B6B002EC44F /* https.cer in Resources */,
 				9A3D1FB01FB047DB004F827C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +796,7 @@
 				9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */,
 				9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */,
 				9A186B421FBAFE65008E2EB1 /* UserInfoModel.m in Sources */,
+				9A82F5E7207F4132002EC44F /* MainSlideView.m in Sources */,
 				9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */,
 				9A186B3B1FB0A180008E2EB1 /* YLYRootView.m in Sources */,
 				9A186B391FB0A180008E2EB1 /* YLYPropertyManager.m in Sources */,
@@ -765,7 +818,6 @@
 				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,
 				9A721C13204F845800787753 /* YLYRootTextField.m in Sources */,
 				9A3D1FA81FB047DB004F827C /* AppDelegate.m in Sources */,
-				9A73F35820456E74000F01B2 /* SwitchButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

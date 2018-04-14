@@ -18,9 +18,10 @@
  上一个页面传入的参数处理使用 preFatherModel -> 当前VCmodel
  当前页面参数处理 nowFatherModel -> nextVCmodel
  */
-/** 前一个页面传入的参数model */
+
+///前一个页面传入的参数model
 @property (nonatomic, readwrite, strong)YLYRootModel *preFatherModel;
-/** 当前页面自身model */
+///当前页面自身model
 @property (nonatomic, readwrite, strong)YLYRootModel *nowFatherModel;
 
 @end

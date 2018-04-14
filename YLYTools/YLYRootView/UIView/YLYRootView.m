@@ -8,7 +8,6 @@
 
 #import "YLYRootView.h"
 
-
 @implementation YLYRootView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -29,8 +28,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesBegan:touches withEvent:event];
     
-    if (self.touchBlock != nil) {
-        self.touchBlock(self);
+    if (self.viewTouchBlock != nil) {
+        self.viewTouchBlock(self);
     }
 }
 

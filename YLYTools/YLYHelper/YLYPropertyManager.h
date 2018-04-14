@@ -20,10 +20,6 @@
 @property (nonatomic, readwrite, assign)BOOL loginVCShowing;//正在展示loginVC
 
 
-/* 持久属性 */
-@property (nonatomic, readwrite, strong)NSString *localUserToken;//本地存储用户token
-@property (nonatomic, readwrite, strong)NSString *deviceToken;//推送token
-
 
 
 @end

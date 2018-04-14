@@ -7,7 +7,7 @@
 //
 
 /*
- app基础配置
+ app层级配置unit
  */
 
 #import <Foundation/Foundation.h>
@@ -32,7 +32,7 @@
 
 
 /*
- 方法
+ 层级关系方法
  */
 
 /** 推出loginVC */

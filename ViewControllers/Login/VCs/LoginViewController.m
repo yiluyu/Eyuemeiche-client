@@ -8,15 +8,16 @@
 
 #import "LoginViewController.h"
 #import "LoginConfig.h"
+#import "NetConfig.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
+{
+    
+}
 
 @property (nonatomic, readwrite, strong)YLYRootView *backView;//底色图
 
 @property (nonatomic, readwrite, strong)LoginView *loginView;//登陆控制view
-
-
-
 
 @end
 
@@ -40,12 +41,12 @@
     _backView.backgroundColor = COLOR_RED;
     [self.view addSubview:_backView];
     [_backView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
     SELF_WEAK();
     //点击背景
-    _backView.touchBlock = ^(YLYRootView *sender) {
+    _backView.viewTouchBlock = ^(YLYRootView *sender) {
         YLYLog(@"点击背景图");
         if (weakSelf.loginView.phoneTextField.isFirstResponder == YES) {
             [weakSelf.loginView.phoneTextField resignFirstResponder];
@@ -59,27 +60,20 @@
     self.loginView = [[LoginView alloc] init];
     [_backView addSubview:_loginView];
     [_loginView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
     
     //点击获取code
-    _loginView.clickBtnGetCodeBlock = ^(LoginView *sender) {
+    _loginView.clickBtnGetCodeBlock = ^(NSDictionary *sendDict) {
         YLYLog(@"发送验证码...");
-        [sender alternateStep:@"2"];
+        [weakSelf requestSendCode:sendDict];
     };
     
     //点击登陆
-    __weak BootUnit *tempBoot = [BootUnit shareUnit];
-    _loginView.clickBtnLoginBlock = ^(LoginView *sender) {
+    _loginView.clickBtnLoginBlock = ^(NSDictionary *sendDict) {
         YLYLog(@"登陆...");
-        
-        YLYLog(@"登陆成功");
-        [sender.phoneTextField resignFirstResponder];
-        [sender.codeTextField resignFirstResponder];
-        [sender.phoneTextField endEditing:YES];
-        [sender.codeTextField endEditing:YES];
-        [tempBoot closeLoginVC];
+        [weakSelf requestLogin:sendDict];
     };
     
     //点击无法登陆
@@ -164,21 +158,89 @@
 
 #pragma -mark 网络
 //获取验证码
-- (void)sendCodeNetRequest {
+- (void)requestSendCode:(NSDictionary *)dict {
+#ifdef YLYUIDemo
+    YLYLog(@"-----获取验证码待定");
+    [_loginView alternateStep:@"2"];
+    return;
+#endif
     
+    YLYNetBox *net = [[YLYNetBox alloc] init];
+    NSArray *keysArr = @[@"mobile"];
+    NSArray *objectsArr = @[dict[@"mobile"]];
+    NSDictionary *postDict = [NSDictionary dictionaryWithObjects:objectsArr
+                                                         forKeys:keysArr];
+    [net sendRequestWithAddress:kRequest_getCode
+                  parameterDict:postDict
+                            tag:@""
+                           name:@"获取登陆验证码"];
+    
+    net.requestSuccessBlock = ^(NSDictionary *dic) {
+        YLYLog(@"验证码获取成功");
+        [_loginView alternateStep:@"2"];
+    };
+    
+    net.requestFailedBlock = ^(NSDictionary *dic) {
+        
+    };
 }
 //登陆
-- (void)sendLoginNetRequest {
+- (void)requestLogin:(NSDictionary *)dict {
+#ifdef YLYUIDemo
+    YLYLog(@"-----登陆请求待定");
+    BootUnit *tempBoot = [BootUnit shareUnit];
+    [_loginView.phoneTextField resignFirstResponder];
+    [_loginView.codeTextField resignFirstResponder];
+    [_loginView.phoneTextField endEditing:YES];
+    [_loginView.codeTextField endEditing:YES];
+    [tempBoot closeLoginVC];
+    return;
+#endif
     
+    YLYNetBox *net = [[YLYNetBox alloc] init];
+    NSArray *keysArr = @[@"mobile"];
+    NSArray *objectsArr = @[dict[@"mobile"]];
+    NSDictionary *postDict = [NSDictionary dictionaryWithObjects:objectsArr
+                                                         forKeys:keysArr];
+    
+    SELF_WEAK();
+    [net sendRequestWithAddress:kRequest_login
+                  parameterDict:postDict
+                            tag:@""
+                           name:@"登陆"];
+    
+    net.requestSuccessBlock = ^(NSDictionary *dic) {
+        YLYLog(@"登陆成功");
+        //存储用户信息
+        [weakSelf saveUserData:dict];
+        
+        //清空状态
+        BootUnit *tempBoot = [BootUnit shareUnit];
+        [weakSelf.loginView.phoneTextField resignFirstResponder];
+        [weakSelf.loginView.codeTextField resignFirstResponder];
+        [weakSelf.loginView.phoneTextField endEditing:YES];
+        [weakSelf.loginView.codeTextField endEditing:YES];
+        [tempBoot closeLoginVC];
+    };
+    
+    net.requestFailedBlock = ^(NSDictionary *dic) {
+        
+    };
 }
 
-
+#pragma -mark 功能方法
+//保存登陆
+- (void)saveUserData:(NSDictionary *)dict {
+    
+}
 
 
 
 
 #pragma -mark vc机制
 - (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
     //注册通知
     [self registerNotification];
 }

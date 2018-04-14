@@ -14,11 +14,5 @@
 #import "BootUnit.h"
 
 #import <Masonry.h>
-#import <AFNetworking.h>
-#import <AFNetworkReachabilityManager.h>
-
-#import "YLYRootView.h"
-#import "YLYRootButton.h"
-#import "YLYRootLabel.h"
 
 #endif /* CommonConfig_h */

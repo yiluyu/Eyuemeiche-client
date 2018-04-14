@@ -96,33 +96,20 @@
 //一次性获取属性, 其他判断直接取值
 - (void)systemInit {
     //获取宽度比例
-    //倍率 按照设计的6屏幕宽度为标准,高度有偏差
-    double rate = 0.0f;
-    
-    if (iPhone6P) {
-        rate = 1242.0f/750.0f;
-        rate = rate/3.0f;
-    } else if (iPhone6) {
-        rate = 1.0f;
-        rate = rate/2.0f;
-    } else if (iPhoneX) {
-        rate = 1125.0f/750.0f;
-        rate = rate/3.0f;
-    } else {
-        rate = 640.0f/750.0f;
-        rate = rate/2.0f;
-    }
-    self.rate = rate;
-    
-    
-    
+    [self getRate];
+    //验证是否第一次启动
+    [self getFirstStatus];
+    //获取提供第三方服务器的id
+    [self getIDForVendor];
+    //适配iOS 11
+    [self adaptSystem];
 }
 
 
 #pragma -mark 页面跳转
 //推出loginVC
 - (void)pushLoginVC {
-    __block __weak YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
+    YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
     if (propertyManager.loginVCShowing == YES) {
         return;
     }
@@ -135,27 +122,79 @@
         _loginNavi.navigationBar.hidden = YES;
     }
     
-    
+    __weak typeof (YLYRootTabbarController *)weakTabbar = _tabbarController;
+    __weak typeof (YLYRootNavigationController *)weakMainNavi = _mainNavi;
     [_mainNavi presentViewController:_loginNavi animated:YES completion:^{
-        propertyManager.loginVCShowing = YES;
-        _tabbarController.selectedIndex = 0;
-        [_mainNavi popToRootViewControllerAnimated:NO];
+        weakTabbar.selectedIndex = 0;
+        [weakMainNavi popToRootViewControllerAnimated:NO];
     }];
 }
 //收回
 - (void)closeLoginVC {
     __block __weak YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
+    __weak typeof (YLYRootTabbarController *)weakTabbar = _tabbarController;
+    __weak typeof (YLYRootNavigationController *)weakMainNavi = _mainNavi;
     [_loginNavi dismissViewControllerAnimated:YES completion:^{
         propertyManager.loginVCShowing = NO;
-        _tabbarController.selectedIndex = 0;
-        [_mainNavi popToRootViewControllerAnimated:NO];
-        
-        _loginNavi = nil;
+        weakTabbar.selectedIndex = 0;
+        [weakMainNavi popToRootViewControllerAnimated:NO];
     }];
+    
+    _loginNavi = nil;
 }
 
 
+#pragma -mark 功能方法
+- (void)getRate {
+    //倍率 按照设计的6屏幕宽度为标准,高度有偏差
+    double rate = 0.0f;
 
+    //#define iPhone6P ((SCREEN_WIDTH == 414)?YES:NO)//414.000000, 736.000000
+    //#define iPhone6 ((SCREEN_WIDTH == 375)?YES:NO)//375.000000, 667.000000
+    //#define iPhone5 ((SCREEN_WIDTH == 320)?YES:NO)//320.000000, 568.000000
+    //#define iPhoneX ((SCREEN_WIDTH == 375) && (SCREEN_HEIGHT == 812)?YES:NO)//375.000000, 812.000000
+    if (iPhoneX) {
+        rate = 1.0f;
+    } else if (iPhone6P) {
+        rate = 414.0f/375.0f;
+    } else if (iPhone6) {
+        rate = 1.0f;
+    } else {
+        rate = 320.0f/375.0f;
+    }
+    
+    self.rate = rate;
+}
 
+- (void)getFirstStatus {
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:CONSTANT_USERDEFAULTS_APPFIRSTLAUNCH] == NO) {
+        YLYLog(@"第一次启动app");
+        //默认空token
+        USERDEFAULTS_SET(@"", CONSTANT_USERDEFAULTS_LOCALUSERTOKEN);
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONSTANT_USERDEFAULTS_APPFIRSTLAUNCH];
+    } else {
+        ;
+    }
+}
+
+- (void)getIDForVendor {
+    NSString *UUID = [[UIDevice currentDevice].identifierForVendor UUIDString];
+    YLYLog(@"UUID = %@", UUID);
+    USERDEFAULTS_SET([NSString checkNullString:UUID], CONSTANT_USERDEFAULTS_LOCALUUID);
+}
+
+- (void)adaptSystem {
+    if (@available (iOS 11, *)) {
+        //tableView安全区适配问题
+        [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        //自动估算行高问题
+        [UITableView appearance].estimatedRowHeight = 0;
+        [UITableView appearance].estimatedSectionHeaderHeight = 0;
+        [UITableView appearance].estimatedSectionFooterHeight = 0;
+        //webView下移
+        [UIWebView appearance].scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+}
 
 @end

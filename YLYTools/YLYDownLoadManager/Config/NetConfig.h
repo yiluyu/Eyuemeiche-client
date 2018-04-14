@@ -6,6 +6,13 @@
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "YLYDownLoadManager.h"
+#ifndef NetConfig_h
+#define NetConfig_h
 
+#import "YLYDownLoadManager.h"
 #import "YLYNetBox.h"
+#import "URLConfig.h"
+
+#endif
+
+
