@@ -24,19 +24,23 @@
         self.iconImage = [[UIImageView alloc] init];
         _iconImage.backgroundColor = COLOR_GRAY;
         [self.contentView addSubview:_iconImage];
+        self.contentView.backgroundColor = COLOR_CLEAR;
+        self.backgroundColor = COLOR_CLEAR;
         [_iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(FIT(31));
             make.centerY.mas_equalTo(self.contentView);
+//            make.top.mas_equalTo(FIT(11));
             make.width.height.mas_equalTo(FIT(18));
         }];
         
         self.detailLabel = [YLYRootLabel creatLabelText:@"项目描述"
                                                    font:YLY6Font(16)
-                                                  color:COLOR_BLACK];
+                                                  color:COLOR_WHITE];
         [self.contentView addSubview:_detailLabel];
         [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_iconImage.mas_right).offset(FIT(8));
             make.centerY.mas_equalTo(self.contentView);
+//            make.top.mas_equalTo(FIT(11));
             make.height.mas_equalTo(FIT(19));
         }];
     }
@@ -71,8 +75,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = COLOR_RED;
-        
         self.headerImage = [[UIImageView alloc] init];
         _headerImage.backgroundColor = COLOR_BLUE;
         [self addSubview:_headerImage];
@@ -150,7 +152,14 @@
 @implementation MainSlideView
 
 - (instancetype)init {
-    if (self = [super initWithFrame:YLY6Rect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)]) {
+    if (self = [super init]) {
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:self];
+        [self mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(UIEdgeInsetsZero);
+        }];
+        
+        self.hidden = YES;
         self.backgroundColor = COLOR_CLEAR;
         self.alpha = 0.0f;
         NSMutableArray *tmpArr = [[NSMutableArray alloc] initWithCapacity:4];
@@ -164,6 +173,7 @@
         tableDataArray = [NSArray arrayWithArray:tmpArr];
         
         [self creatSubViews];
+        [self show];
     }
     return self;
 }
@@ -196,7 +206,7 @@
     logoImage.backgroundColor = COLOR_RED;
     [_sideView addSubview:logoImage];
     [logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.mas_equalTo(FIT(-30)-SafeAreaBottomHeight);
+        make.bottom.mas_equalTo(FIT(-30)-SAFETY_AREA_HEIGHT);
         make.centerX.mas_equalTo(_sideView);
         make.height.mas_equalTo(FIT(25));
         make.width.mas_equalTo(FIT(86));
@@ -213,7 +223,7 @@
     //table
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                   style:UITableViewStylePlain];
-    _tableView.backgroundColor = COLOR_YELLOW;
+    _tableView.backgroundColor = COLOR_CLEAR;
     _tableView.tableHeaderView = _headerView;
     _tableView.dataSource = self;
     _tableView.delegate = self;
@@ -225,18 +235,9 @@
         make.top.mas_equalTo(STATUEBAR_HEIGHT);
         make.bottom.mas_equalTo(logoImage.mas_top);
     }];
-
-    
-    
 }
 
 #pragma -mark tableDelegate
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 0.00001f;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return 0.00001f;
-//}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return tableDataArray.count;
 }
@@ -257,11 +258,15 @@
     
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.slideViewCellClick) {
+        self.slideViewCellClick(indexPath);
+    }
+}
 
 
 - (void)show {
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    [window addSubview:self];
+    self.hidden = NO;
     
     SELF_WEAK();
     [UIView animateWithDuration:CONSTANT_TIME_ANIMATION_SHORT animations:^{
@@ -280,7 +285,7 @@
         weakSelf.alpha = 0.0f;
         weakSelf.sideView.frame = YLY6Rect(-232, 0, 232, SCREEN_HEIGHT);
     } completion:^(BOOL finished) {
-        [weakSelf removeFromSuperview];
+        weakSelf.hidden = YES;
     }];
 }
 

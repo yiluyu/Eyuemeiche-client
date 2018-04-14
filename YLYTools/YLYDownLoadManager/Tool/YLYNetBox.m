@@ -151,7 +151,6 @@
     NSMutableDictionary *postDict = [NSMutableDictionary dictionaryWithDictionary:paramDict];
 //    [_manager.requestSerializer setValue:URLString forHTTPHeaderField:@"Referer"];
     
-    SELF_WEAK();
     [_manager POST:URLString
         parameters:postDict
           progress:^(NSProgress * _Nonnull uploadProgress) {

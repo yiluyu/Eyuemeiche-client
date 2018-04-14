@@ -122,7 +122,9 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
         make.size.mas_equalTo(CGSizeMake(FIT(18), FIT(14)));
         make.centerY.mas_equalTo(_headerBarView);
     }];
-    
+    [_messageButton addTarget:self
+                       action:@selector(enterMessage)
+             forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -141,7 +143,7 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
         make.left.mas_equalTo(FIT(11));
         make.right.mas_equalTo(FIT(-11));
         make.height.mas_equalTo(FIT(48));
-        make.bottom.mas_equalTo(-FIT(26)-SafeAreaBottomHeight);
+        make.bottom.mas_equalTo(-FIT(26)-SAFETY_AREA_HEIGHT);
     }];
     
     //地址

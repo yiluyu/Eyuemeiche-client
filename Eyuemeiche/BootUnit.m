@@ -131,16 +131,16 @@
 }
 //收回
 - (void)closeLoginVC {
-    __block __weak YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
     __weak typeof (YLYRootTabbarController *)weakTabbar = _tabbarController;
     __weak typeof (YLYRootNavigationController *)weakMainNavi = _mainNavi;
     [_loginNavi dismissViewControllerAnimated:YES completion:^{
+        YLYPropertyManager *propertyManager = [YLYPropertyManager sharePropertyManager];
         propertyManager.loginVCShowing = NO;
         weakTabbar.selectedIndex = 0;
         [weakMainNavi popToRootViewControllerAnimated:NO];
     }];
     
-    _loginNavi = nil;
+    self.loginNavi = nil;
 }
 
 
@@ -184,14 +184,15 @@
 }
 
 - (void)adaptSystem {
+    //tableView自动估算行高问题
+    [UITableView appearance].estimatedRowHeight = 0;
+    [UITableView appearance].estimatedSectionHeaderHeight = 0;
+    [UITableView appearance].estimatedSectionFooterHeight = 0;
+    
     if (@available (iOS 11, *)) {
         //tableView安全区适配问题
         [UIScrollView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        //自动估算行高问题
-        [UITableView appearance].estimatedRowHeight = 0;
-        [UITableView appearance].estimatedSectionHeaderHeight = 0;
-        [UITableView appearance].estimatedSectionFooterHeight = 0;
         //webView下移
         [UIWebView appearance].scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }

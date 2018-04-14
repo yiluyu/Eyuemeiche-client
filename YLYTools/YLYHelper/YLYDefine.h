@@ -41,7 +41,7 @@
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 /** 获取当前屏幕尺寸与6屏幕适配比例 */
 #define SCREEN_SCALE (SCREEN_WIDTH/375.0)
-/** 安全区高度 */
+/** 下方安全区高度 */
 #define SAFETY_AREA_HEIGHT (iPhoneX?34.0:0)
 /** tabbar高度 */
 #define TABBAR_HEIGHT 49.0
@@ -65,7 +65,7 @@
 
 //安全SafeArea间隙
 //#define SafeAreaTopHeight iPhoneX?88:64
-#define SafeAreaBottomHeight (iPhoneX?34:0)
+//#define SafeAreaBottomHeight (iPhoneX?34:0)
 /** 以iPhone6屏幕为基准rect */
 #define YLY6Rect(x, y, width, height) [YLYHelper autoAdjustRect:CGRectMake(x, y, width, height)]
 

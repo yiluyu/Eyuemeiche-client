@@ -34,10 +34,10 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-#ifdef YLYUIDemo
-    //模拟登陆失败
-    [self loginFaild];
-#endif
+//#ifdef YLYUIDemo
+//    //模拟登陆失败
+//    [self loginFaild];
+//#endif
 }
 
 
@@ -81,7 +81,6 @@
     SELF_WEAK();
     //点击侧边栏
     _mainView.myBtnBlock = ^{
-        YLYLog(@"-----打开左侧边栏 未完成");
         [weakSelf openLeftSideView];
     };
     //点击消息盒子
@@ -138,10 +137,10 @@
     if (self.slideView == nil) {
         self.slideView = [[MainSlideView alloc] init];
         
-        SELF_WEAK();
+        
         //cell点击
         _slideView.slideViewCellClick = ^(NSIndexPath *indexPath) {
-            YLYLog(@"----- 侧边栏点击cell 未完成");
+            YLYLog(@"----- 侧边栏点击cell 未完成 %@", indexPath);
         };
         
         //header点击
