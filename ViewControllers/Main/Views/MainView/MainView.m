@@ -324,6 +324,4 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
     }
 }
 
-
-
 @end

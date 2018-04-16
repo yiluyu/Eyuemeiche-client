@@ -461,7 +461,6 @@ static int maxTime = CONSTANT_TIME_GETCODE;
             make.top.mas_equalTo(FIT(187)+SAFETY_AREA_HEIGHT);
         }];
         
-        
         [UIView animateWithDuration:CONSTANT_TIME_ANIMATION_LONG animations:^{
             [weakSelf layoutIfNeeded];
         }];
@@ -492,8 +491,6 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         
         //手机号
         _phoneLabel.text = [NSString stringWithFormat:@"您的手机号为: %@", _phoneTextField.text];
-        
-        
         
         //从下往上顶
         //block2
@@ -547,8 +544,5 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         }];
     }
 }
-
-
-
 
 @end

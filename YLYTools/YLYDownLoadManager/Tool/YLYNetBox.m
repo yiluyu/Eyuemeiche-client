@@ -160,7 +160,7 @@
                                                                   options:NSJSONReadingMutableContainers
                                                                     error:nil];//error暂不处理
              NSString *code = dict[@"err_code"];
-
+             
              if (code.integerValue == 0) {
                  YLYLog(@"%@: 请求成功!", urlName);
                  [self success:dict];
@@ -168,6 +168,7 @@
                  YLYLog(@"%@: 不成功!", urlName);
                  [self other:dict];
              }
+             YLYLog(@"dict = %@", dict);
 
          } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
              YLYLog(@"%@", error);

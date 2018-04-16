@@ -34,10 +34,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     
-//#ifdef YLYUIDemo
-//    //模拟登陆失败
+    //模拟登陆失败
 //    [self loginFaild];
-//#endif
 }
 
 
