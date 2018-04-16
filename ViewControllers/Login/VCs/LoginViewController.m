@@ -241,6 +241,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:YES animated:YES];
     
+    [YLYPropertyManager sharePropertyManager].loginVCShowing = YES;
+    
     //注册通知
     [self registerNotification];
 }

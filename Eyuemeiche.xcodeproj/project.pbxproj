@@ -27,6 +27,7 @@
 		9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79320318C270054D38A /* YLYRootTabbarController.m */; };
 		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
 		9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */; };
+		9A5E60F3208474D500491AE3 /* MyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E60F2208474D500491AE3 /* MyInfoVC.m */; };
 		9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */; };
 		9A721C13204F845800787753 /* YLYRootTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C12204F845800787753 /* YLYRootTextField.m */; };
 		9A73F3472043DFF9000F01B2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F3462043DFF9000F01B2 /* MainView.m */; };
@@ -112,6 +113,9 @@
 		9A54E7A3204113360054D38A /* CategoryConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryConfig.h; sourceTree = "<group>"; };
 		9A54E7A4204114470054D38A /* YLYConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYConfig.h; sourceTree = "<group>"; };
 		9A54E7A5204114E10054D38A /* CommonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonConfig.h; sourceTree = "<group>"; };
+		9A5E60F0208474AA00491AE3 /* MyInfoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoConfig.h; sourceTree = "<group>"; };
+		9A5E60F1208474D500491AE3 /* MyInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoVC.h; sourceTree = "<group>"; };
+		9A5E60F2208474D500491AE3 /* MyInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInfoVC.m; sourceTree = "<group>"; };
 		9A721C0E204D28D600787753 /* UILabel+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ExtendMethod.h"; sourceTree = "<group>"; };
 		9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ExtendMethod.m"; sourceTree = "<group>"; };
 		9A721C11204F845800787753 /* YLYRootTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootTextField.h; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 		9A186B0A1FB0A180008E2EB1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9A5E60EC2084746F00491AE3 /* MyInfoVC */,
 				9A186B0B1FB0A180008E2EB1 /* Login */,
 				9A186B111FB0A180008E2EB1 /* Main */,
 				9A186B171FB0A180008E2EB1 /* Order */,
@@ -470,6 +475,40 @@
 				9A3D1FCC1FB047DB004F827C /* Info.plist */,
 			);
 			path = EyuemeicheUITests;
+			sourceTree = "<group>";
+		};
+		9A5E60EC2084746F00491AE3 /* MyInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E60F0208474AA00491AE3 /* MyInfoConfig.h */,
+				9A5E60EF2084748E00491AE3 /* Models */,
+				9A5E60EE2084748700491AE3 /* Views */,
+				9A5E60ED2084748000491AE3 /* VCs */,
+			);
+			path = MyInfoVC;
+			sourceTree = "<group>";
+		};
+		9A5E60ED2084748000491AE3 /* VCs */ = {
+			isa = PBXGroup;
+			children = (
+				9A5E60F1208474D500491AE3 /* MyInfoVC.h */,
+				9A5E60F2208474D500491AE3 /* MyInfoVC.m */,
+			);
+			path = VCs;
+			sourceTree = "<group>";
+		};
+		9A5E60EE2084748700491AE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A5E60EF2084748E00491AE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9A73F34820442132000F01B2 /* MainView */ = {
@@ -813,6 +852,7 @@
 				9A54E79120318BCC0054D38A /* BootUnit.m in Sources */,
 				9A73F3472043DFF9000F01B2 /* MainView.m in Sources */,
 				9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */,
+				9A5E60F3208474D500491AE3 /* MyInfoVC.m in Sources */,
 				9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
 				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,
