@@ -43,13 +43,13 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
 
 @property (nonatomic, readwrite, strong)YLYRootButton *bookOrderBtn;//下订单
 
-
-
 @end
 
 @implementation MainView
 
-- (void)layoutSubviews {
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
+    
     self.backView = [[YLYRootView alloc] init];
     _backView.backgroundColor = COLOR_CLEAR;
     [self addSubview:_backView];
@@ -188,7 +188,7 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
     }];
     
     //选择器
-    self.orderSwitchView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"订单类型背景"]];;
+    self.orderSwitchView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image_订单类型背景"]];;
     _orderSwitchView.backgroundColor = COLOR_YELLOW;
     _orderSwitchView.userInteractionEnabled = YES;
     [_backView addSubview:_orderSwitchView];
@@ -197,7 +197,7 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
         make.bottom.mas_equalTo(_localView.mas_top).offset(FIT(-6));
         make.size.mas_equalTo(CGSizeMake(FIT(117), FIT(40)));
     }];
-    self.slideImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"订单类型滑块"]];
+    self.slideImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image_订单类型滑块"]];
     _slideImage.backgroundColor = COLOR_GREEN;
     _slideImage.userInteractionEnabled = YES;
     [_orderSwitchView addSubview:_slideImage];

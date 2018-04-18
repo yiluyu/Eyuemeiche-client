@@ -8,6 +8,8 @@
 
 #import "MainSlideView.h"
 #import "MainConfig.h"
+#import "MainViewModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 /* -------------------------*/
 #pragma -mark --------- Cell ---------
@@ -29,7 +31,6 @@
         [_iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(FIT(31));
             make.centerY.mas_equalTo(self.contentView);
-//            make.top.mas_equalTo(FIT(11));
             make.width.height.mas_equalTo(FIT(18));
         }];
         
@@ -40,24 +41,11 @@
         [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_iconImage.mas_right).offset(FIT(8));
             make.centerY.mas_equalTo(self.contentView);
-//            make.top.mas_equalTo(FIT(11));
             make.height.mas_equalTo(FIT(19));
         }];
     }
     return self;
 }
-
-@end
-
-/* -------------------------*/
-#pragma -mark --------- CellModel ---------
-/* -------------------------*/
-@interface SlideCellModel ()
-@property (nonatomic, readwrite, copy)NSString *iconName;//icon图片
-@property (nonatomic, readwrite, copy)NSString *title;//内容
-@end
-
-@implementation SlideCellModel
 
 @end
 
@@ -83,11 +71,10 @@
             make.top.mas_equalTo(FIT(59));
             make.width.height.mas_equalTo(FIT(60));
         }];
-//        _headerImage.frame = YLY6Rect(18, 59, 60, 60);
         _headerImage.layer.cornerRadius = FIT(60/2);
         _headerImage.layer.masksToBounds = YES;
         
-        self.nickNameLabel = [YLYRootLabel creatLabelText:@"用户昵称"
+        self.nickNameLabel = [YLYRootLabel creatLabelText:@""
                                                      font:YLY6Font(16)
                                                     color:COLOR_WHITE];
         [self addSubview:_nickNameLabel];
@@ -96,8 +83,7 @@
             make.top.mas_equalTo(_headerImage.mas_top).offset(FIT(11));
             make.height.mas_equalTo(FIT(19));
         }];
-//        _nickNameLabel.frame = YLY6Rect(86, 70, 146, 19);
-        self.phoneLabel = [YLYRootLabel creatLabelText:@"手机号131xxxxxx"
+        self.phoneLabel = [YLYRootLabel creatLabelText:@""
                                                   font:YLY6Font(12)
                                                  color:COLOR_WHITE];
         [self addSubview:_phoneLabel];
@@ -106,7 +92,6 @@
             make.top.mas_equalTo(_nickNameLabel.mas_bottom).offset(FIT(3));
             make.height.mas_equalTo(FIT(14));
         }];
-//        _phoneLabel.frame = YLY6Rect(86, 92, 146, 14);
         
         //触发事件
         YLYRootButton *allBtn = [YLYRootButton creatButtonText:nil
@@ -129,6 +114,20 @@
     if (self.headerClickBlock) {
         self.headerClickBlock();
     }
+}
+
+- (void)refreshUserModel {
+    UserInfoModel *model = [UserManager shareInstanceUserInfo].userModel;
+    //头像
+    [_headerImage sd_setImageWithURL:[NSURL URLWithString:model.headerImageURL]
+                    placeholderImage:[UIImage imageNamed:@"image_用户默认头像"]
+                             options:SDWebImageRefreshCached];
+    
+    //昵称
+    _nickNameLabel.text = model.nickName;
+    
+    //手机号
+    _phoneLabel.text = model.phoneNumber;
 }
 
 @end
@@ -194,7 +193,7 @@
     [self addSubview:_sideView];
     
     //背景
-    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"侧边栏绿色背景"]];
+    UIImageView *bgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image_侧边栏背景"]];
     bgImage.backgroundColor = [UIColor colorWithHexString:@"#AEEFAA"];
     [_sideView addSubview:bgImage];
     [bgImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -202,7 +201,7 @@
     }];
     
     //底部
-    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"侧边栏logo"]];
+    UIImageView *logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"image_侧边栏底部logo"]];
     logoImage.backgroundColor = COLOR_RED;
     [_sideView addSubview:logoImage];
     [logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -267,6 +266,9 @@
 
 - (void)show {
     self.hidden = NO;
+    
+    //更新最新本地用户数据展示
+    [_headerView refreshUserModel];
     
     SELF_WEAK();
     [UIView animateWithDuration:CONSTANT_TIME_ANIMATION_SHORT animations:^{

@@ -7,8 +7,11 @@
 //
 
 #import "MyInfoVC.h"
+#import "MyInfoConfig.h"
 
 @interface MyInfoVC ()
+
+@property (nonatomic, readwrite, strong)MyInfoView *infoView;
 
 @end
 
@@ -16,7 +19,39 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.infoView = [[MyInfoView alloc] initWithFrame:CGRectZero];
+    _infoView.backgroundColor = [UIColor colorWithHexString:@"#F6F6F6"];
+    [self.view addSubview:_infoView];
+    [_infoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    
+    
+    //block
+    //进入个人详情页
+    _infoView.enterPersonalModifyBlcok = ^{
+        YLYLog(@"未完成 ---- 进入个人资料编辑页");
+    };
+    
+    //点击cell
+    _infoView.myInfoCellClick = ^(NSIndexPath *indexPath) {
+        YLYLog(@"未完成 ------ 点击cell %@", indexPath);
+    };
+    
+    //退出登录
+    _infoView.clickLogoutBlcok = ^{
+        YLYLog(@"未完成 ------ 点击退出登录");
+    };
+    
+    //发起请求
+    [self requestMyInfo];
+}
+
+#pragma -mark 网络
+- (void)requestMyInfo {
+    YLYLog(@"未完成 ----- 我的详情网络请求");
+    [_infoView refreshViewData:nil];
 }
 
 - (void)didReceiveMemoryWarning {

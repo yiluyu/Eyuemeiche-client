@@ -13,6 +13,10 @@
 
 - (void)renewUserData {
     YLYLog(@"重置userModel数据");
+    self.nickName = @"未登录";
+    self.phoneNumber = @"无登陆手机号";
+    self.headerImageURL = @"";
+    self.sex = @"男";
 }
 
 @end

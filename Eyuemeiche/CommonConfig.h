@@ -12,6 +12,8 @@
 #import "CategoryConfig.h"
 #import "YLYDefine.h"
 #import "BootUnit.h"
+#import "YLYPropertyManager.h"
+#import "UserManager.h"
 
 #import <Masonry.h>
 

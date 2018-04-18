@@ -17,7 +17,11 @@
     btn.titleLabel.font = (titleFont==nil)?YLY6Font(0):titleFont;
     [btn setTitle:[NSString checkNullString:title] forState:UIControlStateNormal];
     [btn setTitleColor:(titleColor==nil)?COLOR_CLEAR:titleColor forState:UIControlStateNormal];
-    [btn setBackgroundImage:[UIImage imageNamed:[NSString checkNullString:bgImageName]] forState:UIControlStateNormal];
+    if ([NSString checkNullString:bgImageName].length == 0) {
+        [btn setBackgroundImage:[UIImage imageNamed:@"none"] forState:UIControlStateNormal];
+    } else {
+        [btn setBackgroundImage:[UIImage imageNamed:bgImageName] forState:UIControlStateNormal];
+    }
     [btn addTarget:target action:methodNameSEL forControlEvents:UIControlEventTouchUpInside];
     
     return btn;

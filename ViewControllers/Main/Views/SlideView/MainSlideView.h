@@ -14,10 +14,6 @@
 @interface SlideCell : YLYRootCell
 @end
 
-//cellModel
-@interface SlideCellModel : YLYRootModel
-@end
-
 //header
 @interface SlideHeader : YLYRootView
 ///点击头像

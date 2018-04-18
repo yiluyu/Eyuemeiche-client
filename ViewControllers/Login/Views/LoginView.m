@@ -59,7 +59,7 @@
     //logo
     self.logoImage = [[UIImageView alloc] init];
     _logoImage.backgroundColor = COLOR_GREEN;
-    _logoImage.image = [UIImage imageNamed:@"loginLogo"];
+    _logoImage.image = [UIImage imageNamed:@"none"];
     [_backView addSubview:_logoImage];
     [_logoImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(FIT(107), FIT(107)));
@@ -83,7 +83,7 @@
     //phoneicon
     self.phoneicon = [[UIImageView alloc] init];
     _phoneicon.backgroundColor = COLOR_YELLOW;
-    _phoneicon.image = [UIImage imageNamed:@"phonecion"];
+    _phoneicon.image = [UIImage imageNamed:@"none"];
     [_backView addSubview:_phoneicon];
     [_phoneicon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(FIT(52));
@@ -173,7 +173,7 @@
     //codeicon
     self.codeicon = [[UIImageView alloc] init];
     _codeicon.backgroundColor = COLOR_RED;
-    _codeicon.image = [UIImage imageNamed:@"codeicon"];
+    _codeicon.image = [UIImage imageNamed:@"none"];
     [_backView addSubview:_codeicon];
     [_codeicon mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(FIT(53));

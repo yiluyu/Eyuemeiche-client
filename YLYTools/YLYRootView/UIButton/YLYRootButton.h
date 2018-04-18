@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIButton+ExtentMethod.h"
+
 @class YLYRootButton;
 
 @interface YLYRootButton : UIButton

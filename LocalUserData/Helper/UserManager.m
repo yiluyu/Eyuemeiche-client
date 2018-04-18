@@ -8,8 +8,6 @@
 
 #import "UserManager.h"
 #import "YLYDefine.h"
-#import "UserInfoModel.h"
-
 
 @implementation UserManager
 
@@ -32,7 +30,7 @@
 //user数据路径
 - (NSString *)path {
     NSString *userDataPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *dataName = @"userData.edmc";
+    NSString *dataName = @"userData.eyuemeiche";
     userDataPath = [userDataPath stringByAppendingPathComponent:dataName];
     return userDataPath;
 }

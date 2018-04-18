@@ -12,6 +12,7 @@
 #import "NSString+ExtendMethod.h"
 #import "UIColor+ExtendMethod.h"
 #import "UITextField+ExtentMethod.h"
+#import "UIButton+ExtentMethod.h"
 
 
 #endif /* CategoryConfig_h */

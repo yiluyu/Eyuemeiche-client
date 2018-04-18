@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MainConfig.h"
+#import "MyInfoVC.h"
 
 @interface MainViewController ()
 
@@ -70,11 +71,12 @@
 /* 页面 */
 //主页面初始化
 - (void)creatSubViews {
-    self.mainView = [[MainView alloc] init];
+    self.mainView = [[MainView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:_mainView];
     [_mainView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
+    _mainView.backgroundColor = COLOR_WHITE;
     
     SELF_WEAK();
     //点击侧边栏
@@ -94,6 +96,14 @@
     _mainView.mapSearchBlock = ^(CLLocationCoordinate2D location) {
         ;
     };
+}
+
+//进入个人详情
+- (void)enterMyInfoVC {
+    [_slideView hide];
+    
+    MyInfoVC *infoVC = [[MyInfoVC alloc] init];
+    [self.navigationController pushViewController:infoVC animated:YES];
 }
 
 
@@ -135,7 +145,7 @@
     if (self.slideView == nil) {
         self.slideView = [[MainSlideView alloc] init];
         
-        
+        SELF_WEAK();
         //cell点击
         _slideView.slideViewCellClick = ^(NSIndexPath *indexPath) {
             YLYLog(@"----- 侧边栏点击cell 未完成 %@", indexPath);
@@ -143,7 +153,7 @@
         
         //header点击
         _slideView.slideViewHeaderClick = ^{
-            YLYLog(@"----- 侧边栏点击header 未完成");
+            [weakSelf enterMyInfoVC];
         };
     }
     [_slideView show];

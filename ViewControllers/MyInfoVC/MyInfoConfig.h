@@ -6,8 +6,11 @@
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#ifndef MyInfoConfig_h
-#define MyInfoConfig_h
+#import "CommonConfig.h"
 
+#import "MyInfoVC.h"
+#import "MyInfoView.h"
 
-#endif /* MyInfoConfig_h */
+#import "YLYRootView.h"
+#import "YLYRootButton.h"
+#import "YLYRootLabel.h"

@@ -14,8 +14,9 @@
 @property (nonatomic, readwrite, copy)NSString *phoneNumber;//手机号
 @property (nonatomic, readwrite, copy)NSString *sex;//性别
 @property (nonatomic, readwrite, copy)NSString *headerImageURL;//头像URL
+@property (nonatomic, readwrite, copy)NSString *token;//token
 
-/** 重置user数据 */
+///重置user数据
 - (void)renewUserData;
 
 @end

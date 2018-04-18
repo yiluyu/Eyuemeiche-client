@@ -39,15 +39,15 @@
 /* 屏幕适配 */
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
-/** 获取当前屏幕尺寸与6屏幕适配比例 */
+/// 获取当前屏幕尺寸与6屏幕适配比例
 #define SCREEN_SCALE (SCREEN_WIDTH/375.0)
-/** 下方安全区高度 */
+///下方安全区高度
 #define SAFETY_AREA_HEIGHT (iPhoneX?34.0:0)
-/** tabbar高度 */
+/// tabbar高度
 #define TABBAR_HEIGHT 49.0
-/** 状态栏高度 */
+/// 状态栏高度
 #define STATUEBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
-/** 导航栏高度 */
+/// 导航栏高度
 #define NAVIGATIONBAR_HEIGHT 44.0
 ///iPhoneX安全高度
 #define NAVI_FIT_HEIGHT NAVIGATIONBAR_HEIGHT+STATUEBAR_HEIGHT
@@ -66,7 +66,7 @@
 //安全SafeArea间隙
 //#define SafeAreaTopHeight iPhoneX?88:64
 //#define SafeAreaBottomHeight (iPhoneX?34:0)
-/** 以iPhone6屏幕为基准rect */
+/// 以iPhone6屏幕为基准rect
 #define YLY6Rect(x, y, width, height) [YLYHelper autoAdjustRect:CGRectMake(x, y, width, height)]
 
 //基于6屏幕适配font
@@ -80,9 +80,9 @@
 
 /* 系统判断 */
 #define SYSTEM_VERSION [[UIDevice currentDevice].systemVersion intValue]
-/** iOS 10系统判断 */
+/// iOS 10系统判断
 #define iOS10 (SYSTEM_VERSION>=10)?YES:NO
-/** iOS 11系统判断 */
+/// iOS 11系统判断
 #define iOS11 (SYSTEM_VERSION>=11)?YES:NO
 
 
@@ -95,9 +95,9 @@
 #define USERTOKEN USERDEFAULTS_GET(CONSTANT_USERDEFAULTS_LOCALUSERTOKEN)
 
 /* 颜色 */
-/** RGB设置颜色 */
+/// RGB设置颜色
 #define COLOR_RGB(RED, GREEN, BLUE, ALPHA) [UIColor colorWithRed:RED/255.0 green:GREEN/255.0 blue:BLUE/255.0 alpha:ALPHA]
-/** 16进制颜色 */
+/// 16进制颜色
 #define COLOR_HEX(a) [UIColor colorWithHexString:a]
 
 #define COLOR_CLEAR [UIColor clearColor]
@@ -110,8 +110,8 @@
 #define COLOR_GRAY [UIColor grayColor]
 
 
-/** 获取weakSelf */
+/// 获取weakSelf
 #define SELF_WEAK() __weak typeof(&*self) weakSelf = self
-/** 获取strongSelf */
+/// 获取strongSelf
 #define SELF_STRONG() __strong typeof(&*self) strongSelf = weakSelf
 
