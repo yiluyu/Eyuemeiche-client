@@ -282,12 +282,13 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        self.contentView.backgroundColor = COLOR_WHITE;
+        self.backgroundColor = COLOR_WHITE;
+        
         //icon
         self.iconImage = [[UIImageView alloc] init];
-        _iconImage.backgroundColor = COLOR_GRAY;
+        _iconImage.backgroundColor = COLOR_CLEAR;
         [self.contentView addSubview:_iconImage];
-        self.contentView.backgroundColor = COLOR_CLEAR;
-        self.backgroundColor = COLOR_CLEAR;
         [_iconImage mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(FIT(15));
             make.centerY.mas_equalTo(self.contentView);
@@ -320,9 +321,9 @@
         _arrowImage.hidden = YES;
         
         //更多描述
-        self.moreDetailLabel = [YLYRootLabel creatLabelText:@"项目描述"
-                                                       font:YLY6Font(16)
-                                                      color:COLOR_WHITE];
+        self.moreDetailLabel = [YLYRootLabel creatLabelText:@"更多描述"
+                                                       font:YLY6Font(14)
+                                                      color:COLOR_HEX(@"#999999")];
         [self.contentView addSubview:_moreDetailLabel];
         [_moreDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(FIT(-22));
@@ -330,6 +331,15 @@
             make.height.mas_equalTo(FIT(17));
         }];
         _moreDetailLabel.hidden = YES;
+        
+        YLYRootView *line = [[YLYRootView alloc] init];
+        line.backgroundColor = COLOR_HEX(@"#F0F0F0");
+        [self.contentView addSubview:line];
+        [line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(0);
+            make.bottom.mas_equalTo(self.contentView.mas_bottom);
+            make.height.mas_equalTo(1);
+        }];
     }
     return self;
 }
@@ -357,7 +367,7 @@
         
         [self creatHeaderView];
         [self creatBottomView];
-        //    [self creatTableView];
+        [self creatTableView];
     }
     return self;
 }
@@ -403,8 +413,7 @@
 - (void)creatTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                   style:UITableViewStylePlain];
-    _tableView.backgroundColor = COLOR_CLEAR;
-    _tableView.tableHeaderView = _headerView;
+    _tableView.backgroundColor = COLOR_HEX(@"#F6F6F6");
     _tableView.dataSource = self;
     _tableView.delegate = self;
     [_tableView registerClass:[MyInfoCell class] forCellReuseIdentifier:@"MyInfoCell"];
@@ -415,6 +424,10 @@
         make.top.mas_equalTo(_headerView.mas_bottom).offset(0);
         make.bottom.mas_equalTo(_logoutBtn.mas_top).offset(0);
     }];
+    
+    YLYRootView *line = [[YLYRootView alloc] initWithFrame:YLY6Rect(0, 0, 375, 11)];
+    line.backgroundColor = COLOR_HEX(@"#F6F6F6");
+    _tableView.tableHeaderView = line;
 }
 
 - (void)logout {
@@ -452,6 +465,12 @@
         MyInfoCellModel *cellModel = [[MyInfoCellModel alloc] init];
         cellModel.iconImage = [NSString stringWithFormat:@"icon_%@", tArr[i]];
         cellModel.title = tArr[i];
+        if (i == 0) {
+            YLYLog(@"写死假数据  ---------  我的详情数据");
+            cellModel.carCount = @"5";//测试数据
+        } else {
+            cellModel.carCount = @"0";//测试数据
+        }
         [tmpArr addObject:cellModel];
     }
     viewModel.tableData = [NSArray arrayWithArray:tmpArr];
@@ -470,7 +489,7 @@
     MyInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyInfoCell" forIndexPath:indexPath];
     if (cell == nil) {
         cell = [[MyInfoCell alloc] initWithStyle:UITableViewCellStyleValue2
-                                reuseIdentifier:@"MyInfoCell"];
+                                 reuseIdentifier:@"MyInfoCell"];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     MyInfoCellModel *model = tableData[indexPath.row];
@@ -485,6 +504,8 @@
         cell.arrowImage.hidden = NO;
         cell.moreDetailLabel.hidden = YES;
     }
+    
+    cell.backgroundColor = COLOR_WHITE;
     
     return cell;
 }
