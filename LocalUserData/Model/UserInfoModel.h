@@ -12,7 +12,7 @@
 
 @property (nonatomic, readwrite, copy)NSString *nickName;//昵称
 @property (nonatomic, readwrite, copy)NSString *phoneNumber;//手机号
-@property (nonatomic, readwrite, copy)NSString *sex;//性别
+@property (nonatomic, readwrite, copy)NSString *sex;//性别 0男 1女
 @property (nonatomic, readwrite, copy)NSString *headerImageURL;//头像URL
 @property (nonatomic, readwrite, copy)NSString *token;//token
 

@@ -12,7 +12,7 @@
 @interface MyInfoHeaderModel : YLYRootModel
 @property (nonatomic, readwrite, copy)NSString *nickName;//昵称
 @property (nonatomic, readwrite, copy)NSString *phoneNumber;//手机号
-@property (nonatomic, readwrite, copy)NSString *sex;//性别
+@property (nonatomic, readwrite, copy)NSString *sex;//性别 0男 1女
 @property (nonatomic, readwrite, copy)NSString *headerImageURL;//头像URL
 @property (nonatomic, readwrite, copy)NSString *money;//余额
 @property (nonatomic, readwrite, copy)NSString *coupons;//优惠券数量

@@ -9,19 +9,19 @@
 #import "YLYRootView.h"
 #import "YLYRootCell.h"
 
-/* ----- header -----*/
+/* ----- header ----- */
 @interface MyInfoHeader : YLYRootView
 
 ///点击头像
 @property (nonatomic, readwrite, copy)void (^clickImageBlcok)(void);
 
 @end
-/* ----- cell -----*/
+/* ----- cell ----- */
 @interface MyInfoCell : YLYRootCell
 
 @end
 
-/* ----- view -----*/
+/* ----- view ----- */
 @interface MyInfoView : YLYRootView
 
 @property (nonatomic, readwrite, strong)MyInfoHeader *headerView;//头部

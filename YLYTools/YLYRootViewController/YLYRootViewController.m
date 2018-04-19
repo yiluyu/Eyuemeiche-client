@@ -7,6 +7,7 @@
 //
 
 #import "YLYRootViewController.h"
+#import "YLYDefine.h"
 
 @interface YLYRootViewController ()
 
@@ -37,5 +38,24 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"btn_导航栏返回"]
+                       forState:UIControlStateNormal];
+    [backBtn addTarget:self
+                action:@selector(backVC)
+      forControlEvents:UIControlEventTouchUpInside];
+    backBtn.frame = YLY6Rect(0, 0, 13, 22);
+    backBtn.backgroundColor = COLOR_BLUE;
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    
+    [self.navigationItem setLeftBarButtonItem:leftItem];
+}
+
+- (void)backVC {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

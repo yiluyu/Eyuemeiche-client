@@ -11,6 +11,9 @@
 #import "MyInfoVC.h"
 #import "MyInfoView.h"
 
+#import "MyInfoModifyVC.h"
+#import "MyInfoModifyView.h"
+
 #import "YLYRootView.h"
 #import "YLYRootButton.h"
 #import "YLYRootLabel.h"

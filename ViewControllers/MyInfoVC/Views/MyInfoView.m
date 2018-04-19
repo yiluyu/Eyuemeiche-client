@@ -54,6 +54,7 @@
         }];
         _headerImage.layer.cornerRadius = FIT(69/2);
         _headerImage.layer.masksToBounds = YES;
+        _headerImage.userInteractionEnabled = YES;
         
         self.nickNameLabel = [YLYRootLabel creatLabelText:@""
                                                      font:YLY6Font(20)
@@ -248,7 +249,7 @@
     _phoneLabel.text = headerModel.phoneNumber;
     
     //性别
-    _sexLabel.text = headerModel.sex;
+    _sexLabel.text = (headerModel.sex.integerValue == 0)?@"男":@"女";
     
     //余额
     _moneyLabel.text = [NSString stringWithFormat:@"¥%@", headerModel.money];
@@ -282,9 +283,6 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.contentView.backgroundColor = COLOR_WHITE;
-        self.backgroundColor = COLOR_WHITE;
-        
         //icon
         self.iconImage = [[UIImageView alloc] init];
         _iconImage.backgroundColor = COLOR_CLEAR;

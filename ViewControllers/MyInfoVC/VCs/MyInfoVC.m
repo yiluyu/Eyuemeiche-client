@@ -29,9 +29,10 @@
     
     
     //block
+    SELF_WEAK();
     //进入个人详情页
     _infoView.enterPersonalModifyBlcok = ^{
-        YLYLog(@"未完成 ---- 进入个人资料编辑页");
+        [weakSelf enterMyInfoModifyVC];
     };
     
     //点击cell
@@ -47,6 +48,19 @@
     //发起请求
     [self requestMyInfo];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+//修改资料
+- (void)enterMyInfoModifyVC {
+    MyInfoModifyVC *nextVC = [[MyInfoModifyVC alloc] init];
+    [self.navigationController pushViewController:nextVC animated:YES];
+}
+
 
 #pragma -mark 网络
 - (void)requestMyInfo {

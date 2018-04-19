@@ -109,6 +109,8 @@
 #define COLOR_BLACK [UIColor blackColor]
 #define COLOR_GRAY [UIColor grayColor]
 
+///主背景颜色
+#define COLOR_VC_BG COLOR_HEX(@"#F6F6F6")
 
 /// 获取weakSelf
 #define SELF_WEAK() __weak typeof(&*self) weakSelf = self
