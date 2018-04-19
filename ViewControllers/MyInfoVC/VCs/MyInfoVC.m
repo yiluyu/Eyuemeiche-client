@@ -37,7 +37,7 @@
     
     //点击cell
     _infoView.myInfoCellClick = ^(NSIndexPath *indexPath) {
-        YLYLog(@"未完成 ------ 点击cell %@", indexPath);
+        [weakSelf enterCellVC:indexPath];
     };
     
     //退出登录
@@ -59,6 +59,19 @@
 - (void)enterMyInfoModifyVC {
     MyInfoModifyVC *nextVC = [[MyInfoModifyVC alloc] init];
     [self.navigationController pushViewController:nextVC animated:YES];
+}
+//车辆管理
+- (void)enterCellVC:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        YLYLog(@"进入车辆管理");
+        CarModifyVC *nextVC = [[CarModifyVC alloc] init];
+        [self.navigationController pushViewController:nextVC animated:YES];
+    }
+    
+    if (indexPath.row == 1) {
+        YLYLog(@"进入修改手机号");
+        
+    }
 }
 
 

@@ -17,6 +17,7 @@
 
 @property (nonatomic, readwrite, copy)NSString *iconImage;//图标
 @property (nonatomic, readwrite, copy)NSString *title;//标题
+@property (nonatomic, readwrite, copy)NSString *detail;//显示
 @property (nonatomic, readwrite, copy)NSString *imageURL;//图片地址
 
 @end
