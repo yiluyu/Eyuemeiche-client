@@ -9,10 +9,10 @@
 #import "AddCarView.h"
 
 #pragma -mark item
-@interface AddCarItem ()
+@interface AddCarCell ()
 
 @end
-@implementation AddCarItem
+@implementation AddCarCell
 
 @end
 

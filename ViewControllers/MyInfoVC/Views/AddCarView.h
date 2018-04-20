@@ -8,12 +8,12 @@
 
 #import "YLYRootView.h"
 #import "YLYRootLabel.h"
+#import "YLYRootCell.h"
 
-@interface AddCarItem : YLYRootView
+@interface AddCarCell : YLYRootCell
 @property (nonatomic, readwrite, strong)UIImageView *iconImage;//图片
-@property (nonatomic, readwrite, strong)YLYRootLabel *titleLabel;
-@property (nonatomic, readwrite, strong)UITextField *inputField;//输入
-@property (nonatomic, readwrite, strong)UIImageView *arrowImage;//箭头
+@property (nonatomic, readwrite, strong)YLYRootLabel *titleLabel;//标题描述
+@property (nonatomic, readwrite, strong)YLYRootLabel *currentLabel;//当前cell的内容
 @end
 
 

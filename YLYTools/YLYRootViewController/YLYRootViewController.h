@@ -14,14 +14,11 @@
 
 
 /*
- 下一个页面使用统一传参方式
- 上一个页面传入的参数处理使用 preFatherModel -> 当前VCmodel
- 当前页面参数处理 nowFatherModel -> nextVCmodel
+ 下一个页面使用baseDict传参
  */
 
-///前一个页面传入的参数model
-@property (nonatomic, readwrite, strong)YLYRootModel *preFatherModel;
-///当前页面自身model
-@property (nonatomic, readwrite, strong)YLYRootModel *nowFatherModel;
+///前一个页面传入的参数dict
+@property (nonatomic, readwrite, strong)NSDictionary *baseDict;
+
 
 @end

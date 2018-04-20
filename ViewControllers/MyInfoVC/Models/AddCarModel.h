@@ -8,6 +8,12 @@
 
 #import "YLYRootModel.h"
 
+@interface AddCarCellModel : YLYRootModel
+@property (nonatomic, readwrite, copy)NSString *iconImage;//照片
+@property (nonatomic, readwrite, copy)NSString *title;//颜色
+@property (nonatomic, readwrite, copy)NSString *currentDetail;//当前显示
+@end
+
 @interface AddCarModel : YLYRootModel
 @property (nonatomic, readwrite, copy)NSString *carImage;//照片
 @property (nonatomic, readwrite, copy)NSString *color;//颜色
