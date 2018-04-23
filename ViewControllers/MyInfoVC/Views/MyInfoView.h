@@ -14,6 +14,8 @@
 
 ///点击头像
 @property (nonatomic, readwrite, copy)void (^clickImageBlcok)(void);
+///点击header下方按钮
+@property (nonatomic, readwrite, copy)void (^clickBtnBlcok)(NSInteger index);
 
 @end
 /* ----- cell ----- */
@@ -33,7 +35,12 @@
 @property (nonatomic, readwrite, copy)void (^myInfoCellClick)(NSIndexPath *indexPath);
 ///退出登录
 @property (nonatomic, readwrite, copy)void (^clickLogoutBlcok)(void);
-
+///点击钱包
+@property (nonatomic, readwrite, copy)void (^clickMoneyBlcok)(void);
+///点击优惠券
+@property (nonatomic, readwrite, copy)void (^clickCouponsBlcok)(void);
+///点击积分
+@property (nonatomic, readwrite, copy)void (^clickPointsBlcok)(void);
 
 ///传入数据
 - (void)refreshViewData:(NSDictionary *)dict;

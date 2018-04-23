@@ -56,6 +56,17 @@
         _headerImage.layer.masksToBounds = YES;
         _headerImage.userInteractionEnabled = YES;
         
+        UIImageView *modifyIcon = [[UIImageView alloc] init];
+        modifyIcon.backgroundColor = COLOR_RED;
+        [self addSubview:modifyIcon];
+        [modifyIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(_headerImage.mas_bottom).offset(0);
+            make.right.mas_equalTo(_headerImage.mas_right).offset(0);
+            make.width.mas_equalTo(FIT(10));
+            make.height.mas_equalTo(FIT(8));
+        }];
+        modifyIcon.image = [UIImage imageNamed:@"icon_modify"];
+        
         self.nickNameLabel = [YLYRootLabel creatLabelText:@""
                                                      font:YLY6Font(20)
                                                     color:COLOR_WHITE];
@@ -129,6 +140,10 @@
             make.top.mas_equalTo(backImage.mas_bottom).offset(FIT(24));
         }];
         
+//        _moneyLabel.backgroundColor = COLOR_YELLOW;
+//        _couponsLabel.backgroundColor = COLOR_BLUE;
+//        _pointsLabel.backgroundColor = COLOR_RED;
+        
         //分割线
         YLYRootView *line1 = [[YLYRootView alloc] init];
         line1.backgroundColor = [UIColor colorWithHexString:@"#121212"];
@@ -176,6 +191,10 @@
             make.height.mas_equalTo(FIT(14));
             make.centerX.mas_equalTo(_pointsLabel);
         }];
+        
+//        block1.backgroundColor = COLOR_RED;
+//        block1.backgroundColor = COLOR_BLUE;
+//        block3.backgroundColor = COLOR_YELLOW;
         
         //图标
         UIImageView *moneyIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_钱包"]];
@@ -230,6 +249,47 @@
             make.height.mas_equalTo(moneyDes);
             make.centerY.mas_equalTo(block3);
         }];
+        
+        //触发按钮
+        YLYRootButton *btn1 = [YLYRootButton creatButtonText:nil
+                                                  titleColor:nil
+                                                   titleFont:nil
+                                         backgroundImageName:nil
+                                                      target:self
+                                                         SEL:@selector(btnClick:)];
+        btn1.tag = 0;
+        [self addSubview:btn1];
+        [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(_moneyLabel);
+            make.top.mas_equalTo(_moneyLabel.mas_top).offset(0);
+            make.bottom.mas_equalTo(block1.mas_bottom).offset(0);
+        }];
+        YLYRootButton *btn2 = [YLYRootButton creatButtonText:nil
+                                                  titleColor:nil
+                                                   titleFont:nil
+                                         backgroundImageName:nil
+                                                      target:self
+                                                         SEL:@selector(btnClick:)];
+        btn2.tag = 1;
+        [self addSubview:btn2];
+        [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(_couponsLabel);
+            make.top.mas_equalTo(_couponsLabel.mas_top).offset(0);
+            make.bottom.mas_equalTo(block2.mas_bottom).offset(0);
+        }];
+        YLYRootButton *btn3 = [YLYRootButton creatButtonText:nil
+                                                  titleColor:nil
+                                                   titleFont:nil
+                                         backgroundImageName:nil
+                                                      target:self
+                                                         SEL:@selector(btnClick:)];
+        btn3.tag = 2;
+        [self addSubview:btn3];
+        [btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.mas_equalTo(_pointsLabel);
+            make.top.mas_equalTo(_pointsLabel.mas_top).offset(0);
+            make.bottom.mas_equalTo(block3.mas_bottom).offset(0);
+        }];
     }
     return self;
 }
@@ -264,6 +324,12 @@
 - (void)clickHeader {
     if (self.clickImageBlcok) {
         self.clickImageBlcok();
+    }
+}
+
+- (void)btnClick:(YLYRootButton *)sender {
+    if (self.clickBtnBlcok) {
+        self.clickBtnBlcok(sender.tag);
     }
 }
 
@@ -383,6 +449,18 @@
     _headerView.clickImageBlcok = ^{
         if (weakSelf.enterPersonalModifyBlcok) {
             weakSelf.enterPersonalModifyBlcok();
+        }
+    };
+    
+    _headerView.clickBtnBlcok = ^(NSInteger index) {
+        if (index == 0 && weakSelf.clickMoneyBlcok) {
+            weakSelf.clickMoneyBlcok();
+        }
+        if (index == 1 && weakSelf.clickCouponsBlcok) {
+            weakSelf.clickCouponsBlcok();
+        }
+        if (index == 2 && weakSelf.clickPointsBlcok) {
+            weakSelf.clickPointsBlcok();
         }
     };
 }

@@ -27,6 +27,9 @@
 		9A54E79420318C270054D38A /* YLYRootTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79320318C270054D38A /* YLYRootTabbarController.m */; };
 		9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E796203950B70054D38A /* YLYRootNavigationController.m */; };
 		9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A54E79C204107DE0054D38A /* UITextField+ExtentMethod.m */; };
+		9A554D8A208DBA0F00B6677B /* WalletVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A554D89208DBA0F00B6677B /* WalletVC.m */; };
+		9A554D8D208DBA2200B6677B /* WalletView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A554D8C208DBA2200B6677B /* WalletView.m */; };
+		9A554D90208DBA4400B6677B /* WalletViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A554D8F208DBA4400B6677B /* WalletViewModel.m */; };
 		9A5E60F3208474D500491AE3 /* MyInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E60F2208474D500491AE3 /* MyInfoVC.m */; };
 		9A5E60F6208488F300491AE3 /* UIButton+ExtentMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E60F5208488F300491AE3 /* UIButton+ExtentMethod.m */; };
 		9A5E60F92084982300491AE3 /* MyInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E60F82084982300491AE3 /* MyInfoView.m */; };
@@ -38,10 +41,10 @@
 		9A5E610C208844D600491AE3 /* YLYRootImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E610B208844D600491AE3 /* YLYRootImageView.m */; };
 		9A5E610F20885CE500491AE3 /* CarModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E610E20885CE500491AE3 /* CarModifyVC.m */; };
 		9A5E611220885D0700491AE3 /* CarModifyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611120885D0700491AE3 /* CarModifyView.m */; };
-		9A5E611520886BCB00491AE3 /* CarModifyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611420886BCB00491AE3 /* CarModifyModel.m */; };
+		9A5E611520886BCB00491AE3 /* CarModifyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611420886BCB00491AE3 /* CarModifyViewModel.m */; };
 		9A5E61182088876C00491AE3 /* AddCarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E61172088876C00491AE3 /* AddCarVC.m */; };
 		9A5E611B2088884C00491AE3 /* AddCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611A2088884C00491AE3 /* AddCarView.m */; };
-		9A5E611E2088949100491AE3 /* AddCarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611D2088949100491AE3 /* AddCarModel.m */; };
+		9A5E611E2088949100491AE3 /* AddCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611D2088949100491AE3 /* AddCarViewModel.m */; };
 		9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */; };
 		9A721C13204F845800787753 /* YLYRootTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C12204F845800787753 /* YLYRootTextField.m */; };
 		9A73F3472043DFF9000F01B2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F3462043DFF9000F01B2 /* MainView.m */; };
@@ -127,6 +130,12 @@
 		9A54E7A3204113360054D38A /* CategoryConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryConfig.h; sourceTree = "<group>"; };
 		9A54E7A4204114470054D38A /* YLYConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYConfig.h; sourceTree = "<group>"; };
 		9A54E7A5204114E10054D38A /* CommonConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonConfig.h; sourceTree = "<group>"; };
+		9A554D88208DBA0F00B6677B /* WalletVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletVC.h; sourceTree = "<group>"; };
+		9A554D89208DBA0F00B6677B /* WalletVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletVC.m; sourceTree = "<group>"; };
+		9A554D8B208DBA2200B6677B /* WalletView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletView.h; sourceTree = "<group>"; };
+		9A554D8C208DBA2200B6677B /* WalletView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletView.m; sourceTree = "<group>"; };
+		9A554D8E208DBA4400B6677B /* WalletViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WalletViewModel.h; sourceTree = "<group>"; };
+		9A554D8F208DBA4400B6677B /* WalletViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WalletViewModel.m; sourceTree = "<group>"; };
 		9A5E60F0208474AA00491AE3 /* MyInfoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoConfig.h; sourceTree = "<group>"; };
 		9A5E60F1208474D500491AE3 /* MyInfoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInfoVC.h; sourceTree = "<group>"; };
 		9A5E60F2208474D500491AE3 /* MyInfoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInfoVC.m; sourceTree = "<group>"; };
@@ -150,14 +159,14 @@
 		9A5E610E20885CE500491AE3 /* CarModifyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModifyVC.m; sourceTree = "<group>"; };
 		9A5E611020885D0700491AE3 /* CarModifyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModifyView.h; sourceTree = "<group>"; };
 		9A5E611120885D0700491AE3 /* CarModifyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModifyView.m; sourceTree = "<group>"; };
-		9A5E611320886BCB00491AE3 /* CarModifyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModifyModel.h; sourceTree = "<group>"; };
-		9A5E611420886BCB00491AE3 /* CarModifyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModifyModel.m; sourceTree = "<group>"; };
+		9A5E611320886BCB00491AE3 /* CarModifyViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarModifyViewModel.h; sourceTree = "<group>"; };
+		9A5E611420886BCB00491AE3 /* CarModifyViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarModifyViewModel.m; sourceTree = "<group>"; };
 		9A5E61162088876C00491AE3 /* AddCarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarVC.h; sourceTree = "<group>"; };
 		9A5E61172088876C00491AE3 /* AddCarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarVC.m; sourceTree = "<group>"; };
 		9A5E61192088884C00491AE3 /* AddCarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarView.h; sourceTree = "<group>"; };
 		9A5E611A2088884C00491AE3 /* AddCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarView.m; sourceTree = "<group>"; };
-		9A5E611C2088949100491AE3 /* AddCarModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarModel.h; sourceTree = "<group>"; };
-		9A5E611D2088949100491AE3 /* AddCarModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarModel.m; sourceTree = "<group>"; };
+		9A5E611C2088949100491AE3 /* AddCarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarViewModel.h; sourceTree = "<group>"; };
+		9A5E611D2088949100491AE3 /* AddCarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarViewModel.m; sourceTree = "<group>"; };
 		9A721C0E204D28D600787753 /* UILabel+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ExtendMethod.h"; sourceTree = "<group>"; };
 		9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ExtendMethod.m"; sourceTree = "<group>"; };
 		9A721C11204F845800787753 /* YLYRootTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootTextField.h; sourceTree = "<group>"; };
@@ -511,6 +520,8 @@
 				9A5E610E20885CE500491AE3 /* CarModifyVC.m */,
 				9A5E61162088876C00491AE3 /* AddCarVC.h */,
 				9A5E61172088876C00491AE3 /* AddCarVC.m */,
+				9A554D88208DBA0F00B6677B /* WalletVC.h */,
+				9A554D89208DBA0F00B6677B /* WalletVC.m */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -526,6 +537,8 @@
 				9A5E611120885D0700491AE3 /* CarModifyView.m */,
 				9A5E61192088884C00491AE3 /* AddCarView.h */,
 				9A5E611A2088884C00491AE3 /* AddCarView.m */,
+				9A554D8B208DBA2200B6677B /* WalletView.h */,
+				9A554D8C208DBA2200B6677B /* WalletView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -537,10 +550,12 @@
 				9A5E60FB2084A1DD00491AE3 /* MyInfoViewModel.m */,
 				9A5E61062087226000491AE3 /* MyInfoModifyViewModel.h */,
 				9A5E61072087226000491AE3 /* MyInfoModifyViewModel.m */,
-				9A5E611320886BCB00491AE3 /* CarModifyModel.h */,
-				9A5E611420886BCB00491AE3 /* CarModifyModel.m */,
-				9A5E611C2088949100491AE3 /* AddCarModel.h */,
-				9A5E611D2088949100491AE3 /* AddCarModel.m */,
+				9A5E611320886BCB00491AE3 /* CarModifyViewModel.h */,
+				9A5E611420886BCB00491AE3 /* CarModifyViewModel.m */,
+				9A5E611C2088949100491AE3 /* AddCarViewModel.h */,
+				9A5E611D2088949100491AE3 /* AddCarViewModel.m */,
+				9A554D8E208DBA4400B6677B /* WalletViewModel.h */,
+				9A554D8F208DBA4400B6677B /* WalletViewModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -733,7 +748,7 @@
 				TargetAttributes = {
 					9A3D1FA21FB047DB004F827C = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -870,8 +885,10 @@
 				9A5E610C208844D600491AE3 /* YLYRootImageView.m in Sources */,
 				9AEBD385202C320B009E5FC2 /* YLYRegular.m in Sources */,
 				9A186B451FBAFE7B008E2EB1 /* UserManager.m in Sources */,
+				9A554D8A208DBA0F00B6677B /* WalletVC.m in Sources */,
 				9A186B361FB0A180008E2EB1 /* YLYDownLoadManager.m in Sources */,
 				9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */,
+				9A554D8D208DBA2200B6677B /* WalletView.m in Sources */,
 				9A5E610520871FFE00491AE3 /* MyInfoModifyView.m in Sources */,
 				9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */,
 				9A186B421FBAFE65008E2EB1 /* UserInfoModel.m in Sources */,
@@ -888,9 +905,10 @@
 				9A186B381FB0A180008E2EB1 /* YLYHelper.m in Sources */,
 				9A186B351FB0A180008E2EB1 /* MainViewController.m in Sources */,
 				9AEBD388202DB503009E5FC2 /* LoginView.m in Sources */,
-				9A5E611E2088949100491AE3 /* AddCarModel.m in Sources */,
+				9A5E611E2088949100491AE3 /* AddCarViewModel.m in Sources */,
 				9A73F35E204571B0000F01B2 /* YLYRootButton.m in Sources */,
 				9A3E6A44205A581200B22928 /* YLYNetBox.m in Sources */,
+				9A554D90208DBA4400B6677B /* WalletViewModel.m in Sources */,
 				9A5E61022086FABF00491AE3 /* MyInfoModifyVC.m in Sources */,
 				9A5E60F6208488F300491AE3 /* UIButton+ExtentMethod.m in Sources */,
 				9A5E611B2088884C00491AE3 /* AddCarView.m in Sources */,
@@ -903,7 +921,7 @@
 				9A5E60F3208474D500491AE3 /* MyInfoVC.m in Sources */,
 				9A5E60F92084982300491AE3 /* MyInfoView.m in Sources */,
 				9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */,
-				9A5E611520886BCB00491AE3 /* CarModifyModel.m in Sources */,
+				9A5E611520886BCB00491AE3 /* CarModifyViewModel.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
 				9A54E797203950B70054D38A /* YLYRootNavigationController.m in Sources */,
 				9A5E61182088876C00491AE3 /* AddCarVC.m in Sources */,
@@ -1055,16 +1073,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eyuemeiche/Eyuemeiche.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 252WARHBVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Eyuemeiche/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyuemeiche.eymcClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e821d018-77cc-4a63-ab19-e43d4e8b45f0";
-				PROVISIONING_PROFILE_SPECIFIER = eymcClientDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1075,16 +1094,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eyuemeiche/Eyuemeiche.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 252WARHBVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Eyuemeiche/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyuemeiche.eymcClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e821d018-77cc-4a63-ab19-e43d4e8b45f0";
-				PROVISIONING_PROFILE_SPECIFIER = eymcClientDev;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

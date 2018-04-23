@@ -8,7 +8,7 @@
 
 #import "CarModifyVC.h"
 #import "MyInfoConfig.h"
-#import "CarModifyModel.h"
+#import "CarModifyViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface CarModifyVC () <UITableViewDelegate, UITableViewDataSource>

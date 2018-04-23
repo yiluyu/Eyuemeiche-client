@@ -27,8 +27,20 @@
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     
-    
     //block
+    [self setInfoViewBlock];
+    
+    //发起请求
+    [self requestMyInfo];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)setInfoViewBlock {
     SELF_WEAK();
     //进入个人详情页
     _infoView.enterPersonalModifyBlcok = ^{
@@ -45,14 +57,31 @@
         YLYLog(@"未完成 ------ 点击退出登录");
     };
     
-    //发起请求
-    [self requestMyInfo];
+    //点击钱包
+    _infoView.clickMoneyBlcok = ^{
+        [weakSelf enterMoneyVC];
+    };
+    //点击优惠券
+    _infoView.clickCouponsBlcok = ^{
+        [weakSelf enterCouponsVC];
+    };
+    //点击积分
+    _infoView.clickPointsBlcok = ^{
+        [weakSelf enterPointsVC];
+    };
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
+- (void)enterMoneyVC {
+    YLYLog(@"未完成 ----- 进入钱包页面");
+}
+
+- (void)enterCouponsVC {
+    YLYLog(@"未完成 ----- 进入优惠券页面");
+}
+
+- (void)enterPointsVC {
+    [[YLYHelper shareHelper] showHudViewWithString:@"积分商城即将开放, 敬请期待!"];
+    return;
 }
 
 //修改资料

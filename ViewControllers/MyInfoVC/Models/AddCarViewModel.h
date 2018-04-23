@@ -1,5 +1,5 @@
 //
-//  AddCarModel.h
+//  AddCarViewModel.h
 //  Eyuemeiche
 //
 //  Created by yu on 19/04/2018.
@@ -14,7 +14,7 @@
 @property (nonatomic, readwrite, copy)NSString *currentDetail;//当前显示
 @end
 
-@interface AddCarModel : YLYRootModel
+@interface AddCarViewModel : YLYRootModel
 @property (nonatomic, readwrite, copy)NSString *carImage;//照片
 @property (nonatomic, readwrite, copy)NSString *color;//颜色
 @property (nonatomic, readwrite, copy)NSString *brand;//车型

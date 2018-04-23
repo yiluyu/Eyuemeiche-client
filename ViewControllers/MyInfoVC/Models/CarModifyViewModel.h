@@ -1,5 +1,5 @@
 //
-//  CarModifyModel.h
+//  CarModifyViewModel.h
 //  Eyuemeiche
 //
 //  Created by yu on 19/04/2018.
@@ -8,7 +8,7 @@
 
 #import "YLYRootModel.h"
 
-@interface CarModifyModel : YLYRootModel
+@interface CarModifyViewModel : YLYRootModel
 @end
 
 @interface CarModifyCellModel : YLYRootModel

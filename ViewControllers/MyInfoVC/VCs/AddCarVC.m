@@ -8,7 +8,7 @@
 
 #import "AddCarVC.h"
 #import "MyInfoConfig.h"
-#import "AddCarModel.h"
+#import "AddCarViewModel.h"
 
 @interface AddCarVC () <UITableViewDelegate, UITableViewDataSource>
 {
@@ -180,6 +180,32 @@
         make.left.right.mas_equalTo(0);
         make.bottom.mas_equalTo(_bottomBtn.mas_top).offset(0);
     }];
+    
+    //tableHeader
+    YLYRootView *tableHeader = [[YLYRootView alloc] initWithFrame:YLY6Rect(0, 0, 375, 51)];
+    tableHeader.backgroundColor = COLOR_WHITE;
+    //icon
+    UIImageView *icon = [[UIImageView alloc] init];
+    icon.backgroundColor = COLOR_CLEAR;
+    icon.image = [UIImage imageNamed:@"icon_基本信息"];
+    [tableHeader addSubview:icon];
+    [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(FIT(13));
+        make.centerY.mas_equalTo(tableHeader);
+        make.width.height.mas_equalTo(FIT(16));
+    }];
+    //信息描述
+    YLYRootLabel *titleLabel = [YLYRootLabel creatLabelText:@"基本信息"
+                                                       font:YLY6Font(14)
+                                                      color:[UIColor colorWithHexString:@"#00CA9D"]];
+    [tableHeader addSubview:titleLabel];
+    [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.mas_equalTo(icon.mas_right).offset(FIT(13));
+        make.centerY.mas_equalTo(icon);
+        make.height.mas_equalTo(FIT(17));
+    }];
+    
+    _tableView.tableHeaderView = tableHeader;
 }
 
 #pragma -mark tableDelegate

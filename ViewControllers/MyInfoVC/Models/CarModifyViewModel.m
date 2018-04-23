@@ -1,14 +1,14 @@
 //
-//  CarModifyModel.m
+//  CarModifyViewModel.m
 //  Eyuemeiche
 //
 //  Created by yu on 19/04/2018.
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#import "CarModifyModel.h"
+#import "CarModifyViewModel.h"
 
-@implementation CarModifyModel
+@implementation CarModifyViewModel
 
 @end
 
