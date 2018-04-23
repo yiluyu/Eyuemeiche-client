@@ -72,7 +72,8 @@
 }
 
 - (void)enterMoneyVC {
-    YLYLog(@"未完成 ----- 进入钱包页面");
+    WalletVC *nextVC = [[WalletVC alloc] init];
+    [self.navigationController pushViewController:nextVC animated:YES];
 }
 
 - (void)enterCouponsVC {

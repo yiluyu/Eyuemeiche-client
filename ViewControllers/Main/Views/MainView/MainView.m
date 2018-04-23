@@ -86,7 +86,7 @@ typedef NS_ENUM(NSInteger, ORDERTYPE) {
     [_headerBarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(FIT(44));
-        make.top.mas_equalTo(STATUEBAR_HEIGHT);
+        make.top.mas_equalTo(STATUSBAR_HEIGHT);
     }];
     
     

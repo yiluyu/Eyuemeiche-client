@@ -205,6 +205,15 @@
         make.height.mas_equalTo(FIT(17));
     }];
     
+    YLYRootView *line = [[YLYRootView alloc] init];
+    line.backgroundColor = COLOR_HEX(@"#F0F0F0");
+    [tableHeader addSubview:line];
+    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.mas_equalTo(0);
+        make.bottom.mas_equalTo(tableHeader.mas_bottom);
+        make.height.mas_equalTo(1);
+    }];
+    
     _tableView.tableHeaderView = tableHeader;
 }
 

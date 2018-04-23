@@ -231,7 +231,7 @@
     [_sideView addSubview:_tableView];
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(0);
-        make.top.mas_equalTo(STATUEBAR_HEIGHT);
+        make.top.mas_equalTo(STATUSBAR_HEIGHT);
         make.bottom.mas_equalTo(logoImage.mas_top);
     }];
 }

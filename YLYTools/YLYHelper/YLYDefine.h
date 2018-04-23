@@ -46,11 +46,11 @@
 /// tabbar高度
 #define TABBAR_HEIGHT 49.0
 /// 状态栏高度
-#define STATUEBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
+#define STATUSBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
 /// 导航栏高度
 #define NAVIGATIONBAR_HEIGHT 44.0
 ///iPhoneX安全高度
-#define NAVI_FIT_HEIGHT NAVIGATIONBAR_HEIGHT+STATUEBAR_HEIGHT
+#define NAVI_FIT_HEIGHT NAVIGATIONBAR_HEIGHT+STATUSBAR_HEIGHT
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
