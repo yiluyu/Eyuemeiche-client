@@ -8,6 +8,11 @@
 
 #import "AddCarModel.h"
 
+@implementation AddCarCellModel
+
+@end
+
+
 @implementation AddCarModel
 
 @end

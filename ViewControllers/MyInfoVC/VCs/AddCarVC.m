@@ -130,9 +130,10 @@
                                           font:YLY6Font(10)
                                          color:COLOR_HEX(@"#5F5D70")];
     _btnDes.textAlignment = NSTextAlignmentCenter;
-    [_headerView addSubview:_btnDes];
+    [_carImage addSubview:_btnDes];
     [_btnDes mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(_carImage);
+        make.bottom.mas_equalTo(_carImage.mas_bottom).offset(FIT(-29));
         make.height.mas_equalTo(FIT(16));
     }];
 }
@@ -211,6 +212,7 @@
 #pragma -mark method
 - (void)addCarClick {
     YLYLog(@"未完成 ------- 发起添加车辆请求");
+    [self requestCommit];
 }
 
 //添加图片
