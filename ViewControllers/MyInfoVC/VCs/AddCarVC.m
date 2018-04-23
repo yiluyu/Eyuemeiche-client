@@ -188,7 +188,7 @@
     }
     cell.backgroundColor = COLOR_WHITE;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    test
     AddCarCellModel *model = tableData[indexPath.row];
     
     cell.iconImage.image = [UIImage imageNamed:model.iconImage];
