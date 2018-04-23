@@ -14,6 +14,7 @@
 @property (nonatomic, readwrite, strong)UIImageView *iconImage;//图片
 @property (nonatomic, readwrite, strong)YLYRootLabel *titleLabel;//标题描述
 @property (nonatomic, readwrite, strong)YLYRootLabel *currentLabel;//当前cell的内容
+@property (nonatomic, readwrite, strong)UIImageView *arrowImage;//箭头
 @end
 
 

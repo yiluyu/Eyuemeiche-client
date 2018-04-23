@@ -109,20 +109,16 @@
         make.height.mas_equalTo(FIT(113));
         make.centerX.mas_equalTo(_headerView);
     }];
-    _carImage.userInteractionEnabled = YES;
     
-    //按钮
-    self.addCarImageBtn = [YLYRootButton creatButtonText:nil
-                                              titleColor:nil
-                                               titleFont:nil
-                                     backgroundImageName:@"btn_添加车辆照片"
-                                                  target:self
-                                                     SEL:@selector(addCarImageClick)];
-    [_headerView addSubview:_addCarImageBtn];
-    [_addCarImageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.centerY.mas_equalTo(_carImage);
+    //按钮图标
+    UIImageView *btnImage = [[UIImageView alloc] init];
+    btnImage.image = [UIImage imageNamed:@"btn_添加车辆照片"];
+    btnImage.backgroundColor = COLOR_WHITE;
+    [_carImage addSubview:btnImage];
+    [btnImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(FIT(25));
         make.height.mas_equalTo(FIT(22));
+        make.centerX.centerY.mas_equalTo(_carImage);
     }];
     
     //按钮描述文字
@@ -135,6 +131,19 @@
         make.centerX.mas_equalTo(_carImage);
         make.bottom.mas_equalTo(_carImage.mas_bottom).offset(FIT(-29));
         make.height.mas_equalTo(FIT(16));
+    }];
+    
+    //按钮
+    self.addCarImageBtn = [YLYRootButton creatButtonText:nil
+                                              titleColor:nil
+                                               titleFont:nil
+                                     backgroundImageName:nil
+                                                  target:self
+                                                     SEL:@selector(addCarImageClick)];
+    [_headerView addSubview:_addCarImageBtn];
+    [_addCarImageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.centerY.mas_equalTo(_carImage);
+        make.width.height.mas_equalTo(_carImage);
     }];
 }
 
@@ -188,7 +197,7 @@
     }
     cell.backgroundColor = COLOR_WHITE;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    test
+    
     AddCarCellModel *model = tableData[indexPath.row];
     
     cell.iconImage.image = [UIImage imageNamed:model.iconImage];
