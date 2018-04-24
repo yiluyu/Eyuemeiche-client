@@ -23,6 +23,9 @@
 
 #import <MAMapKit/MAMapKit.h>
 
+#import "MessageVC.h"
+#import "MessageView.h"
+#import "MessageViewModel.h"
 
 
 #endif /* MainConfig_h */

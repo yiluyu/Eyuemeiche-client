@@ -12,7 +12,7 @@
 
 @end
 
-//cellModel
+//slideCellModel
 @interface SlideCellModel : YLYRootModel
 @property (nonatomic, readwrite, copy)NSString *iconName;//icon图片
 @property (nonatomic, readwrite, copy)NSString *title;//内容
