@@ -73,7 +73,7 @@
     [self.view addSubview:_headerView];
     [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.mas_equalTo(0);
-        make.height.mas_equalTo(FIT(237)+STATUSBAR_HEIGHT);
+        make.height.mas_equalTo(FIT(217)+STATUSBAR_HEIGHT);
     }];
     
     //背景图
