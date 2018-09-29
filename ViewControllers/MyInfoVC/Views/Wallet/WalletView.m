@@ -31,9 +31,9 @@
             make.edges.mas_equalTo(UIEdgeInsetsZero);
         }];
         
-        self.moneyLabel = [YLYRootLabel creatLabelText:nil
-                                                  font:YLY6Font(18)
-                                                 color:COLOR_BLACK];
+        self.moneyLabel = [YLYRootLabel createLabelText:nil
+                                                   font:YLY6Font(18)
+                                                  color:COLOR_BLACK];
         [self addSubview:_moneyLabel];
         [_moneyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerX.mas_equalTo(self);
@@ -41,7 +41,7 @@
             make.height.mas_equalTo(FIT(18));
         }];
         
-        self.desLabel = [YLYRootLabel creatLabelText:nil
+        self.desLabel = [YLYRootLabel createLabelText:nil
                                                 font:YLY6Font(10)
                                                color:COLOR_HEX(@"#949496")];
         [self addSubview:_desLabel];
@@ -52,12 +52,12 @@
         }];
         
         //按钮
-        YLYRootButton *btn = [YLYRootButton creatButtonText:nil
-                                                 titleColor:nil
-                                                  titleFont:nil
-                                        backgroundImageName:nil
-                                                     target:self
-                                                        SEL:@selector(clicked)];
+        YLYRootButton *btn = [YLYRootButton createButtonText:nil
+                                                  titleColor:nil
+                                                   titleFont:nil
+                                         backgroundImageName:nil
+                                                      target:self
+                                                         SEL:@selector(clicked)];
         [self addSubview:btn];
         [btn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);

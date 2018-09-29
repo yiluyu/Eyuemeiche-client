@@ -12,7 +12,7 @@
 
 @interface LoginViewController ()<UITextFieldDelegate>
 {
-    
+    NSString *msg_token;//验证码token
 }
 
 @property (nonatomic, readwrite, strong)YLYRootView *backView;//底色图
@@ -165,7 +165,7 @@
     return;
 #endif
     
-    YLYNetBox *net = [[YLYNetBox alloc] init];
+    YLYNetBox *net = [[YLYDownLoadManager shareManager] createNetBoxWithSender:self];
     NSArray *keysArr = @[@"mobile"];
     NSArray *objectsArr = @[dict[@"mobile"]];
     NSDictionary *postDict = [NSDictionary dictionaryWithObjects:objectsArr
@@ -175,14 +175,14 @@
                             tag:@""
                            name:@"获取登陆验证码"];
     
+    SELF_WEAK();
+    SELF_STRONG();
     net.requestSuccessBlock = ^(NSDictionary *dic) {
         YLYLog(@"验证码获取成功");
+        strongSelf->msg_token = dic[@"msg_token"];
         [_loginView alternateStep:@"2"];
     };
-    
-    net.requestFailedBlock = ^(NSDictionary *dic) {
-        
-    };
+
 }
 //登陆
 - (void)requestLogin:(NSDictionary *)dict {
@@ -197,9 +197,9 @@
     return;
 #endif
     
-    YLYNetBox *net = [[YLYNetBox alloc] init];
-    NSArray *keysArr = @[@"mobile"];
-    NSArray *objectsArr = @[dict[@"mobile"]];
+    YLYNetBox *net = [[YLYDownLoadManager shareManager] createNetBoxWithSender:self];
+    NSArray *keysArr = @[@"mobile", @"msg_token", @"validate"];
+    NSArray *objectsArr = @[dict[@"mobile"], msg_token, dict[@"validate"]];
     NSDictionary *postDict = [NSDictionary dictionaryWithObjects:objectsArr
                                                          forKeys:keysArr];
     
@@ -223,15 +223,13 @@
         [tempBoot closeLoginVC];
     };
     
-    net.requestFailedBlock = ^(NSDictionary *dic) {
-        
-    };
 }
 
 #pragma -mark 功能方法
 //保存登陆
 - (void)saveUserData:(NSDictionary *)dict {
-    
+    USERDEFAULTS_SET(dict[@"access_token"], @"access_token");
+    USERDEFAULTS_SYNC();
 }
 
 

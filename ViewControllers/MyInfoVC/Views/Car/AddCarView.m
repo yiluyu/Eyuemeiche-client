@@ -28,7 +28,7 @@
         }];
         
         //信息描述
-        self.titleLabel = [YLYRootLabel creatLabelText:@"项目描述"
+        self.titleLabel = [YLYRootLabel createLabelText:@"项目描述"
                                                   font:YLY6Font(14)
                                                  color:[UIColor colorWithHexString:@"#666666"]];
         [self.contentView addSubview:_titleLabel];
@@ -52,7 +52,7 @@
         }];
         
         //详细描述
-        self.currentLabel = [YLYRootLabel creatLabelText:@"项目描述"
+        self.currentLabel = [YLYRootLabel createLabelText:@"项目描述"
                                                     font:YLY6Font(14)
                                                    color:[UIColor colorWithHexString:@"#666666"]];
         [self.contentView addSubview:_currentLabel];

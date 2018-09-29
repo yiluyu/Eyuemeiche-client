@@ -8,6 +8,7 @@
 
 #import "YLYRootViewController.h"
 #import "YLYDefine.h"
+#import "YLYDownLoadManager.h"
 
 @interface YLYRootViewController ()
 
@@ -42,6 +43,16 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self setBackBtn];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self closeAllRequest];
+}
+
+- (void)setBackBtn {
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [backBtn setBackgroundImage:[UIImage imageNamed:@"btn_导航栏返回"]
                        forState:UIControlStateNormal];
@@ -57,6 +68,12 @@
 
 - (void)backVC {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+//关闭所有请求
+- (void)closeAllRequest {
+    YLYDownLoadManager *manager = [YLYDownLoadManager shareManager];
+    [manager clearNetBoxInSender:self];
 }
 
 @end

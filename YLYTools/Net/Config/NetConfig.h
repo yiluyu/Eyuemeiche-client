@@ -10,7 +10,6 @@
 #define NetConfig_h
 
 #import "YLYDownLoadManager.h"
-#import "YLYNetBox.h"
 #import "URLConfig.h"
 
 #endif

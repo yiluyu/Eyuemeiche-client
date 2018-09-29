@@ -20,5 +20,7 @@
 ///前一个页面传入的参数dict
 @property (nonatomic, readwrite, strong)NSDictionary *baseDict;
 
+///返回按钮
+- (void)backVC;
 
 @end

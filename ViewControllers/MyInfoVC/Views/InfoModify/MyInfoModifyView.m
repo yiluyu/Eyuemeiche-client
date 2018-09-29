@@ -31,7 +31,7 @@
         }];
         
         //信息描述
-        self.titleLabel = [YLYRootLabel creatLabelText:@"项目描述"
+        self.titleLabel = [YLYRootLabel createLabelText:@"项目描述"
                                                   font:YLY6Font(14)
                                                  color:[UIColor colorWithHexString:@"#666666"]];
         [self.contentView addSubview:_titleLabel];
@@ -85,9 +85,9 @@
         }];
         
         //信息描述
-        self.titleLabel = [YLYRootLabel creatLabelText:@"项目描述"
-                                                  font:YLY6Font(14)
-                                                 color:[UIColor colorWithHexString:@"#666666"]];
+        self.titleLabel = [YLYRootLabel createLabelText:@"项目描述"
+                                                   font:YLY6Font(14)
+                                                  color:[UIColor colorWithHexString:@"#666666"]];
         [self.contentView addSubview:_titleLabel];
         [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_iconImage.mas_right).offset(FIT(13));
@@ -106,6 +106,17 @@
             make.centerY.mas_equalTo(self.contentView);
             make.width.mas_equalTo(FIT(5));
             make.height.mas_equalTo(FIT(8));
+        }];
+        
+        //详情
+        self.detailLabel = [YLYRootLabel createLabelText:@"详情"
+                                                    font:YLY6Font(14)
+                                                   color:[UIColor colorWithHexString:@"#666666"]];
+        [self.contentView addSubview:_detailLabel];
+        [_detailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.mas_equalTo(_arrowImage.mas_left).offset(FIT(-13));
+            make.centerY.mas_equalTo(self.contentView);
+            make.height.mas_equalTo(FIT(17));
         }];
         
         YLYRootView *line = [[YLYRootView alloc] init];
@@ -136,7 +147,7 @@
 
 @implementation SexPopView
 
-- (instancetype)init {
+- (id)initWithArray:(NSArray *)dataArray {
     if (self = [super init]) {
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         [window addSubview:self];
@@ -148,15 +159,15 @@
         self.backgroundColor = COLOR_CLEAR;
         self.alpha = 0.0f;
         
-        pickerData = @[@"男", @"女"];
+        pickerData = [dataArray copy];
         
-        [self creatSubViews];
+        [self createSubViews];
         [self show];
     }
     return self;
 }
 
-- (void)creatSubViews {
+- (void)createSubViews {
     self.backView = [[YLYRootView alloc] init];
     _backView.backgroundColor = COLOR_BLACK;
     [self addSubview:_backView];
@@ -178,12 +189,12 @@
         make.bottom.mas_equalTo(-SAFETY_AREA_HEIGHT);
     }];
     
-    YLYRootButton *cancel = [YLYRootButton creatButtonText:@"取消"
-                                                titleColor:COLOR_HEX(@"#9B99A9")
-                                                 titleFont:CONSTANT_FONT_SMALL
-                                       backgroundImageName:@"none"
-                                                    target:self
-                                                       SEL:@selector(cancelClick)];
+    YLYRootButton *cancel = [YLYRootButton createButtonText:@"取消"
+                                                 titleColor:COLOR_HEX(@"#9B99A9")
+                                                  titleFont:CONSTANT_FONT_SMALL
+                                        backgroundImageName:@"none"
+                                                     target:self
+                                                        SEL:@selector(cancelClick)];
     [_whiteView addSubview:cancel];
     [cancel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(FIT(14));
@@ -191,12 +202,12 @@
         make.top.mas_equalTo(FIT(14));
     }];
     
-    YLYRootButton *sure = [YLYRootButton creatButtonText:@"确认"
-                                                titleColor:COLOR_GREEN
-                                                 titleFont:CONSTANT_FONT_SMALL
-                                       backgroundImageName:@"none"
-                                                    target:self
-                                                       SEL:@selector(sureClick)];
+    YLYRootButton *sure = [YLYRootButton createButtonText:@"确认"
+                                               titleColor:COLOR_GREEN
+                                                titleFont:CONSTANT_FONT_SMALL
+                                      backgroundImageName:@"none"
+                                                   target:self
+                                                      SEL:@selector(sureClick)];
     [_whiteView addSubview:sure];
     [sure mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(FIT(-14));
@@ -218,7 +229,10 @@
 
 - (void)sureClick {
     //读取当前picker选择
-    
+    selectIndex = [_pickerView selectedRowInComponent:0];
+    if (self.sexPopSelectBlcok) {
+        self.sexPopSelectBlcok(selectIndex);
+    }
     
     [self hide];
 }
@@ -228,6 +242,10 @@
 }
 
 - (void)pointIndex:(NSInteger)index {
+    //只要点开了pop, 假如默认-1则默认选中了第一条
+    if (index < 0 ) {
+        index = 0;
+    }
     selectIndex = index;
     
     [_pickerView selectRow:selectIndex inComponent:0 animated:YES];
@@ -272,10 +290,7 @@
     return pickerData[row];
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    selectIndex = row;
-    if (self.sexPopSelectBlcok) {
-        self.sexPopSelectBlcok(selectIndex);
-    }
+    
 }
 
 

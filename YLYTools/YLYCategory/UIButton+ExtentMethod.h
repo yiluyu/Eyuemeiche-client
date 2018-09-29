@@ -13,4 +13,12 @@
 ///按钮响应时间间隔, 默认 1.0f
 @property (nonatomic, readwrite, assign)NSTimeInterval actionIntervalTime;
 
+///四周扩大响应区域
+- (void)setEnlargeEdge:(CGFloat)size;
+///指定方向扩大相应区域
+- (void)setEnlargeEdgeWithTop:(CGFloat)top
+                        right:(CGFloat)right
+                       bottom:(CGFloat)bottom
+                         left:(CGFloat)left;
+
 @end

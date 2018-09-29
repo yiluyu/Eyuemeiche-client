@@ -16,6 +16,8 @@
     NSArray *tableData;
     
     NSInteger currentSexIndex;//性别选择
+    
+    NSArray *popData;//弹框数据
 }
 
 @property (nonatomic, readwrite, strong)UITableView *tableView;
@@ -48,6 +50,8 @@
 //初始化基础数据
 - (void)initBaseData {
     NSArray *titleArr = @[@"头像", @"昵称", @"性别"];
+    popData = @[@"男", @"女"];
+    
     NSMutableArray *tmpArr = [[NSMutableArray alloc] initWithCapacity:titleArr.count];
     for (NSInteger i = 0; i < titleArr.count; i ++) {
         MyInfoModifyCellModel *model = [[MyInfoModifyCellModel alloc] init];
@@ -143,21 +147,28 @@
     if (indexPath.row == 2) {
         YLYLog(@"修改性别");
         if (self.sexPopView == nil) {
-            _sexPopView = [[SexPopView alloc] init];
+            _sexPopView = [[SexPopView alloc] initWithArray:popData];
             
             SELF_WEAK();
             _sexPopView.sexPopSelectBlcok = ^(NSInteger index) {
-                MyInfoModifyCell2 *sexCell = [weakSelf.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
-                sexCell.detailLabel.text = (index == 0)?@"男":@"女";
-                
-                SELF_STRONG();
-                strongSelf->currentSexIndex = index;
+                [weakSelf refreshPopViewCell:index];
             };
         } else {
             [_sexPopView show];
         }
         [_sexPopView pointIndex:currentSexIndex];
     }
+}
+
+//pop选择回调
+- (void)refreshPopViewCell:(NSInteger)index {
+    if (index < 0) {
+        return;
+    }
+    MyInfoModifyCell2 *sexCell = [_tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    sexCell.detailLabel.text = popData[index];
+    
+    currentSexIndex = index;
 }
 
 - (void)dealloc {

@@ -67,7 +67,7 @@
         }];
         modifyIcon.image = [UIImage imageNamed:@"icon_modify"];
         
-        self.nickNameLabel = [YLYRootLabel creatLabelText:@""
+        self.nickNameLabel = [YLYRootLabel createLabelText:@""
                                                      font:YLY6Font(20)
                                                     color:COLOR_WHITE];
         [self addSubview:_nickNameLabel];
@@ -76,7 +76,7 @@
             make.top.mas_equalTo(_headerImage.mas_bottom).offset(FIT(8));
             make.height.mas_equalTo(FIT(20));
         }];
-        self.phoneLabel = [YLYRootLabel creatLabelText:@""
+        self.phoneLabel = [YLYRootLabel createLabelText:@""
                                                   font:YLY6Font(12)
                                                  color:COLOR_WHITE];
         [self addSubview:_phoneLabel];
@@ -86,7 +86,7 @@
             make.height.mas_equalTo(FIT(14));
         }];
         
-        self.sexLabel = [YLYRootLabel creatLabelText:@""
+        self.sexLabel = [YLYRootLabel createLabelText:@""
                                                 font:YLY6Font(12)
                                                color:COLOR_WHITE];
         [self addSubview:_sexLabel];
@@ -97,12 +97,12 @@
         }];
         
         //触发事件
-        YLYRootButton *allBtn = [YLYRootButton creatButtonText:nil
-                                                    titleColor:nil
-                                                     titleFont:nil
-                                           backgroundImageName:nil
-                                                        target:self
-                                                           SEL:@selector(clickHeader)];
+        YLYRootButton *allBtn = [YLYRootButton createButtonText:nil
+                                                     titleColor:nil
+                                                      titleFont:nil
+                                            backgroundImageName:nil
+                                                         target:self
+                                                            SEL:@selector(clickHeader)];
         [_headerImage addSubview:allBtn];
         [allBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.mas_equalTo(UIEdgeInsetsZero);
@@ -110,21 +110,21 @@
         allBtn.backgroundColor = COLOR_CLEAR;
         
         //钱包
-        self.moneyLabel = [YLYRootLabel creatLabelText:@"--"
+        self.moneyLabel = [YLYRootLabel createLabelText:@"--"
                                                   font:YLY6Font(18)
                                                  color:[UIColor colorWithHexString:@"#666666"]];
         _moneyLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_moneyLabel];
 
         //优惠券
-        self.couponsLabel = [YLYRootLabel creatLabelText:@"--"
+        self.couponsLabel = [YLYRootLabel createLabelText:@"--"
                                                     font:YLY6Font(18)
                                                    color:[UIColor colorWithHexString:@"#666666"]];
         _couponsLabel.textAlignment = NSTextAlignmentCenter;
         [self addSubview:_couponsLabel];
         
         //积分
-        self.pointsLabel = [YLYRootLabel creatLabelText:@"--"
+        self.pointsLabel = [YLYRootLabel createLabelText:@"--"
                                                    font:YLY6Font(18)
                                                   color:[UIColor colorWithHexString:@"#666666"]];
         _pointsLabel.textAlignment = NSTextAlignmentCenter;
@@ -222,7 +222,7 @@
             make.centerY.mas_equalTo(block3);
         }];
         //说明
-        YLYRootLabel *moneyDes = [YLYRootLabel creatLabelText:@"钱包"
+        YLYRootLabel *moneyDes = [YLYRootLabel createLabelText:@"钱包"
                                                          font:YLY6Font(12)
                                                         color:[UIColor colorWithHexString:@"#ADADAD"]];
         [block1 addSubview:moneyDes];
@@ -231,7 +231,7 @@
             make.height.mas_equalTo(FIT(14));
             make.centerY.mas_equalTo(block1);
         }];
-        YLYRootLabel *couponsDes = [YLYRootLabel creatLabelText:@"优惠券"
+        YLYRootLabel *couponsDes = [YLYRootLabel createLabelText:@"优惠券"
                                                            font:YLY6Font(12)
                                                           color:[UIColor colorWithHexString:@"#ADADAD"]];
         [block2 addSubview:couponsDes];
@@ -240,7 +240,7 @@
             make.height.mas_equalTo(moneyDes);
             make.centerY.mas_equalTo(block2);
         }];
-        YLYRootLabel *pointsDes = [YLYRootLabel creatLabelText:@"积分"
+        YLYRootLabel *pointsDes = [YLYRootLabel createLabelText:@"积分"
                                                           font:YLY6Font(12)
                                                          color:[UIColor colorWithHexString:@"#ADADAD"]];
         [block3 addSubview:pointsDes];
@@ -251,12 +251,12 @@
         }];
         
         //触发按钮
-        YLYRootButton *btn1 = [YLYRootButton creatButtonText:nil
-                                                  titleColor:nil
-                                                   titleFont:nil
-                                         backgroundImageName:nil
-                                                      target:self
-                                                         SEL:@selector(btnClick:)];
+        YLYRootButton *btn1 = [YLYRootButton createButtonText:nil
+                                                   titleColor:nil
+                                                    titleFont:nil
+                                          backgroundImageName:nil
+                                                       target:self
+                                                          SEL:@selector(btnClick:)];
         btn1.tag = 0;
         [self addSubview:btn1];
         [btn1 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -264,12 +264,12 @@
             make.top.mas_equalTo(_moneyLabel.mas_top).offset(0);
             make.bottom.mas_equalTo(block1.mas_bottom).offset(0);
         }];
-        YLYRootButton *btn2 = [YLYRootButton creatButtonText:nil
-                                                  titleColor:nil
-                                                   titleFont:nil
-                                         backgroundImageName:nil
-                                                      target:self
-                                                         SEL:@selector(btnClick:)];
+        YLYRootButton *btn2 = [YLYRootButton createButtonText:nil
+                                                   titleColor:nil
+                                                    titleFont:nil
+                                          backgroundImageName:nil
+                                                       target:self
+                                                          SEL:@selector(btnClick:)];
         btn2.tag = 1;
         [self addSubview:btn2];
         [btn2 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -277,12 +277,12 @@
             make.top.mas_equalTo(_couponsLabel.mas_top).offset(0);
             make.bottom.mas_equalTo(block2.mas_bottom).offset(0);
         }];
-        YLYRootButton *btn3 = [YLYRootButton creatButtonText:nil
-                                                  titleColor:nil
-                                                   titleFont:nil
-                                         backgroundImageName:nil
-                                                      target:self
-                                                         SEL:@selector(btnClick:)];
+        YLYRootButton *btn3 = [YLYRootButton createButtonText:nil
+                                                   titleColor:nil
+                                                    titleFont:nil
+                                          backgroundImageName:nil
+                                                       target:self
+                                                          SEL:@selector(btnClick:)];
         btn3.tag = 2;
         [self addSubview:btn3];
         [btn3 mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -360,7 +360,7 @@
         }];
         
         //信息描述
-        self.detailLabel = [YLYRootLabel creatLabelText:@"项目描述"
+        self.detailLabel = [YLYRootLabel createLabelText:@"项目描述"
                                                    font:YLY6Font(14)
                                                   color:[UIColor colorWithHexString:@"#666666"]];
         [self.contentView addSubview:_detailLabel];
@@ -385,9 +385,9 @@
         _arrowImage.hidden = YES;
         
         //更多描述
-        self.moreDetailLabel = [YLYRootLabel creatLabelText:@"更多描述"
-                                                       font:YLY6Font(14)
-                                                      color:COLOR_HEX(@"#999999")];
+        self.moreDetailLabel = [YLYRootLabel createLabelText:@"更多描述"
+                                                        font:YLY6Font(14)
+                                                       color:COLOR_HEX(@"#999999")];
         [self.contentView addSubview:_moreDetailLabel];
         [_moreDetailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(FIT(-22));
@@ -429,15 +429,15 @@
         tableData = nil;
         viewModel = nil;
         
-        [self creatHeaderView];
-        [self creatBottomView];
-        [self creatTableView];
+        [self createHeaderView];
+        [self createBottomView];
+        [self createTableView];
     }
     return self;
 }
 
 //头部创建
-- (void)creatHeaderView {
+- (void)createHeaderView {
     self.headerView = [[MyInfoHeader alloc] init];
     [self addSubview:_headerView];
     [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -466,13 +466,13 @@
 }
 
 //底部创建
-- (void)creatBottomView {
-    self.logoutBtn = [YLYRootButton creatButtonText:@"退出登录"
-                                         titleColor:COLOR_WHITE
-                                          titleFont:YLY6Font(18)
-                                backgroundImageName:nil
-                                             target:self
-                                                SEL:@selector(logout)];
+- (void)createBottomView {
+    self.logoutBtn = [YLYRootButton createButtonText:@"退出登录"
+                                          titleColor:COLOR_WHITE
+                                           titleFont:YLY6Font(18)
+                                 backgroundImageName:nil
+                                              target:self
+                                                 SEL:@selector(logout)];
     _logoutBtn.backgroundColor = [UIColor colorWithHexString:@"#00CA9D"];
     _logoutBtn.layer.cornerRadius = FIT(4);
     _logoutBtn.layer.masksToBounds = YES;
@@ -486,7 +486,7 @@
 }
 
 //table创建
-- (void)creatTableView {
+- (void)createTableView {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                   style:UITableViewStylePlain];
     _tableView.backgroundColor = COLOR_HEX(@"#F6F6F6");

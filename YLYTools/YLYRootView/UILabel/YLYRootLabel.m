@@ -12,7 +12,7 @@
 
 @implementation YLYRootLabel
 
-+ (UILabel *)creatLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor {
++ (UILabel *)createLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor {
     YLYRootLabel *label = [[YLYRootLabel alloc] init];
     if ([NSString checkNullString:showText].length != 0) {
         label.text = showText;

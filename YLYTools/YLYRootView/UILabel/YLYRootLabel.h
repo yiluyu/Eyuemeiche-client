@@ -12,6 +12,6 @@
 @interface YLYRootLabel : UILabel
 
 ///常规label创建
-+ (YLYRootLabel *)creatLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor;
++ (YLYRootLabel *)createLabelText:(NSString *)showText font:(UIFont *)font color:(UIColor *)textColor;
 
 @end

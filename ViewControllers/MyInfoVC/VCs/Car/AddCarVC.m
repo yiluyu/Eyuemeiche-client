@@ -40,7 +40,7 @@
     
     
     [self initBaseData];
-    [self creatSubViews];
+    [self createSubViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,13 +72,13 @@
     tableData = [NSMutableArray arrayWithArray:tmpArr];
 }
 
-- (void)creatSubViews {
-    [self creatHeader];
-    [self creatBottom];
-    [self creatTable];
+- (void)createSubViews {
+    [self createHeader];
+    [self createBottom];
+    [self createTable];
 }
 
-- (void)creatHeader {
+- (void)createHeader {
     self.headerView = [[YLYRootView alloc] init];
     _headerView.backgroundColor = COLOR_VC_BG;
     [self.view addSubview:_headerView];
@@ -88,7 +88,7 @@
     }];
     
     //描述文字
-    self.desLabel = [YLYRootLabel creatLabelText:@"请完善车辆信息以方便e约美车为您服务"
+    self.desLabel = [YLYRootLabel createLabelText:@"请完善车辆信息以方便e约美车为您服务"
                                             font:YLY6Font(14)
                                            color:COLOR_HEX(@"#666666")];
     _desLabel.textAlignment = NSTextAlignmentCenter;
@@ -122,7 +122,7 @@
     }];
     
     //按钮描述文字
-    self.btnDes = [YLYRootLabel creatLabelText:@"添加车辆照片"
+    self.btnDes = [YLYRootLabel createLabelText:@"添加车辆照片"
                                           font:YLY6Font(10)
                                          color:COLOR_HEX(@"#5F5D70")];
     _btnDes.textAlignment = NSTextAlignmentCenter;
@@ -134,12 +134,12 @@
     }];
     
     //按钮
-    self.addCarImageBtn = [YLYRootButton creatButtonText:nil
-                                              titleColor:nil
-                                               titleFont:nil
-                                     backgroundImageName:nil
-                                                  target:self
-                                                     SEL:@selector(addCarImageClick)];
+    self.addCarImageBtn = [YLYRootButton createButtonText:nil
+                                               titleColor:nil
+                                                titleFont:nil
+                                      backgroundImageName:nil
+                                                   target:self
+                                                      SEL:@selector(addCarImageClick)];
     [_headerView addSubview:_addCarImageBtn];
     [_addCarImageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.centerY.mas_equalTo(_carImage);
@@ -147,13 +147,13 @@
     }];
 }
 
-- (void)creatBottom {
-    self.bottomBtn = [YLYRootButton creatButtonText:@"添加车辆"
-                                         titleColor:COLOR_WHITE
-                                          titleFont:YLY6Font(18)
-                                backgroundImageName:@"none"
-                                             target:self
-                                                SEL:@selector(addCarClick)];
+- (void)createBottom {
+    self.bottomBtn = [YLYRootButton createButtonText:@"添加车辆"
+                                          titleColor:COLOR_WHITE
+                                           titleFont:YLY6Font(18)
+                                 backgroundImageName:@"none"
+                                              target:self
+                                                 SEL:@selector(addCarClick)];
     _bottomBtn.backgroundColor = COLOR_HEX(@"#00CA9D");
     _bottomBtn.layer.cornerRadius = FIT(4);
     _bottomBtn.layer.masksToBounds = YES;
@@ -166,7 +166,7 @@
     }];
 }
 
-- (void)creatTable {
+- (void)createTable {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                   style:UITableViewStylePlain];
     _tableView.backgroundColor = COLOR_VC_BG;
@@ -195,9 +195,9 @@
         make.width.height.mas_equalTo(FIT(16));
     }];
     //信息描述
-    YLYRootLabel *titleLabel = [YLYRootLabel creatLabelText:@"基本信息"
-                                                       font:YLY6Font(14)
-                                                      color:[UIColor colorWithHexString:@"#00CA9D"]];
+    YLYRootLabel *titleLabel = [YLYRootLabel createLabelText:@"基本信息"
+                                                        font:YLY6Font(14)
+                                                       color:[UIColor colorWithHexString:@"#00CA9D"]];
     [tableHeader addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(icon.mas_right).offset(FIT(13));
@@ -264,6 +264,14 @@
     YLYLog(@"未完成 ----- 添加车辆图片");
 }
 
+//返回
+- (void)backVC {
+    [super backVC];
+    
+    if ([self.delegate respondsToSelector:@selector(callBackRefreshData)]) {
+        [_delegate callBackRefreshData];
+    }
+}
 
 #pragma -mark https
 //提交

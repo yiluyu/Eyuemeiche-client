@@ -9,6 +9,7 @@
 #import "YLYHelper.h"
 #import "YLYConstantDefine.h"
 #import "YLYRegular.h"
+#import "YLYConstantString.h"
 
 /*
  该对象用定义宏
@@ -17,7 +18,7 @@
 /* debug总开关 */
 #define YLYTest    //开发状态,注释掉则为发布状态
 
-#define YLYUIDemo    //纯 UI 展示模式
+//#define YLYUIDemo    //纯 UI 展示模式
 
 /* 自定义log输出,替换系统NSLog
  NSLog does 2 things:
@@ -90,9 +91,10 @@
 ///NSUserDefaults
 #define USERDEFAULTS_GET(keyName) [[NSUserDefaults standardUserDefaults] objectForKey:keyName]
 ///设置 NSUserDefaults
-#define USERDEFAULTS_SET(object, keyName) [[NSUserDefaults standardUserDefaults] setObject:object forKey:keyName];[[NSUserDefaults standardUserDefaults] synchronize]
+#define USERDEFAULTS_SET(object, keyName) [[NSUserDefaults standardUserDefaults] setObject:object forKey:keyName]
+#define USERDEFAULTS_SYNC() [[NSUserDefaults standardUserDefaults] synchronize]
 ///直接获取用户token
-#define USERTOKEN USERDEFAULTS_GET(CONSTANT_USERDEFAULTS_LOCALUSERTOKEN)
+#define USERTOKEN USERDEFAULTS_GET(CONSTANT_USERDEFAULTS_ACCESSTOKEN)
 
 /* 颜色 */
 /// RGB设置颜色

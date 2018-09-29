@@ -16,9 +16,7 @@
 
 //views
 #import "MainView.h"
-#import "YLYRootLabel.h"
-#import "YLYRootButton.h"
-#import "YLYRootView.h"
+
 #import "MainSlideView.h"
 
 #import <MAMapKit/MAMapKit.h>
@@ -26,6 +24,10 @@
 #import "MessageVC.h"
 #import "MessageView.h"
 #import "MessageViewModel.h"
+
+#import "MessageDetailVC.h"
+#import "MessageDetailView.h"
+#import "MessageDetailModel.h"
 
 
 #endif /* MainConfig_h */

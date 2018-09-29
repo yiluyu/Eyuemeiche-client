@@ -11,7 +11,7 @@
 
 @implementation YLYRootButton
 
-+ (YLYRootButton *)creatButtonText:(NSString *)title titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont backgroundImageName:(NSString *)bgImageName target:(id)target SEL:(SEL)methodNameSEL {
++ (YLYRootButton *)createButtonText:(NSString *)title titleColor:(UIColor *)titleColor titleFont:(UIFont *)titleFont backgroundImageName:(NSString *)bgImageName target:(id)target SEL:(SEL)methodNameSEL {
     YLYRootButton *btn = [[YLYRootButton alloc] init];
     btn.backgroundColor = COLOR_CLEAR;
     btn.titleLabel.font = (titleFont==nil)?YLY6Font(0):titleFont;

@@ -37,7 +37,7 @@
     self.title = @"钱包";
     
     [self initBaseData];
-    [self creatSubViews];
+    [self createSubViews];
     [self sendRequests];
 }
 
@@ -58,17 +58,17 @@
 }
 
 #pragma -mark 创建子视图
-- (void)creatSubViews {
-    [self creatHeaderView];
-    [self creatBottomView];
-    [self creatMainView];
+- (void)createSubViews {
+    [self createHeaderView];
+    [self createBottomView];
+    [self createMainView];
     
-    [self creatNavigationBar];
+    [self createNavigationBar];
 }
 
 
 
-- (void)creatHeaderView {
+- (void)createHeaderView {
     self.headerView = [[YLYRootView alloc] init];
     [self.view addSubview:_headerView];
     [_headerView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,9 +85,9 @@
     bgImage.backgroundColor = COLOR_GREEN;
     
     //余额描述
-    YLYRootLabel *desMoney = [YLYRootLabel creatLabelText:@"账户余额（元）"
-                                                     font:YLY6Font(14)
-                                                    color:COLOR_WHITE];
+    YLYRootLabel *desMoney = [YLYRootLabel createLabelText:@"账户余额（元）"
+                                                      font:YLY6Font(14)
+                                                     color:COLOR_WHITE];
     [_headerView addSubview:desMoney];
     [desMoney mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(FIT(16));
@@ -98,7 +98,7 @@
     
     //余额显示
     //总余额
-    self.totalMoneyLabel = [YLYRootLabel creatLabelText:nil
+    self.totalMoneyLabel = [YLYRootLabel createLabelText:nil
                                                    font:YLY6Font(72)
                                                   color:COLOR_WHITE];
     [_headerView addSubview:_totalMoneyLabel];
@@ -113,13 +113,13 @@
     YLYLog(@"冻结余额显示... 待定");
 }
 
-- (void)creatBottomView {
-    self.bottomBtn = [YLYRootButton creatButtonText:@"确定"
-                                         titleColor:COLOR_WHITE
-                                          titleFont:YLY6Font(18)
-                                backgroundImageName:nil
-                                             target:self
-                                                SEL:@selector(commitCharge)];
+- (void)createBottomView {
+    self.bottomBtn = [YLYRootButton createButtonText:@"确定"
+                                          titleColor:COLOR_WHITE
+                                           titleFont:YLY6Font(18)
+                                 backgroundImageName:nil
+                                              target:self
+                                                 SEL:@selector(commitCharge)];
     _bottomBtn.backgroundColor = COLOR_HEX(@"#00CA9D");
     _bottomBtn.layer.cornerRadius = FIT(4);
     _bottomBtn.layer.masksToBounds = YES;
@@ -134,7 +134,7 @@
     
 }
 
-- (void)creatMainView {
+- (void)createMainView {
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     scrollView.backgroundColor = COLOR_YELLOW;
     [self.view addSubview:scrollView];
@@ -170,7 +170,7 @@
         make.centerY.mas_equalTo(header);
     }];
     //标题
-    YLYRootLabel *titleLabel = [YLYRootLabel creatLabelText:@"账号充值"
+    YLYRootLabel *titleLabel = [YLYRootLabel createLabelText:@"账号充值"
                                                        font:YLY6Font(14)
                                                       color:COLOR_HEX(@"#00CA9D")];
     [header addSubview:titleLabel];
@@ -259,7 +259,7 @@
     scrollView.contentSize = CGSizeMake(FIT(375), btnsBack.frame.origin.y+btnsBack.frame.size.height);
 }
 
-- (void)creatNavigationBar {
+- (void)createNavigationBar {
     self.navi = [[YLYRootView alloc] init];
     _navi.backgroundColor = COLOR_RED;
     [self.view addSubview:_navi];
@@ -270,12 +270,12 @@
     }];
     
     //返回
-    YLYRootButton *backBtn = [YLYRootButton creatButtonText:nil
-                                                 titleColor:nil
-                                                  titleFont:nil
-                                        backgroundImageName:@"btn_back"
-                                                     target:self
-                                                        SEL:@selector(backVC)];
+    YLYRootButton *backBtn = [YLYRootButton createButtonText:nil
+                                                  titleColor:nil
+                                                   titleFont:nil
+                                         backgroundImageName:@"btn_back"
+                                                      target:self
+                                                         SEL:@selector(backVC)];
     backBtn.backgroundColor = COLOR_BLUE;
     [_navi addSubview:backBtn];
     [backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -286,9 +286,9 @@
     }];
     
     //title
-    YLYRootLabel *titleLabel = [YLYRootLabel creatLabelText:@"钱包"
-                                                       font:YLY6Font(17)
-                                                      color:COLOR_WHITE];
+    YLYRootLabel *titleLabel = [YLYRootLabel createLabelText:@"钱包"
+                                                        font:YLY6Font(17)
+                                                       color:COLOR_WHITE];
     [_navi addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.centerX.mas_equalTo(_navi);
@@ -296,12 +296,12 @@
     }];
     
     //右侧
-    YLYRootButton *detailBtn = [YLYRootButton creatButtonText:@"明细"
-                                                   titleColor:COLOR_WHITE
-                                                    titleFont:YLY6Font(17)
-                                          backgroundImageName:nil
-                                                       target:self
-                                                          SEL:@selector(enterDetailVC)];
+    YLYRootButton *detailBtn = [YLYRootButton createButtonText:@"明细"
+                                                    titleColor:COLOR_WHITE
+                                                     titleFont:YLY6Font(17)
+                                           backgroundImageName:nil
+                                                        target:self
+                                                           SEL:@selector(enterDetailVC)];
     [_navi addSubview:detailBtn];
     [detailBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(FIT(-16));

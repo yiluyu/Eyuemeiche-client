@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking.h>
 
 @interface YLYNetBox : NSObject
+
+@property (nonatomic, readwrite, strong)AFHTTPSessionManager *manager;
+@property (nonatomic, readwrite, weak)id viewController;//发起请求的对象
 
 @property (nonatomic, readonly, copy)NSString *requestName;//请求名称
 @property (nonatomic, readonly, copy)NSString *requestTag;//请求 number 标记
@@ -18,9 +22,12 @@
 ///其他block
 @property (nonatomic, readwrite, copy)void (^requestOtherBlock)(NSDictionary *dic);
 ///请求失败block
-@property (nonatomic, readwrite, copy)void (^requestFailedBlock)(NSDictionary *dic);
+@property (nonatomic, readwrite, copy)void (^requestFailedBlock)(void);
 ///请求中处理block
 @property (nonatomic, readwrite, copy)void (^requestProcessBlock)(NSProgress *uploadProgress);
+
+///DownLoadManager管理回调
+@property (nonatomic, readwrite, copy)void (^requestDown)(id sender, YLYNetBox *netBox);
 
 /*
  @address 接口名
@@ -33,5 +40,9 @@
                  parameterDict:(NSDictionary *)paramDict
                            tag:(NSString *)urlTag
                           name:(NSString *)urlName;
+
+///取消请求
+- (void)cancelRequest;
+
 
 @end

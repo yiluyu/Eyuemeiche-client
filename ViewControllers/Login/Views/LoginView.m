@@ -183,9 +183,9 @@
     _codeicon.alpha = 0.0f;
     
     //phoneLabel
-    self.phoneLabel = [YLYRootLabel creatLabelText:@""
-                                              font:CONSTANT_FONT_SMALL
-                                             color:[UIColor colorWithHexString:@"#5F5D70"]];
+    self.phoneLabel = [YLYRootLabel createLabelText:@""
+                                               font:CONSTANT_FONT_SMALL
+                                              color:[UIColor colorWithHexString:@"#5F5D70"]];
     _phoneLabel.backgroundColor = COLOR_CLEAR;
     [_backView addSubview:_phoneLabel];
     [_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -296,7 +296,7 @@
 }
 //登陆
 - (void)loginSend {
-    if ([YLYRegular checkNumber:self.codeTextField.text] == NO || self.codeTextField.text.length < 6) {
+    if ([YLYRegular checkNumber:self.codeTextField.text] == NO || self.codeTextField.text.length < 4) {
         [[YLYHelper shareHelper] showHudViewWithString:@"验证码格式错误!"];
         if (_codeTextField.isFirstResponder == NO) {
             [_codeTextField becomeFirstResponder];
@@ -305,7 +305,7 @@
     }
     
     if (self.clickBtnLoginBlock) {
-        NSDictionary *sendDict = @{@"mobile":_phoneTextField.text, @"msg_token":_codeTextField.text};
+        NSDictionary *sendDict = @{@"mobile":_phoneTextField.text, @"validate":_codeTextField.text};
         self.clickBtnLoginBlock(sendDict);
     }
 }
@@ -324,7 +324,6 @@
         return;
     }
 
-    
     if (self.clickBtnGetCodeBlock) {
         NSDictionary *sendDict = @{@"mobile":_phoneTextField.text};
         self.clickBtnGetCodeBlock(sendDict);
@@ -396,7 +395,7 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         NSInteger existLength = textField.text.length;
         NSInteger selectedLength = range.length;
         NSInteger replaceLength = string.length;
-        if (existLength - selectedLength + replaceLength > 6) {
+        if (existLength - selectedLength + replaceLength > 4) {
             return NO;
         }
     }
@@ -410,8 +409,8 @@ static int maxTime = CONSTANT_TIME_GETCODE;
         }
     }
     if (textField == self.codeTextField) {
-        if (textField.text.length > 6) {
-            textField.text = [textField.text substringToIndex:6];
+        if (textField.text.length > 4) {
+            textField.text = [textField.text substringToIndex:4];
         }
     }
 }

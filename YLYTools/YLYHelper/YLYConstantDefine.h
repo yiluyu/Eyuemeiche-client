@@ -33,8 +33,8 @@
 
 
 /* 本地数据 */
-///当前启动存储 userToken
-#define CONSTANT_USERDEFAULTS_LOCALUSERTOKEN @"localUserToken"
+///当前启动存储 access_token
+#define CONSTANT_USERDEFAULTS_ACCESSTOKEN @"access_token"
 ///当前启动存储 推送 deviceToken
 #define CONSTANT_USERDEFAULTS_LOCALDEVICETOKEN @"localDeviceToken"
 ///当前启动存储 UUID

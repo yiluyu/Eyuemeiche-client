@@ -27,7 +27,3 @@
 #import "WalletVC.h"
 #import "WalletView.h"
 #import "WalletViewModel.h"
-
-#import "YLYRootView.h"
-#import "YLYRootButton.h"
-#import "YLYRootLabel.h"

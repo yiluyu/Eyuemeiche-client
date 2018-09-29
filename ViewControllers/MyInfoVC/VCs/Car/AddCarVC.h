@@ -8,6 +8,11 @@
 
 #import "YLYRootViewController.h"
 
+@protocol AddCarDelegate <NSObject>
+///刷新数据
+- (void)callBackRefreshData;
+@end
+
 typedef NS_ENUM(NSInteger, ENUM_AddCarVCType) {
     kNormal,    //正常添加
     kModify     //修改原来的
@@ -20,5 +25,8 @@ typedef NS_ENUM(NSInteger, ENUM_AddCarVCType) {
  */
 
 @property (nonatomic, readwrite, assign)ENUM_AddCarVCType type;
+
+@property (nonatomic, readwrite, weak)id <AddCarDelegate>delegate;
+
 
 @end

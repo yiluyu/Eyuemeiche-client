@@ -26,15 +26,15 @@
         }];
         
         
-        YLYRootLabel *label1 = [YLYRootLabel creatLabelText:@"品牌:"
+        YLYRootLabel *label1 = [YLYRootLabel createLabelText:@"品牌:"
                                                        font:CONSTANT_FONT_DETAIL
                                                       color:COLOR_BLUE];
         [self.contentView addSubview:label1];
-        YLYRootLabel *label2 = [YLYRootLabel creatLabelText:@"车牌:"
+        YLYRootLabel *label2 = [YLYRootLabel createLabelText:@"车牌:"
                                                        font:CONSTANT_FONT_DETAIL
                                                       color:COLOR_BLUE];
         [self.contentView addSubview:label2];
-        YLYRootLabel *label3 = [YLYRootLabel creatLabelText:@"颜色:"
+        YLYRootLabel *label3 = [YLYRootLabel createLabelText:@"颜色:"
                                                        font:CONSTANT_FONT_DETAIL
                                                       color:COLOR_BLUE];
         [self.contentView addSubview:label3];
@@ -49,7 +49,7 @@
         }];
         
         //品牌
-        self.brandLabel = [YLYRootLabel creatLabelText:@"默认牌子"
+        self.brandLabel = [YLYRootLabel createLabelText:@"默认牌子"
                                                   font:CONSTANT_FONT_DETAIL
                                                  color:COLOR_GRAY];
         [self.contentView addSubview:_brandLabel];
@@ -60,7 +60,7 @@
         }];
         
         //车牌
-        self.carNoLabel = [YLYRootLabel creatLabelText:@"默认车牌"
+        self.carNoLabel = [YLYRootLabel createLabelText:@"默认车牌"
                                                   font:CONSTANT_FONT_DETAIL
                                                  color:COLOR_GRAY];
         [self.contentView addSubview:_carNoLabel];
@@ -71,9 +71,9 @@
         }];
         
         //颜色
-        self.colorLabel = [YLYRootLabel creatLabelText:@"默认牌子"
-                                                  font:CONSTANT_FONT_DETAIL
-                                                 color:COLOR_GRAY];
+        self.colorLabel = [YLYRootLabel createLabelText:@"默认牌子"
+                                                   font:CONSTANT_FONT_DETAIL
+                                                  color:COLOR_GRAY];
         [self.contentView addSubview:_colorLabel];
         [_colorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(_carNoLabel);

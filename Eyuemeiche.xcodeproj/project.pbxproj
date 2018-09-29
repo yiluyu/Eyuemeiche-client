@@ -20,6 +20,14 @@
 		9A1FB7FA208EDF9600DAE254 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1FB7F9208EDF9600DAE254 /* MessageVC.m */; };
 		9A1FB7FD208EDFA800DAE254 /* MessageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1FB7FC208EDFA800DAE254 /* MessageViewModel.m */; };
 		9A1FB801208EDFC400DAE254 /* MessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1FB800208EDFC400DAE254 /* MessageView.m */; };
+		9A1FB8132090823C00DAE254 /* https.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9A1FB8122090823B00DAE254 /* https.cer */; };
+		9A2A1D4020AC516C00262B0E /* MessageDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D3F20AC516C00262B0E /* MessageDetailVC.m */; };
+		9A2A1D4320AC518B00262B0E /* MessageDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D4220AC518B00262B0E /* MessageDetailView.m */; };
+		9A2A1D4620AC519D00262B0E /* MessageDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D4520AC519D00262B0E /* MessageDetailModel.m */; };
+		9A2A1D4920B299EB00262B0E /* YLYConstantString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D4820B299EB00262B0E /* YLYConstantString.m */; };
+		9A2A1D4C20B4086E00262B0E /* MakeOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D4B20B4086E00262B0E /* MakeOrderVC.m */; };
+		9A2A1D5220B4088E00262B0E /* MakeOrderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D5120B4088E00262B0E /* MakeOrderView.m */; };
+		9A2A1D5520B408A100262B0E /* MakeOrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A2A1D5420B408A100262B0E /* MakeOrderViewModel.m */; };
 		9A3D1FA81FB047DB004F827C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D1FA71FB047DB004F827C /* AppDelegate.m */; };
 		9A3D1FB01FB047DB004F827C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3D1FAF1FB047DB004F827C /* Assets.xcassets */; };
 		9A3D1FB61FB047DB004F827C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3D1FB51FB047DB004F827C /* main.m */; };
@@ -48,12 +56,18 @@
 		9A5E61182088876C00491AE3 /* AddCarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E61172088876C00491AE3 /* AddCarVC.m */; };
 		9A5E611B2088884C00491AE3 /* AddCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611A2088884C00491AE3 /* AddCarView.m */; };
 		9A5E611E2088949100491AE3 /* AddCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A5E611D2088949100491AE3 /* AddCarViewModel.m */; };
+		9A607D8420E60F56004F965C /* OrderConfirmVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D8320E60F56004F965C /* OrderConfirmVC.m */; };
+		9A607D8720E60F68004F965C /* OrderConfirmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D8620E60F68004F965C /* OrderConfirmModel.m */; };
+		9A607D8A20E60F78004F965C /* OrderConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D8920E60F78004F965C /* OrderConfirmView.m */; };
+		9A607D9020E9CBAF004F965C /* OrderConfirmPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D8F20E9CBAF004F965C /* OrderConfirmPopView.m */; };
+		9A607D9620EA2659004F965C /* OrderDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D9520EA2659004F965C /* OrderDetailViewModel.m */; };
+		9A607D9920EA2669004F965C /* OrderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D9820EA2669004F965C /* OrderDetailView.m */; };
+		9A607D9C20EA269D004F965C /* OrderDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A607D9B20EA269D004F965C /* OrderDetailVC.m */; };
 		9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */; };
 		9A721C13204F845800787753 /* YLYRootTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A721C12204F845800787753 /* YLYRootTextField.m */; };
 		9A73F3472043DFF9000F01B2 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F3462043DFF9000F01B2 /* MainView.m */; };
 		9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */; };
 		9A73F35E204571B0000F01B2 /* YLYRootButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A73F35D204571B0000F01B2 /* YLYRootButton.m */; };
-		9A82F5E3207F1B6B002EC44F /* https.cer in Resources */ = {isa = PBXBuildFile; fileRef = 9A82F5E2207F1B6B002EC44F /* https.cer */; };
 		9A82F5E7207F4132002EC44F /* MainSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A82F5E6207F4132002EC44F /* MainSlideView.m */; };
 		9AEBD37B202AE72A009E5FC2 /* YLYRootModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37A202AE72A009E5FC2 /* YLYRootModel.m */; };
 		9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AEBD37E202BE8EE009E5FC2 /* NSString+ExtendMethod.m */; };
@@ -112,6 +126,22 @@
 		9A1FB7FC208EDFA800DAE254 /* MessageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageViewModel.m; sourceTree = "<group>"; };
 		9A1FB7FF208EDFC400DAE254 /* MessageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageView.h; sourceTree = "<group>"; };
 		9A1FB800208EDFC400DAE254 /* MessageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageView.m; sourceTree = "<group>"; };
+		9A1FB8122090823B00DAE254 /* https.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = https.cer; sourceTree = "<group>"; };
+		9A2A1D3E20AC516C00262B0E /* MessageDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailVC.h; sourceTree = "<group>"; };
+		9A2A1D3F20AC516C00262B0E /* MessageDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailVC.m; sourceTree = "<group>"; };
+		9A2A1D4120AC518B00262B0E /* MessageDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailView.h; sourceTree = "<group>"; };
+		9A2A1D4220AC518B00262B0E /* MessageDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailView.m; sourceTree = "<group>"; };
+		9A2A1D4420AC519D00262B0E /* MessageDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageDetailModel.h; sourceTree = "<group>"; };
+		9A2A1D4520AC519D00262B0E /* MessageDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageDetailModel.m; sourceTree = "<group>"; };
+		9A2A1D4720B299EB00262B0E /* YLYConstantString.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYConstantString.h; sourceTree = "<group>"; };
+		9A2A1D4820B299EB00262B0E /* YLYConstantString.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYConstantString.m; sourceTree = "<group>"; };
+		9A2A1D4A20B4086E00262B0E /* MakeOrderVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeOrderVC.h; sourceTree = "<group>"; };
+		9A2A1D4B20B4086E00262B0E /* MakeOrderVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeOrderVC.m; sourceTree = "<group>"; };
+		9A2A1D5020B4088E00262B0E /* MakeOrderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeOrderView.h; sourceTree = "<group>"; };
+		9A2A1D5120B4088E00262B0E /* MakeOrderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeOrderView.m; sourceTree = "<group>"; };
+		9A2A1D5320B408A100262B0E /* MakeOrderViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeOrderViewModel.h; sourceTree = "<group>"; };
+		9A2A1D5420B408A100262B0E /* MakeOrderViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MakeOrderViewModel.m; sourceTree = "<group>"; };
+		9A2A1D5820B408F100262B0E /* MakeOrderConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MakeOrderConfig.h; sourceTree = "<group>"; };
 		9A3D1FA31FB047DB004F827C /* Eyuemeiche.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyuemeiche.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3D1FA61FB047DB004F827C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9A3D1FA71FB047DB004F827C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -176,6 +206,20 @@
 		9A5E611A2088884C00491AE3 /* AddCarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarView.m; sourceTree = "<group>"; };
 		9A5E611C2088949100491AE3 /* AddCarViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCarViewModel.h; sourceTree = "<group>"; };
 		9A5E611D2088949100491AE3 /* AddCarViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCarViewModel.m; sourceTree = "<group>"; };
+		9A607D8220E60F56004F965C /* OrderConfirmVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderConfirmVC.h; sourceTree = "<group>"; };
+		9A607D8320E60F56004F965C /* OrderConfirmVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmVC.m; sourceTree = "<group>"; };
+		9A607D8520E60F68004F965C /* OrderConfirmModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderConfirmModel.h; sourceTree = "<group>"; };
+		9A607D8620E60F68004F965C /* OrderConfirmModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmModel.m; sourceTree = "<group>"; };
+		9A607D8820E60F78004F965C /* OrderConfirmView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderConfirmView.h; sourceTree = "<group>"; };
+		9A607D8920E60F78004F965C /* OrderConfirmView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmView.m; sourceTree = "<group>"; };
+		9A607D8E20E9CBAF004F965C /* OrderConfirmPopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderConfirmPopView.h; sourceTree = "<group>"; };
+		9A607D8F20E9CBAF004F965C /* OrderConfirmPopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderConfirmPopView.m; sourceTree = "<group>"; };
+		9A607D9420EA2659004F965C /* OrderDetailViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewModel.h; sourceTree = "<group>"; };
+		9A607D9520EA2659004F965C /* OrderDetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewModel.m; sourceTree = "<group>"; };
+		9A607D9720EA2669004F965C /* OrderDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailView.h; sourceTree = "<group>"; };
+		9A607D9820EA2669004F965C /* OrderDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailView.m; sourceTree = "<group>"; };
+		9A607D9A20EA269D004F965C /* OrderDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderDetailVC.h; sourceTree = "<group>"; };
+		9A607D9B20EA269D004F965C /* OrderDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderDetailVC.m; sourceTree = "<group>"; };
 		9A721C0E204D28D600787753 /* UILabel+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ExtendMethod.h"; sourceTree = "<group>"; };
 		9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ExtendMethod.m"; sourceTree = "<group>"; };
 		9A721C11204F845800787753 /* YLYRootTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootTextField.h; sourceTree = "<group>"; };
@@ -186,7 +230,6 @@
 		9A73F35A20456F3B000F01B2 /* YLYRootLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootLabel.m; sourceTree = "<group>"; };
 		9A73F35C204571B0000F01B2 /* YLYRootButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYRootButton.h; sourceTree = "<group>"; };
 		9A73F35D204571B0000F01B2 /* YLYRootButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YLYRootButton.m; sourceTree = "<group>"; };
-		9A82F5E2207F1B6B002EC44F /* https.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = https.cer; sourceTree = "<group>"; };
 		9A82F5E5207F4132002EC44F /* MainSlideView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainSlideView.h; sourceTree = "<group>"; };
 		9A82F5E6207F4132002EC44F /* MainSlideView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainSlideView.m; sourceTree = "<group>"; };
 		9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Eyuemeiche.entitlements; sourceTree = "<group>"; };
@@ -291,8 +334,12 @@
 		9A186B121FB0A180008E2EB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9A1FB809208EE06400DAE254 /* Message */,
-				9A1FB808208EE05C00DAE254 /* Main */,
+				9A5E60FD2084A20800491AE3 /* MainViewModel.h */,
+				9A5E60FE2084A20800491AE3 /* MainViewModel.m */,
+				9A1FB7FB208EDFA800DAE254 /* MessageViewModel.h */,
+				9A1FB7FC208EDFA800DAE254 /* MessageViewModel.m */,
+				9A2A1D4420AC519D00262B0E /* MessageDetailModel.h */,
+				9A2A1D4520AC519D00262B0E /* MessageDetailModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -300,8 +347,12 @@
 		9A186B131FB0A180008E2EB1 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
-				9A1FB807208EE04F00DAE254 /* Message */,
-				9A1FB806208EE04800DAE254 /* Main */,
+				9A186B141FB0A180008E2EB1 /* MainViewController.h */,
+				9A186B151FB0A180008E2EB1 /* MainViewController.m */,
+				9A1FB7F8208EDF9600DAE254 /* MessageVC.h */,
+				9A1FB7F9208EDF9600DAE254 /* MessageVC.m */,
+				9A2A1D3E20AC516C00262B0E /* MessageDetailVC.h */,
+				9A2A1D3F20AC516C00262B0E /* MessageDetailVC.m */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -309,9 +360,14 @@
 		9A186B161FB0A180008E2EB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9A1FB7FE208EDFB100DAE254 /* Message */,
-				9A82F5E4207F39D4002EC44F /* SlideView */,
-				9A73F34820442132000F01B2 /* MainView */,
+				9A73F3452043DFF9000F01B2 /* MainView.h */,
+				9A73F3462043DFF9000F01B2 /* MainView.m */,
+				9A82F5E5207F4132002EC44F /* MainSlideView.h */,
+				9A82F5E6207F4132002EC44F /* MainSlideView.m */,
+				9A1FB7FF208EDFC400DAE254 /* MessageView.h */,
+				9A1FB800208EDFC400DAE254 /* MessageView.m */,
+				9A2A1D4120AC518B00262B0E /* MessageDetailView.h */,
+				9A2A1D4220AC518B00262B0E /* MessageDetailView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,8 +375,9 @@
 		9A186B171FB0A180008E2EB1 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				9A186B181FB0A180008E2EB1 /* Models */,
+				9A2A1D5820B408F100262B0E /* MakeOrderConfig.h */,
 				9A186B191FB0A180008E2EB1 /* VCs */,
+				9A186B181FB0A180008E2EB1 /* Models */,
 				9A186B1A1FB0A180008E2EB1 /* Views */,
 			);
 			path = Order;
@@ -329,6 +386,12 @@
 		9A186B181FB0A180008E2EB1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A1D5320B408A100262B0E /* MakeOrderViewModel.h */,
+				9A2A1D5420B408A100262B0E /* MakeOrderViewModel.m */,
+				9A607D8520E60F68004F965C /* OrderConfirmModel.h */,
+				9A607D8620E60F68004F965C /* OrderConfirmModel.m */,
+				9A607D9420EA2659004F965C /* OrderDetailViewModel.h */,
+				9A607D9520EA2659004F965C /* OrderDetailViewModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +399,12 @@
 		9A186B191FB0A180008E2EB1 /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A1D4A20B4086E00262B0E /* MakeOrderVC.h */,
+				9A2A1D4B20B4086E00262B0E /* MakeOrderVC.m */,
+				9A607D8220E60F56004F965C /* OrderConfirmVC.h */,
+				9A607D8320E60F56004F965C /* OrderConfirmVC.m */,
+				9A607D9A20EA269D004F965C /* OrderDetailVC.h */,
+				9A607D9B20EA269D004F965C /* OrderDetailVC.m */,
 			);
 			path = VCs;
 			sourceTree = "<group>";
@@ -343,6 +412,14 @@
 		9A186B1A1FB0A180008E2EB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A2A1D5020B4088E00262B0E /* MakeOrderView.h */,
+				9A2A1D5120B4088E00262B0E /* MakeOrderView.m */,
+				9A607D8820E60F78004F965C /* OrderConfirmView.h */,
+				9A607D8920E60F78004F965C /* OrderConfirmView.m */,
+				9A607D8E20E9CBAF004F965C /* OrderConfirmPopView.h */,
+				9A607D8F20E9CBAF004F965C /* OrderConfirmPopView.m */,
+				9A607D9720EA2669004F965C /* OrderDetailView.h */,
+				9A607D9820EA2669004F965C /* OrderDetailView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,14 +448,17 @@
 		9A186B231FB0A180008E2EB1 /* YLYHelper */ = {
 			isa = PBXGroup;
 			children = (
-				9A186B241FB0A180008E2EB1 /* YLYConstantDefine.h */,
+				9A54E7A5204114E10054D38A /* CommonConfig.h */,
 				9A186B251FB0A180008E2EB1 /* YLYDefine.h */,
+				9A2A1D4720B299EB00262B0E /* YLYConstantString.h */,
+				9A2A1D4820B299EB00262B0E /* YLYConstantString.m */,
 				9A186B281FB0A180008E2EB1 /* YLYHelper.h */,
 				9A186B291FB0A180008E2EB1 /* YLYHelper.m */,
-				9A186B2A1FB0A180008E2EB1 /* YLYPropertyManager.h */,
-				9A186B2B1FB0A180008E2EB1 /* YLYPropertyManager.m */,
+				9A186B241FB0A180008E2EB1 /* YLYConstantDefine.h */,
 				9AEBD383202C320B009E5FC2 /* YLYRegular.h */,
 				9AEBD384202C320B009E5FC2 /* YLYRegular.m */,
+				9A186B2A1FB0A180008E2EB1 /* YLYPropertyManager.h */,
+				9A186B2B1FB0A180008E2EB1 /* YLYPropertyManager.m */,
 			);
 			path = YLYHelper;
 			sourceTree = "<group>";
@@ -448,15 +528,6 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		9A1FB7FE208EDFB100DAE254 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				9A1FB7FF208EDFC400DAE254 /* MessageView.h */,
-				9A1FB800208EDFC400DAE254 /* MessageView.m */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
 		9A1FB802208EDFD600DAE254 /* MyInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -493,42 +564,6 @@
 				9A554D89208DBA0F00B6677B /* WalletVC.m */,
 			);
 			path = Wallet;
-			sourceTree = "<group>";
-		};
-		9A1FB806208EE04800DAE254 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9A186B141FB0A180008E2EB1 /* MainViewController.h */,
-				9A186B151FB0A180008E2EB1 /* MainViewController.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		9A1FB807208EE04F00DAE254 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				9A1FB7F8208EDF9600DAE254 /* MessageVC.h */,
-				9A1FB7F9208EDF9600DAE254 /* MessageVC.m */,
-			);
-			path = Message;
-			sourceTree = "<group>";
-		};
-		9A1FB808208EE05C00DAE254 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9A5E60FD2084A20800491AE3 /* MainViewModel.h */,
-				9A5E60FE2084A20800491AE3 /* MainViewModel.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		9A1FB809208EE06400DAE254 /* Message */ = {
-			isa = PBXGroup;
-			children = (
-				9A1FB7FB208EDFA800DAE254 /* MessageViewModel.h */,
-				9A1FB7FC208EDFA800DAE254 /* MessageViewModel.m */,
-			);
-			path = Message;
 			sourceTree = "<group>";
 		};
 		9A1FB80A208EE0A200DAE254 /* MyInfo */ = {
@@ -635,9 +670,7 @@
 		9A3D1FA51FB047DB004F827C /* Eyuemeiche */ = {
 			isa = PBXGroup;
 			children = (
-				9A82F5E2207F1B6B002EC44F /* https.cer */,
 				9AE75D8C1FB054FE0058872C /* Eyuemeiche.entitlements */,
-				9A54E7A5204114E10054D38A /* CommonConfig.h */,
 				9A3D1FA61FB047DB004F827C /* AppDelegate.h */,
 				9A3D1FA71FB047DB004F827C /* AppDelegate.m */,
 				9A54E78F20318BCC0054D38A /* BootUnit.h */,
@@ -720,18 +753,10 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
-		9A73F34820442132000F01B2 /* MainView */ = {
-			isa = PBXGroup;
-			children = (
-				9A73F3452043DFF9000F01B2 /* MainView.h */,
-				9A73F3462043DFF9000F01B2 /* MainView.m */,
-			);
-			path = MainView;
-			sourceTree = "<group>";
-		};
 		9A82F5DA207DE8CA002EC44F /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				9A1FB8122090823B00DAE254 /* https.cer */,
 				9A186B211FB0A180008E2EB1 /* YLYDownLoadManager.h */,
 				9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */,
 				9A3E6A42205A581200B22928 /* YLYNetBox.h */,
@@ -783,15 +808,6 @@
 				9A721C12204F845800787753 /* YLYRootTextField.m */,
 			);
 			path = UITextField;
-			sourceTree = "<group>";
-		};
-		9A82F5E4207F39D4002EC44F /* SlideView */ = {
-			isa = PBXGroup;
-			children = (
-				9A82F5E5207F4132002EC44F /* MainSlideView.h */,
-				9A82F5E6207F4132002EC44F /* MainSlideView.m */,
-			);
-			path = SlideView;
 			sourceTree = "<group>";
 		};
 		9AEBD37C202BE8CD009E5FC2 /* YLYCategory */ = {
@@ -899,7 +915,7 @@
 				TargetAttributes = {
 					9A3D1FA21FB047DB004F827C = {
 						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -943,7 +959,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A82F5E3207F1B6B002EC44F /* https.cer in Resources */,
+				9A1FB8132090823C00DAE254 /* https.cer in Resources */,
 				9A3D1FB01FB047DB004F827C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1036,32 +1052,43 @@
 				9A5E610C208844D600491AE3 /* YLYRootImageView.m in Sources */,
 				9AEBD385202C320B009E5FC2 /* YLYRegular.m in Sources */,
 				9A186B451FBAFE7B008E2EB1 /* UserManager.m in Sources */,
+				9A2A1D4C20B4086E00262B0E /* MakeOrderVC.m in Sources */,
 				9A554D8A208DBA0F00B6677B /* WalletVC.m in Sources */,
 				9A186B361FB0A180008E2EB1 /* YLYDownLoadManager.m in Sources */,
+				9A607D9620EA2659004F965C /* OrderDetailViewModel.m in Sources */,
 				9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */,
+				9A2A1D5220B4088E00262B0E /* MakeOrderView.m in Sources */,
 				9A554D8D208DBA2200B6677B /* WalletView.m in Sources */,
 				9A5E610520871FFE00491AE3 /* MyInfoModifyView.m in Sources */,
 				9A721C10204D28D600787753 /* UILabel+ExtendMethod.m in Sources */,
+				9A607D8420E60F56004F965C /* OrderConfirmVC.m in Sources */,
 				9A1FB7FA208EDF9600DAE254 /* MessageVC.m in Sources */,
 				9A186B421FBAFE65008E2EB1 /* UserInfoModel.m in Sources */,
+				9A2A1D5520B408A100262B0E /* MakeOrderViewModel.m in Sources */,
 				9A5E60FF2084A20800491AE3 /* MainViewModel.m in Sources */,
 				9A5E611220885D0700491AE3 /* CarModifyView.m in Sources */,
+				9A607D8A20E60F78004F965C /* OrderConfirmView.m in Sources */,
 				9A82F5E7207F4132002EC44F /* MainSlideView.m in Sources */,
 				9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */,
 				9A186B3B1FB0A180008E2EB1 /* YLYRootView.m in Sources */,
 				9A186B391FB0A180008E2EB1 /* YLYPropertyManager.m in Sources */,
 				9A186B3A1FB0A180008E2EB1 /* YLYRootCell.m in Sources */,
 				9A5E60FC2084A1DD00491AE3 /* MyInfoViewModel.m in Sources */,
+				9A607D8720E60F68004F965C /* OrderConfirmModel.m in Sources */,
 				9A3D1FB61FB047DB004F827C /* main.m in Sources */,
+				9A607D9920EA2669004F965C /* OrderDetailView.m in Sources */,
 				9A186B3C1FB0A180008E2EB1 /* YLYRootViewController.m in Sources */,
 				9A186B381FB0A180008E2EB1 /* YLYHelper.m in Sources */,
 				9A186B351FB0A180008E2EB1 /* MainViewController.m in Sources */,
 				9AEBD388202DB503009E5FC2 /* LoginView.m in Sources */,
 				9A5E611E2088949100491AE3 /* AddCarViewModel.m in Sources */,
+				9A607D9C20EA269D004F965C /* OrderDetailVC.m in Sources */,
 				9A1FB801208EDFC400DAE254 /* MessageView.m in Sources */,
+				9A607D9020E9CBAF004F965C /* OrderConfirmPopView.m in Sources */,
 				9A73F35E204571B0000F01B2 /* YLYRootButton.m in Sources */,
 				9A3E6A44205A581200B22928 /* YLYNetBox.m in Sources */,
 				9A554D90208DBA4400B6677B /* WalletViewModel.m in Sources */,
+				9A2A1D4020AC516C00262B0E /* MessageDetailVC.m in Sources */,
 				9A5E61022086FABF00491AE3 /* MyInfoModifyVC.m in Sources */,
 				9A5E60F6208488F300491AE3 /* UIButton+ExtentMethod.m in Sources */,
 				9A1FB7FD208EDFA800DAE254 /* MessageViewModel.m in Sources */,
@@ -1072,8 +1099,10 @@
 				9A54E79120318BCC0054D38A /* BootUnit.m in Sources */,
 				9A73F3472043DFF9000F01B2 /* MainView.m in Sources */,
 				9AEBD382202BE909009E5FC2 /* UIColor+ExtendMethod.m in Sources */,
+				9A2A1D4620AC519D00262B0E /* MessageDetailModel.m in Sources */,
 				9A5E60F3208474D500491AE3 /* MyInfoVC.m in Sources */,
 				9A5E60F92084982300491AE3 /* MyInfoView.m in Sources */,
+				9A2A1D4320AC518B00262B0E /* MessageDetailView.m in Sources */,
 				9A54E79D204107DE0054D38A /* UITextField+ExtentMethod.m in Sources */,
 				9A5E611520886BCB00491AE3 /* CarModifyViewModel.m in Sources */,
 				9AEBD37F202BE8EE009E5FC2 /* NSString+ExtendMethod.m in Sources */,
@@ -1081,6 +1110,7 @@
 				9A5E61182088876C00491AE3 /* AddCarVC.m in Sources */,
 				9A721C13204F845800787753 /* YLYRootTextField.m in Sources */,
 				9A3D1FA81FB047DB004F827C /* AppDelegate.m in Sources */,
+				9A2A1D4920B299EB00262B0E /* YLYConstantString.m in Sources */,
 				9A5E610F20885CE500491AE3 /* CarModifyVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1227,17 +1257,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eyuemeiche/Eyuemeiche.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Luyu Yi (4WHTD25L2T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 252WARHBVE;
 				INFOPLIST_FILE = Eyuemeiche/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyuemeiche.eymcClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "12fe6a43-b98a-4426-b5b5-15964315b5b9";
+				PROVISIONING_PROFILE_SPECIFIER = eymcClientDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1248,17 +1278,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Eyuemeiche/Eyuemeiche.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Luyu Yi (4WHTD25L2T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 252WARHBVE;
 				INFOPLIST_FILE = Eyuemeiche/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eyuemeiche.eymcClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "12fe6a43-b98a-4426-b5b5-15964315b5b9";
+				PROVISIONING_PROFILE_SPECIFIER = eymcClientDev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

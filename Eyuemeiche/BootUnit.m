@@ -170,8 +170,9 @@
     if ([[NSUserDefaults standardUserDefaults] boolForKey:CONSTANT_USERDEFAULTS_APPFIRSTLAUNCH] == NO) {
         YLYLog(@"第一次启动app");
         //默认空token
-        USERDEFAULTS_SET(@"", CONSTANT_USERDEFAULTS_LOCALUSERTOKEN);
+        USERDEFAULTS_SET(@"", CONSTANT_USERDEFAULTS_ACCESSTOKEN);
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONSTANT_USERDEFAULTS_APPFIRSTLAUNCH];
+        USERDEFAULTS_SYNC();
     } else {
         ;
     }
@@ -181,6 +182,7 @@
     NSString *UUID = [[UIDevice currentDevice].identifierForVendor UUIDString];
     YLYLog(@"UUID = %@", UUID);
     USERDEFAULTS_SET([NSString checkNullString:UUID], CONSTANT_USERDEFAULTS_LOCALUUID);
+    USERDEFAULTS_SYNC();
 }
 
 - (void)adaptSystem {

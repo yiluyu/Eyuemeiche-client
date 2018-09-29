@@ -31,6 +31,9 @@
 /* ----- SexPopView ----- */
 @interface SexPopView : YLYRootView
 
+///初始化传值
+- (id)initWithArray:(NSArray *)dataArray;
+
 ///设定初始值
 - (void)pointIndex:(NSInteger)index;
 

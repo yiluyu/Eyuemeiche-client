@@ -20,6 +20,11 @@
 static const char *button_actionIntervalTime = "button_actionIntervalTime";
 static const char *button_clickTime = "button_clickTime";
 
+static char topNameKey;
+static char rightNameKey;
+static char bottomNameKey;
+static char leftNameKey;
+
 //手动增加 actionIntervalTime get方法
 - (NSTimeInterval)actionIntervalTime {
     return [objc_getAssociatedObject(self, button_actionIntervalTime) doubleValue];
@@ -97,6 +102,45 @@ static const char *button_clickTime = "button_clickTime";
     //在 +load 方法里已经将 sysSEL->newMethod, newSEL->sysMethod 交换过了
     //这里需要执行系统的 UIButton 响应方法, 直接找 newSEL 即可
     [self newSendAction:action to:target forEvent:event];
+}
+
+/* 扩大响应区域 */
+- (void)setEnlargeEdge:(CGFloat)size {
+    objc_setAssociatedObject(self, &topNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &rightNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &bottomNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &leftNameKey, [NSNumber numberWithFloat:size], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (void)setEnlargeEdgeWithTop:(CGFloat)top right:(CGFloat)right bottom:(CGFloat)bottom left:(CGFloat)left {
+    objc_setAssociatedObject(self, &topNameKey, [NSNumber numberWithFloat:top], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &rightNameKey, [NSNumber numberWithFloat:right], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &bottomNameKey, [NSNumber numberWithFloat:bottom], OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, &leftNameKey, [NSNumber numberWithFloat:left], OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (CGRect)enlargedRect {
+    NSNumber* topEdge = objc_getAssociatedObject(self, &topNameKey);
+    NSNumber* rightEdge = objc_getAssociatedObject(self, &rightNameKey);
+    NSNumber* bottomEdge = objc_getAssociatedObject(self, &bottomNameKey);
+    NSNumber* leftEdge = objc_getAssociatedObject(self, &leftNameKey);
+    if (topEdge && rightEdge && bottomEdge && leftEdge) {
+        return CGRectMake(self.bounds.origin.x - leftEdge.floatValue,
+                          self.bounds.origin.y - topEdge.floatValue,
+                          self.bounds.size.width + leftEdge.floatValue + rightEdge.floatValue,
+                          self.bounds.size.height + topEdge.floatValue + bottomEdge.floatValue);
+    }
+    else {
+        return self.bounds;
+    }
+}
+
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent*) event {
+    CGRect rect = [self enlargedRect];
+    if (CGRectEqualToRect(rect, self.bounds)) {
+        return [super hitTest:point withEvent:event];
+    }
+    return CGRectContainsPoint(rect, point) ? self : nil;
 }
 
 @end

@@ -17,6 +17,7 @@
     self.phoneNumber = @"无登陆手机号";
     self.headerImageURL = @"";
     self.sex = @"0";
+    self.access_token = @"";
 }
 
 @end

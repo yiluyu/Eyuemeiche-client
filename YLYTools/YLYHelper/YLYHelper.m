@@ -79,9 +79,6 @@ static YLYHelper *helper = nil;
 }
 
 
-
-
-
 //显示hub提示
 - (void)showHudViewWithString:(NSString *)promptString {
     if (self.textShowing == YES || self.processShowing == YES) {

@@ -11,7 +11,7 @@
 #import "CarModifyViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface CarModifyVC () <UITableViewDelegate, UITableViewDataSource>
+@interface CarModifyVC () <UITableViewDelegate, UITableViewDataSource, AddCarDelegate>
 {
     NSArray *tableData;
 }
@@ -28,7 +28,7 @@
     self.title = @"车辆管理";
     
     [self initBaseData];
-    [self creatSubViews];
+    [self createSubViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -56,6 +56,7 @@
 
 - (void)addCar {
     AddCarVC *nextVC = [[AddCarVC alloc] init];
+    nextVC.delegate = self;
     [self.navigationController pushViewController:nextVC animated:YES];
 }
 
@@ -79,7 +80,7 @@
     tableData = [NSArray arrayWithArray:tmpArr];
 }
 
-- (void)creatSubViews {
+- (void)createSubViews {
     self.tableView = [[UITableView alloc] initWithFrame:CGRectZero
                                                   style:UITableViewStylePlain];
     _tableView.backgroundColor = COLOR_VC_BG;
@@ -124,6 +125,11 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     YLYLog(@"进入修改车辆");
+}
+
+#pragma -mark AddCarVCDelegate
+- (void)callBackRefreshData {
+    
 }
 
 @end
