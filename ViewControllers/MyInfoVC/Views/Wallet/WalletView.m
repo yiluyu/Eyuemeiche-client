@@ -8,6 +8,7 @@
 
 #import "WalletView.h"
 #import "MyInfoConfig.h"
+#import "YLYBaseViewHeader.h"
 
 #pragma -mark chargeItem
 

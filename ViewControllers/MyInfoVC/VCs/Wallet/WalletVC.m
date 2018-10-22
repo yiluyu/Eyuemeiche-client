@@ -8,6 +8,7 @@
 
 #import "WalletVC.h"
 #import "MyInfoConfig.h"
+#import "YLYBaseViewHeader.h"
 
 @interface WalletVC ()
 {

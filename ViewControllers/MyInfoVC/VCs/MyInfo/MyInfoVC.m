@@ -8,6 +8,7 @@
 
 #import "MyInfoVC.h"
 #import "MyInfoConfig.h"
+#import "YLYBaseViewHeader.h"
 
 @interface MyInfoVC ()
 

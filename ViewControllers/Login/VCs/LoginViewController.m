@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginConfig.h"
 #import "NetConfig.h"
+#import "BootUnit.h"
 
 @interface LoginViewController ()<UITextFieldDelegate>
 {
@@ -159,7 +160,7 @@
 #pragma -mark 网络
 //获取验证码
 - (void)requestSendCode:(NSDictionary *)dict {
-#ifdef YLYUIDemo
+#if YLYUIDemo
     YLYLog(@"-----获取验证码待定");
     [_loginView alternateStep:@"2"];
     return;
@@ -176,9 +177,9 @@
                            name:@"获取登陆验证码"];
     
     SELF_WEAK();
-    SELF_STRONG();
     net.requestSuccessBlock = ^(NSDictionary *dic) {
         YLYLog(@"验证码获取成功");
+        SELF_STRONG();
         strongSelf->msg_token = dic[@"msg_token"];
         [_loginView alternateStep:@"2"];
     };
@@ -186,7 +187,7 @@
 }
 //登陆
 - (void)requestLogin:(NSDictionary *)dict {
-#ifdef YLYUIDemo
+#if YLYUIDemo
     YLYLog(@"-----登陆请求待定");
     BootUnit *tempBoot = [BootUnit shareUnit];
     [_loginView.phoneTextField resignFirstResponder];
@@ -255,6 +256,7 @@
 - (void)dealloc {
     //关掉定时器
     [self.loginView closeTimer];
+    [[YLYDownLoadManager shareManager] clearNetBoxInSender:self];
 }
 
 

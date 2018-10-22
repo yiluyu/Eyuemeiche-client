@@ -53,7 +53,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", @"text/plain", nil];
     // 设置超时时间
     [manager.requestSerializer willChangeValueForKey:@"timeoutInterval"];
-    manager.requestSerializer.timeoutInterval = 5.0f;
+    manager.requestSerializer.timeoutInterval = 10.0f;
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     [manager.requestSerializer setValue:@"text/html" forHTTPHeaderField:@"Content-Type"];
@@ -112,66 +112,57 @@
      YLYLog(@"%p", _mainView);//指针指向的地址
      */
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        //加入字典
-        NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
-        NSString *netBoxKey = [NSString stringWithFormat:@"%p", netBox];
-        NSMutableDictionary *netBoxDict = netsDict[senderKey];
-        if (netBoxDict == nil) {
-            netBoxDict = [[NSMutableDictionary alloc] initWithCapacity:0];
-        }
-        [netBoxDict setObject:netBox forKey:netBoxKey];
-        [netsDict setObject:netBoxDict forKey:senderKey];
-        
-        dispatch_semaphore_signal(semaphore);
-    });
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    //加入字典
+    NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
+    NSString *netBoxKey = [NSString stringWithFormat:@"%p", netBox];
+    NSMutableDictionary *netBoxDict = netsDict[senderKey];
+    if (netBoxDict == nil) {
+        netBoxDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    }
+    [netBoxDict setObject:netBox forKey:netBoxKey];
+    [netsDict setObject:netBoxDict forKey:senderKey];
+    
+    dispatch_semaphore_signal(semaphore);
 }
 
 //删除管理字典
 - (void)removeNetBoxFromDict:(id)sender netBox:(YLYNetBox *)netBox {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        //检查字典
-        NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
-        NSMutableDictionary *netBoxDict = netsDict[senderKey];
-        if (netBoxDict != nil) {
-            NSString *netBoxKey = [NSString stringWithFormat:@"%p", netBox];
-            [netBoxDict removeObjectForKey:netBoxKey];
-            
-            if (netBoxDict.allKeys.count == 0) {
-                [netsDict removeObjectForKey:senderKey];
-            }
-        }
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    //检查字典
+    NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
+    NSMutableDictionary *netBoxDict = netsDict[senderKey];
+    if (netBoxDict != nil) {
+        NSString *netBoxKey = [NSString stringWithFormat:@"%p", netBox];
+        [netBoxDict removeObjectForKey:netBoxKey];
         
-        dispatch_semaphore_signal(semaphore);
-    });
+        if (netBoxDict.allKeys.count == 0) {
+            [netsDict removeObjectForKey:senderKey];
+        }
+    }
+    
+    dispatch_semaphore_signal(semaphore);
 }
 
 //清空指定 sender 下的所有请求
 - (void)clearNetBoxInSender:(id)sender {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        //查询字典
-        NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
-        NSMutableDictionary *netBoxDict = netsDict[senderKey];
-        if (netBoxDict != nil) {
-            //遍历dict下的所有netbox
-            NSArray *objects = netBoxDict.allValues;
-            for (YLYNetBox *netBox in objects) {
-                [netBox cancelRequest];
-            }
-            //清空 senderKey
-            [netsDict removeObjectForKey:senderKey];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    //查询字典
+    NSString *senderKey = [NSString stringWithFormat:@"%p", sender];
+    NSMutableDictionary *netBoxDict = netsDict[senderKey];
+    if (netBoxDict != nil) {
+        //遍历dict下的所有netbox
+        NSArray *objects = netBoxDict.allValues;
+        for (YLYNetBox *netBox in objects) {
+            [netBox cancelRequest];
         }
-        
-        dispatch_semaphore_signal(semaphore);
-    });
+        //清空 senderKey
+        [netsDict removeObjectForKey:senderKey];
+    }
+    
+    dispatch_semaphore_signal(semaphore);
 }
 
 

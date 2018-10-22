@@ -6,13 +6,12 @@
 //  Copyright © 2018 yu. All rights reserved.
 //
 
-#ifndef CategoryConfig_h
-#define CategoryConfig_h
+/* 类别头文件 */
 
 #import "NSString+ExtendMethod.h"
 #import "UIColor+ExtendMethod.h"
+#import "UILabel+ExtendMethod.h"
 #import "UITextField+ExtentMethod.h"
 #import "UIButton+ExtentMethod.h"
-
-
-#endif /* CategoryConfig_h */
+#import "NSDictionary+ExtendMethod.h"
+#import "NSMutableDictionary+ExtendMethod.h"

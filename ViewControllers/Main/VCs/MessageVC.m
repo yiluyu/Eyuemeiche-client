@@ -8,6 +8,8 @@
 
 #import "MessageVC.h"
 #import "MainConfig.h"
+#import "BootUnit.h"
+#import "YLYBaseViewHeader.h"
 
 @interface MessageVC () <UITableViewDelegate, UITableViewDataSource>
 {

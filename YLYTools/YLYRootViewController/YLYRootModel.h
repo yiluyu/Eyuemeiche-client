@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YLYRegular.h"
 
-@interface YLYRootModel : NSObject <NSCoding>
+@class YLYRootModel;
 
+@protocol YLYRootModelProtocol <NSObject>
+
+@required
 ///从 Dict 转化成 model
-- (instancetype)initWithDict:(NSDictionary *)dataDict;
+- (void)updateDict:(NSDictionary *)dataDict;
+
+@end
+
+@interface YLYRootModel : NSObject <NSCoding, YLYRootModelProtocol>
 
 @end

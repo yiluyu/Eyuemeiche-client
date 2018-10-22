@@ -7,6 +7,7 @@
 //
 
 #import "YLYRootView.h"
+#import "YLYBaseViewHeader.h"
 
 @class LoginView;
 
@@ -23,8 +24,8 @@
 //当前步骤
 @property (nonatomic, readonly, strong)NSString *stepStatus;// 0为获取验证码  1为登陆
 
-@property (nonatomic, readonly, strong)UITextField *phoneTextField;//phone输入
-@property (nonatomic, readonly, strong)UITextField *codeTextField;//code输入
+@property (nonatomic, readonly, strong)YLYRootTextField *phoneTextField;//phone输入
+@property (nonatomic, readonly, strong)YLYRootTextField *codeTextField;//code输入
 
 /** 跳转步骤 */
 - (void)alternateStep:(NSString *)step;// @"1"获取验证码; @"2"登陆

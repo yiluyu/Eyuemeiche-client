@@ -7,6 +7,7 @@
 //
 
 #import "MyInfoConfig.h"
+#import "YLYBaseViewHeader.h"
 
 @implementation MyInfoModifyView
 

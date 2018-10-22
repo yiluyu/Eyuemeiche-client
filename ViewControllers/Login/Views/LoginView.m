@@ -7,34 +7,48 @@
 //
 
 #import "LoginView.h"
-#import "LoginConfig.h"
+#import "YLYBaseViewHeader.h"
+#import "YLYDefine.h"
 
 @interface LoginView () <UITextFieldDelegate>
 
-@property (nonatomic, readwrite, strong)NSString *stepStatus;//当前步骤状态
-
-@property (nonatomic, readwrite, strong)UIImageView *logoImage;//logo
-
-@property (nonatomic, readwrite, strong)YLYRootView *backView;//背景色
+//! 当前步骤状态
+@property (nonatomic, readwrite, strong)NSString *stepStatus;
+//! logo
+@property (nonatomic, readwrite, strong)UIImageView *logoImage;
+//! 背景色
+@property (nonatomic, readwrite, strong)YLYRootView *backView;
 
 //第一步模块
-@property (nonatomic, readwrite, strong)UIImageView *phoneicon;//图标
-@property (nonatomic, readwrite, strong)YLYRootView *phoneBack;//输入背景
-@property (nonatomic, readwrite, strong)UITextField *phoneTextField;//phone输入
-@property (nonatomic, readwrite, strong)YLYRootButton *cannotLogin;//无法登陆
-@property (nonatomic, readwrite, strong)YLYRootButton *getCodeBtn;//获取验证码按钮
+//! 图标
+@property (nonatomic, readwrite, strong)UIImageView *phoneicon;
+//! 输入背景
+@property (nonatomic, readwrite, strong)YLYRootView *phoneBack;
+//! phone输入
+@property (nonatomic, readwrite, strong)YLYRootTextField *phoneTextField;
+//! 无法登陆
+@property (nonatomic, readwrite, strong)YLYRootButton *cannotLogin;
+//! 获取验证码按钮
+@property (nonatomic, readwrite, strong)YLYRootButton *getCodeBtn;
 
 //第二步模块
-@property (nonatomic, readwrite, strong)YLYRootLabel *phoneLabel;//手机号展示
-@property (nonatomic, readwrite, strong)UIImageView *codeicon;//图标
-@property (nonatomic, readwrite, strong)UITextField *codeTextField;//code输入
-@property (nonatomic, readwrite, strong)YLYRootButton *changePhoneBtn;//重新输入手机号
-@property (nonatomic, readwrite, strong)YLYRootButton *loginBtn;//登陆
+//! 手机号展示
+@property (nonatomic, readwrite, strong)YLYRootLabel *phoneLabel;
+//! 图标
+@property (nonatomic, readwrite, strong)UIImageView *codeicon;
+//! code输入
+@property (nonatomic, readwrite, strong)YLYRootTextField *codeTextField;
+//! 重新输入手机号
+@property (nonatomic, readwrite, strong)YLYRootButton *changePhoneBtn;
+//! 登陆
+@property (nonatomic, readwrite, strong)YLYRootButton *loginBtn;
 
 
 //计时器
-@property (nonatomic, readwrite, assign)BOOL isSendingCode;//发送code中
-@property (nonatomic, readwrite, strong)NSTimer *sendingTimer;//发送code的计时器
+//! 发送code中
+@property (nonatomic, readwrite, assign)BOOL isSendingCode;
+//! 发送code的计时器
+@property (nonatomic, readwrite, strong)NSTimer *sendingTimer;
 
 @end
 
@@ -94,7 +108,7 @@
     
     
     //phonetext
-    self.phoneTextField = [[UITextField alloc] init];
+    self.phoneTextField = [[YLYRootTextField alloc] init];
     _phoneTextField.backgroundColor = COLOR_CLEAR;
     _phoneTextField.textAlignment = NSTextAlignmentLeft;
     _phoneTextField.placeholder = @"请输入手机号";
@@ -196,7 +210,7 @@
     _phoneLabel.alpha = 0.0f;
     
     //codetext
-    self.codeTextField = [[UITextField alloc] init];
+    self.codeTextField = [[YLYRootTextField alloc] init];
     _codeTextField.backgroundColor = [UIColor colorWithHexString:@"#FBFAFF"];
     _codeTextField.textAlignment = NSTextAlignmentLeft;
     _codeTextField.placeholder = @"请输入验证码";
@@ -542,6 +556,11 @@ static int maxTime = CONSTANT_TIME_GETCODE;
             weakSelf.getCodeBtn.alpha = 0.0f;
         }];
     }
+}
+
+- (void)dealloc {
+    self.codeTextField = nil;
+    self.phoneTextField = nil;
 }
 
 @end

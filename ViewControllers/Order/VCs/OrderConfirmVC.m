@@ -10,6 +10,7 @@
 #import "MakeOrderConfig.h"
 #import "MyInfoModifyView.h"
 #import "OrderConfirmPopView.h"
+#import "BootUnit.h"
 
 @interface OrderConfirmVC () <UITableViewDelegate, UITableViewDataSource>
 {

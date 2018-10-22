@@ -8,6 +8,7 @@
 
 #import "MessageView.h"
 #import "MainConfig.h"
+#import "YLYBaseViewHeader.h"
 
 #pragma -mark cell
 @implementation MessageCell

@@ -10,6 +10,8 @@
 #import "MainConfig.h"
 #import "MyInfoVC.h"
 #import "MakeOrderVC.h"
+#import "BootUnit.h"
+#import "YLYBaseViewHeader.h"
 
 @interface MainViewController ()
 
@@ -40,7 +42,7 @@
     
     
     //模拟登陆失败
-//    [self loginFaild];
+    [self loginFaild];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

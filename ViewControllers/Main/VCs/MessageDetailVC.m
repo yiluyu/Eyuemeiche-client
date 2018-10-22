@@ -8,6 +8,8 @@
 
 #import "MessageDetailVC.h"
 #import "MainConfig.h"
+#import "YLYBaseViewHeader.h"
+#import "BootUnit.h"
 #import <sys/socket.h>
 #import <arpa/inet.h>
 

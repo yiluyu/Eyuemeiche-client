@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9666663E217591E300873C52 /* NSDictionary+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 9666663D217591E300873C52 /* NSDictionary+ExtendMethod.m */; };
+		96666641217592A400873C52 /* NSMutableDictionary+ExtendMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 96666640217592A400873C52 /* NSMutableDictionary+ExtendMethod.m */; };
 		9A186B341FB0A180008E2EB1 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B0F1FB0A180008E2EB1 /* LoginViewController.m */; };
 		9A186B351FB0A180008E2EB1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B151FB0A180008E2EB1 /* MainViewController.m */; };
 		9A186B361FB0A180008E2EB1 /* YLYDownLoadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A186B221FB0A180008E2EB1 /* YLYDownLoadManager.m */; };
@@ -96,6 +98,11 @@
 
 /* Begin PBXFileReference section */
 		115AFF556407BFEEB0636627 /* Pods-Eyuemeiche.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyuemeiche.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eyuemeiche/Pods-Eyuemeiche.release.xcconfig"; sourceTree = "<group>"; };
+		9666663C217591E300873C52 /* NSDictionary+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ExtendMethod.h"; sourceTree = "<group>"; };
+		9666663D217591E300873C52 /* NSDictionary+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ExtendMethod.m"; sourceTree = "<group>"; };
+		9666663F217592A400873C52 /* NSMutableDictionary+ExtendMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ExtendMethod.h"; sourceTree = "<group>"; };
+		96666640217592A400873C52 /* NSMutableDictionary+ExtendMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ExtendMethod.m"; sourceTree = "<group>"; };
+		96F6750B21774B050099C96E /* YLYBaseViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLYBaseViewHeader.h; sourceTree = "<group>"; };
 		9A186B0E1FB0A180008E2EB1 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9A186B0F1FB0A180008E2EB1 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9A186B141FB0A180008E2EB1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -466,6 +473,7 @@
 		9A186B2C1FB0A180008E2EB1 /* YLYRootView */ = {
 			isa = PBXGroup;
 			children = (
+				96F6750B21774B050099C96E /* YLYBaseViewHeader.h */,
 				9A5E6109208844BD00491AE3 /* UIImageView */,
 				9A82F5E0207DEAFD002EC44F /* UITextField */,
 				9A82F5DE207DEAE9002EC44F /* UIButton */,
@@ -824,6 +832,10 @@
 				9A721C0F204D28D600787753 /* UILabel+ExtendMethod.m */,
 				9A5E60F4208488F300491AE3 /* UIButton+ExtentMethod.h */,
 				9A5E60F5208488F300491AE3 /* UIButton+ExtentMethod.m */,
+				9666663C217591E300873C52 /* NSDictionary+ExtendMethod.h */,
+				9666663D217591E300873C52 /* NSDictionary+ExtendMethod.m */,
+				9666663F217592A400873C52 /* NSMutableDictionary+ExtendMethod.h */,
+				96666640217592A400873C52 /* NSMutableDictionary+ExtendMethod.m */,
 			);
 			path = YLYCategory;
 			sourceTree = "<group>";
@@ -1071,6 +1083,7 @@
 				9A82F5E7207F4132002EC44F /* MainSlideView.m in Sources */,
 				9A73F35B20456F3B000F01B2 /* YLYRootLabel.m in Sources */,
 				9A186B3B1FB0A180008E2EB1 /* YLYRootView.m in Sources */,
+				96666641217592A400873C52 /* NSMutableDictionary+ExtendMethod.m in Sources */,
 				9A186B391FB0A180008E2EB1 /* YLYPropertyManager.m in Sources */,
 				9A186B3A1FB0A180008E2EB1 /* YLYRootCell.m in Sources */,
 				9A5E60FC2084A1DD00491AE3 /* MyInfoViewModel.m in Sources */,
@@ -1082,6 +1095,7 @@
 				9A186B351FB0A180008E2EB1 /* MainViewController.m in Sources */,
 				9AEBD388202DB503009E5FC2 /* LoginView.m in Sources */,
 				9A5E611E2088949100491AE3 /* AddCarViewModel.m in Sources */,
+				9666663E217591E300873C52 /* NSDictionary+ExtendMethod.m in Sources */,
 				9A607D9C20EA269D004F965C /* OrderDetailVC.m in Sources */,
 				9A1FB801208EDFC400DAE254 /* MessageView.m in Sources */,
 				9A607D9020E9CBAF004F965C /* OrderConfirmPopView.m in Sources */,

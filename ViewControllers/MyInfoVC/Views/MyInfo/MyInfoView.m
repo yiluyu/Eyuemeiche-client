@@ -11,6 +11,7 @@
 #import "MyInfoViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UserManager.h"
+#import "YLYBaseViewHeader.h"
 
 #pragma -mark ----- header -----
 @interface MyInfoHeader ()

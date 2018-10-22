@@ -18,7 +18,7 @@
 /* debug总开关 */
 #define YLYTest    //开发状态,注释掉则为发布状态
 
-//#define YLYUIDemo    //纯 UI 展示模式
+//#define YLYUIDemo 1   //纯 UI 展示模式
 
 /* 自定义log输出,替换系统NSLog
  NSLog does 2 things:

@@ -10,6 +10,9 @@
 #import "MyInfoConfig.h"
 #import "MyInfoModifyViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "YLYBaseViewHeader.h"
+#import "YLYPropertyManager.h"
+#import "UserManager.h"
 
 @interface MyInfoModifyVC () <UITableViewDelegate, UITableViewDataSource>
 {

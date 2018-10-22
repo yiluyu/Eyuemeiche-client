@@ -8,6 +8,7 @@
 
 #import "AddCarView.h"
 #import "MyInfoConfig.h"
+#import "YLYBaseViewHeader.h"
 
 #pragma -mark item
 @interface AddCarCell ()
